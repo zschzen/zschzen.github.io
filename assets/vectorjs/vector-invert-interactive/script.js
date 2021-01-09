@@ -111,8 +111,6 @@ for (let i = -3; i <= 3; i++) {
 
 point.translate(150, -100);
 
-//pointB.translate(-100, -50);
-
 interactive.circle(0, 0, 3).style.fill = '#404040';
 
 //# sourceMappingURL=cartesian-coordinate-system.js.map
