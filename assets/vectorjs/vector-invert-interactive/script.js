@@ -23,7 +23,6 @@ yAxis.style.stroke = 'green';
 let rectangle = interactive.rectangle(xAxis.x1, yAxis.y1, xAxis.x2 - xAxis.x1, yAxis.y2 - yAxis.y1);
 rectangle.classList.add('default');
 point.constrainWithinBox(xAxis.x1, yAxis.y1, xAxis.x2, yAxis.y2);
-//pointB.constrainWithinBox(xAxis.x1, yAxis.y1, xAxis.x2, yAxis.y2);
 
 let line = interactive.line(0, 0, 0, 0);
 let lineDIR = interactive.line(0, 0, 0, 0);
