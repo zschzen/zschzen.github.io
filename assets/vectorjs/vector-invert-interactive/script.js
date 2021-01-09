@@ -12,7 +12,6 @@ interactive.style.overflow = 'hidden';
 
 // Create three control points
 let point = interactive.control(0, 0);
-//let pointB = interactive.control(0, 0);
 
 let xAxis = interactive.line(-interactive.width / 2 + margin, 0, interactive.width / 2 - margin, 0);
 let yAxis = interactive.line(0, -interactive.height / 2 + margin, 0, interactive.height / 2 - margin);
