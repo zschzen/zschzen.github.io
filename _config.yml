@@ -7,33 +7,34 @@
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # --------------------------
-title: Chirpy                          # the main title
+title: Leandro Peres                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: Game Worker &<br/>Pensador Lúdico.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Site pessoal para comunicações diversas,
+  englobando portifólio e currículo.
 
-# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+# fill in the base hostname & protocol for your site, e.g., 'https://username.github.io'
+url: 'https://peres.dev'
 
-author: your_full_name                  # change to your full name
+author: Leandro Peres                  # change to your full name
+
+avatar: /assets/img/home/profile.jpeg    # support internet resources
 
 github:
-  username: github_username             # change to your github username
+  username: zschzen             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: zschzen            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Leandro Peres                  # it will shows as the copyright owner in Footer
+  email: leandro@peres.dev             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/zschzen      # change to your twitter homepage
+    - https://github.com/zschzen       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -47,7 +48,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 baseurl: ''
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: America/Sao_Paulo
 
 google_analytics:
   id: ''          # Fill with your Google Analytics ID
@@ -62,7 +63,7 @@ google_analytics:
 
 disqus:
   comments: false  # boolean type, the global switch for posts comments.
-  shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  shortname: 'peres-dev'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 
 # Prefer color scheme setting.
@@ -77,17 +78,7 @@ disqus:
 #
 #     dark   - Use the dark color scheme
 #
-theme_mode:   # [light|dark]
-
-# The CDN endpoint for images.
-# After filling in, the image resource URL of posts and site avatar
-# will automatically add the CDN endpoint prefix.
-#
-# Note: MUST remove it or replace with your CDN
-img_cdn: 'https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images'
-
-avatar: /commons/avatar.jpg   # the avatar on sidebar, support local or internet resources
-
+theme_mode:   # <light|dark>
 
 # boolean type, the global switch for ToC in posts.
 toc: true
