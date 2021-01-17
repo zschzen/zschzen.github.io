@@ -4,7 +4,7 @@ author: Leandro Peres
 date: 2020-12-22 11:00:00 -0300
 categories: [Tutorial]
 tags: [WIP, Matemática, Games, Vetores]
-image: https://mathinsight.org/media/image/image/vector_opposite.png
+#image: https://mathinsight.org/media/image/image/vector_opposite.png
 math: true
 
 #$$ \left(\begin{bmatrix} 1 \cr 3 \end{bmatrix} + \begin{bmatrix} 2 \cr 2 \end{bmatrix} \right) \cdot \begin{bmatrix} 4 \cr 4 \end{bmatrix} = 0 $$
@@ -18,7 +18,7 @@ math: true
 Na matemática, um vetor é uma contrução capaz de representar uma **direção** e **sentido**, além de possuir sua **intensidade** (módulo ou magnitude).[^footnote]
 Um vetor $$ a $$ é representado gráficamente por qualquer seguimento de reta orientado, como exemplo o seguimento $$ \overline{AB} $$.
 
-Genericamente, um vetor contém coordenadas espaciais e, dado a isso, podem ser classificados em dimensões, bem como:
+Genericamente, em jogos um vetor contém coordenadas espaciais e, não tão somente a isto, podem ser classificados em dimensões, bem como:
 - 1D (contém x),
 - 2D (contém x, y),
 - 3D (contém x, y, z),
@@ -26,10 +26,10 @@ Genericamente, um vetor contém coordenadas espaciais e, dado a isso, podem ser 
 
 #### Representação
 
-<span style="color:#07689f">Vetor</span> 2D:
+Vetor 2D:
 $$ \vec{V} = \begin{bmatrix} x \cr y \end{bmatrix} $$
 
-<span style="color:#07689f">Vetor</span> 3D:
+Vetor 3D:
 $$ \vec{V} = \begin{bmatrix} x \cr y \cr z \end{bmatrix} $$
 
 ## Aplicabilidade em jogos digitais
@@ -56,7 +56,7 @@ $$
 }
 $$
 
-Para **vetores 3D**, o processo é relativamente o mesmo. Porém, com a adição do eixo z:
+Para **vetores 3D ou 4D**, o processo é o mesmo. Porém, com a adição do eixo z ou w:
 
 $$
 \eqalign{

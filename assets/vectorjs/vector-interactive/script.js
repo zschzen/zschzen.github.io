@@ -117,7 +117,7 @@ angleRectangle.classList.add('default');
 
 let xPosition = interactive.line(0, 0, 0, 0);
 xPosition.style.stroke = 'red';
-xPosition.style.strokeDasharray = "7,7";
+xPosition.style.strokeDasharray = "10,10";
 xPosition.addDependency(point);
 xPosition.update = function () {
     this.x1 = point.x;
@@ -138,7 +138,7 @@ xPosition.update = function () {
 };
 let yPosition = interactive.line(0, 0, 0, 0);
 yPosition.style.stroke = 'green';
-yPosition.style.strokeDasharray = "7,7";
+yPosition.style.strokeDasharray = "10,10";
 yPosition.addDependency(point);
 yPosition.update = function () {
     this.y1 = point.y;

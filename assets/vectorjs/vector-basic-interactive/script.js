@@ -7,7 +7,7 @@ interactive.border = false;
 
 let PorM = 1;
 
-let radio = interactive.radioControl(-250, -100, ["a+b", "a-b"]);
+let radio = interactive.radioControl(-275, -125, ["a + b", "a - b"]);
 radio.onchange = () => {
     PorM = radio.index == 0 ? 1 : -1;
 
@@ -71,8 +71,8 @@ const updateResultingLinePos = () => {
     lineCLabel.x = (lineC.x2 / 2) - 5;
     lineCLabel.y = (lineC.y2 / 2) - 5;
 
-    lineDLabel.x = ((lineC.x2 + line.x2 * PorM * PorM) / 2) + 5;
-    lineDLabel.y = ((lineC.y2 + line.y2 * PorM * PorM) / 2) + 5;
+    lineDLabel.x = ((lineC.x2 + line.x2) / 2) + 5;
+    lineDLabel.y = ((lineC.y2 + line.y2) / 2) + 5;
 }
 
 let boxConstraint = point.constrain;
