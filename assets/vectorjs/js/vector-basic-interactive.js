@@ -49,13 +49,10 @@ let lineBLabel = interactive.text(0, 0, 'b');
 let lineCLabel = interactive.text(0, 0, 'c');
 let lineDLabel = interactive.text(0, 0, '+b'); // its a lineBLabel clone
 
-lineB.style.stroke = `#434982`;
-lineC.style.stroke = `#730068`;
+lineC.style.stroke = `blue`;
 lineD.style.stroke = lineB.style.stroke;
 lineD.style.strokeOpacity = '.6';
 
-lineCLabel.style.stroke = lineC.style.stroke;
-lineDLabel.style.stroke = lineB.style.stroke;
 lineDLabel.style.strokeWidth = .25;
 lineCLabel.style.strokeWidth = .25;
 

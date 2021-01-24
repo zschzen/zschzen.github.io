@@ -1,7 +1,7 @@
 ---
-title: Matemática vetorial em jogos
+title: Matemática vetorial aplicada em jogos
 author: Leandro Peres
-date: 2020-12-22 11:00:00 -0300
+date: 2020-01-18 11:00:00 -0300
 categories: [Tutorial]
 tags: [WIP, Matemática, Games, Vetores]
 #image: https://mathinsight.org/media/image/image/vector_opposite.png
@@ -16,7 +16,7 @@ math: true
 ## Introdutórios
 
 Na matemática, um vetor é uma contrução capaz de representar uma **direção** e **sentido**, além de possuir sua **intensidade** (módulo ou magnitude).[^footnote]
-Um vetor $$ a $$ é representado gráficamente por qualquer seguimento de reta orientado, como exemplo o seguimento $$ \overline{AB} $$.
+Um vetor $$ a $$ é representado graficamente por qualquer seguimento de reta orientado, como exemplo o seguimento $$ \overline{AB} $$.
 
 Genericamente, em jogos um vetor contém coordenadas espaciais e, não tão somente a isto, podem ser classificados em dimensões, bem como:
 - 1D (contém x),
@@ -42,7 +42,9 @@ Um jogador está localizado na posição (**3**, **2**) em relação à origem d
 
 {% include vectorjs.html path="vector-interactive" %}
 
-### Magnitude
+# Básico
+
+## Magnitude
 
 Com base no exemplo anterior, podemos deduzir a <span style="color:blue">**distância**</span> do jogador em relação à origem do mundo.
 Nota-se que o vetor em um sistema cardial se apresenta como um ***[Triângulo Retângulo]{:target="_blank"}***, e, assim, conseguimos deduzir (em unidades) o tamanho do vetor da posição por intermédio do ***[Teorema de Pitágoras]{:target="_blank"}***:
@@ -71,15 +73,18 @@ $$
 >
 >De exemplo, peguemos um vetor *1D* de medida *(**-10**)*. Ele terá o valor **10** como magnitude.
 
-# Operações Básicas
 
 ## Inverso
+O inverso de um vetor é um vetor de igual magnitude, mas na direção oposta. Desde modo, o inverso de $$ a $$ é $$ -a $$.
 
 {% include vectorjs.html path="vector-invert-interactive" %}
 
-## Básica
+## Normalização
+O vetor unitário de um vetor $$ a $$ é o vetor com o mesmo ponto inicial e direção de $$ a $$, mas com comprimento de 1 unidade. Pode ser provado matematicamente que existe um e apenas um vetor unitário para cada vetor $$ a $$.
 
-### Adição & Subtração
+{% include vectorjs.html path="vector-normalize-interactive" %}
+
+## Adição & Subtração
 A soma entre vetores é usada para alterar as propriedades dos vetores, criando um vetor resultante.
 Em suma, adiciona-se em cada propriedade (x, y, z, w) as outras propriedades correspondentes dos vetores a serem acumulados.
 
@@ -87,8 +92,6 @@ Grafia:
 $$ \vec{V} = \begin{bmatrix} x1 \pm x2 \pm xn \cr y1 \pm y2 \pm yn \cr z1 \pm z2 \pm zn \end{bmatrix} $$
 
 Para subtrair, devemos inverter o segundo vetor e, após tal operação, adiciona-se ao primeiro.
-
-Exemplo:
 
 {% include vectorjs.html path="vector-basic-interactive" %}
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>VectorJS</title>
+  <link rel="stylesheet" href="https://vectorjs.org/library.css">
+</head>
+
+<body>
+  <div id="interactive"></div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let interactivePath = urlParams.get('folder').toString();
+
+    var newScript = document.createElement('script');
+    newScript.type = 'module';
+    newScript.src = './js/' + interactivePath + ".js";
+    document.getElementsByTagName('head')[0].appendChild(newScript);
+  </script>
+</body>
+
+</html>
