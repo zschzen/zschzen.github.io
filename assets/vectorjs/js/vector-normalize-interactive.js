@@ -27,7 +27,6 @@ let line = interactive.line(0, 0, 0, 0);
 let lineDIR = interactive.line(0, 0, 0, 0);
 lineDIR.style.stroke = 'blue';
 
-line.addDependency(point);
 lineDIR.addDependency(point);
 lineDIR.update = () => {
 
@@ -36,8 +35,7 @@ lineDIR.update = () => {
         uLabel.root.setAttribute('visibility', `hidden`);
         return;
     }
-    else
-    {
+    else if (lineDIR.root.getAttribute('visibility') != `visible`) {
         lineDIR.root.setAttribute('visibility', `visible`);
         uLabel.root.setAttribute('visibility', `visible`);
     }

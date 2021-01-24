@@ -73,16 +73,15 @@ $$
 >
 >De exemplo, peguemos um vetor *1D* de medida *(**-10**)*. Ele terá o valor **10** como magnitude.
 
+## Normalização
+O vetor unitário de um vetor $$ a $$ é o vetor com o mesmo ponto inicial e direção de $$ a $$, mas com magnitude de 1 unidade. Pode ser provado matematicamente que existe um e apenas um vetor unitário para cada vetor $$ a $$.
+
+{% include vectorjs.html path="vector-normalize-interactive" %}
 
 ## Inverso
 O inverso de um vetor é um vetor de igual magnitude, mas na direção oposta. Desde modo, o inverso de $$ a $$ é $$ -a $$.
 
 {% include vectorjs.html path="vector-invert-interactive" %}
-
-## Normalização
-O vetor unitário de um vetor $$ a $$ é o vetor com o mesmo ponto inicial e direção de $$ a $$, mas com comprimento de 1 unidade. Pode ser provado matematicamente que existe um e apenas um vetor unitário para cada vetor $$ a $$.
-
-{% include vectorjs.html path="vector-normalize-interactive" %}
 
 ## Adição & Subtração
 A soma entre vetores é usada para alterar as propriedades dos vetores, criando um vetor resultante.

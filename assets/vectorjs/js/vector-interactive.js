@@ -125,7 +125,7 @@ xPosition.update = function () {
     this.y2 = point.y;
 
     angleRectangle.x = point.x - (point.x < 0 ? 0 : angleRectangle.width);
-    
+
     angleRectangle.root.setAttribute('visibility', point.x == 0 || point.y == 0 ? `hidden` : `visible`);
 
     if (point.x == 0 && point.y == 0) {
