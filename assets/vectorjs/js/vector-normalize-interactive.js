@@ -30,6 +30,18 @@ lineDIR.style.stroke = 'blue';
 line.addDependency(point);
 lineDIR.addDependency(point);
 lineDIR.update = () => {
+
+    if (point.x == 0 && point.y == 0) {
+        lineDIR.root.setAttribute('visibility', `hidden`);
+        uLabel.root.setAttribute('visibility', `hidden`);
+        return;
+    }
+    else
+    {
+        lineDIR.root.setAttribute('visibility', `visible`);
+        uLabel.root.setAttribute('visibility', `visible`);
+    }
+
     let x = line.x2 / 50;
     let y = line.y2 / 50;
 
