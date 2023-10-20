@@ -1,0 +1,54 @@
+{% capture iframeClasses %}shadow rounded-10 fade-in lazyload {{ include.pos | default: 'center' }}{% endcapture %}
+{% capture iframeWidth %}{{ include.width | default: '100%' }}{% endcapture %}
+
+{% capture iframeSrc %}
+  {% if include.type == 'web' %}
+    {{ include.url }}
+  {% elsif include.type == 'local' %}
+    {{ site.baseurl }}/{{ include.url }}/index.html?content={{ include.content }}
+  {% endif %}
+{% endcapture %}
+
+{% capture iframeBgColor %}
+  {% if include.bgcolor %}
+    {{ include.bgcolor }}
+  {% else %}
+    #fff
+  {% endif %}
+{% endcapture %}
+
+<script type="text/javascript">
+  function resizeIframe(e) {
+    e.style.height = e.contentWindow.document.documentElement.scrollHeight + "px";
+    e.style.visibility = "visible";
+    e.style.opacity = "0";
+    requestAnimationFrame(function() {
+      e.style.opacity = "1";
+      var associatedLegend = e.parentNode.querySelector('.text-center[data-iframe-id="' + e.title + '"]');
+      if (associatedLegend) {
+        associatedLegend.style.visibility = "visible";
+        associatedLegend.style.opacity = "1";
+      }
+    });
+  }
+</script>
+
+<style>
+  .fade-in {
+    opacity: 0;
+    transition: opacity .5s ease-in;
+  }
+</style>
+
+<iframe src="{{ iframeSrc }}" class="fade-in {{ iframeClasses }}" 
+        style="border: 0 solid #ccc; overflow: hidden; margin: 0 auto; display: block; visibility: hidden; background-color: {{ iframeBgColor }};"
+        scrolling="no" frameborder="0" onload="resizeIframe(this)"
+        title="{{ include.title }}"
+        width="{{ iframeWidth }}">
+</iframe>
+
+{% if include.legend %}
+  <div class="text-center mt-2 fade-in" style="opacity: 0; visibility: hidden;" data-iframe-id="{{ include.title }}">
+    <small class="text-muted">{{ include.legend }}</small>
+  </div>
+{% endif %}
