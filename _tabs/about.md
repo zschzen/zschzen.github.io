@@ -56,9 +56,9 @@ You can check:
 
 [//]: (Externos)
 
-[Resume]: <//resume.peres.dev/>
-[Portfolio]: <//portfolio.peres.dev/>
-[Bio]: <//bio.peres.dev/>
+[Resume]: <https://resume.peres.dev/>
+[Portfolio]: <https://portfolio.peres.dev/>
+[Bio]: <https://bio.peres.dev/>
 
 [SOHNE]: <https://gamejolt.com/@SOHNE>
 [The Legend of Zelda]: <https://pt.wikipedia.org/wiki/The_Legend_of_Zelda>
@@ -76,5 +76,5 @@ You can check:
 [LabTIME/UFG]: <https://labtime.ufg.br>
 [Inforsystem]: <https://www.inforsystems.com.br>
 
-[Kwartz]: <//kwartz.peres.dev/>
-[Colorblindness]: <//github.com/SOHNE/Colorblindness>
+[Kwartz]: <https://kwartz.peres.dev/>
+[Colorblindness]: <https://github.com/SOHNE/Colorblindness>
