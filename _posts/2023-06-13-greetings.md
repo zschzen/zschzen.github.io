@@ -5,7 +5,7 @@ date: 2023-06-13 10:00:00 +0800
 pin: true
 ---
 
-Hello, dear readers, and welcome! I am excited to embark on this journey of sharing my knowledge and experiences in the realm of game development. Whether you're a seasoned developer, a curious beginner, or simply someone with an interest in the fascinating world of games, this blog is designed to provide you with valuable insights, helpful resources, and inspiring ideas.
+Hello, dear readers, and welcome! I am excited to embark on this journey of sharing my knowledge and experiences in the realm of game development. Whether you're a curious beginner, or simply someone with an interest in the fascinating world of games, this blog is designed to provide you with valuable insights, helpful resources, and inspiring ideas.
 
 ## Purpose
 Before we dive into the realm of game development, it's important to establish the purpose of this blog. The content you'll find here is primarily created for **learning purposes**. I want to emphasize that the code provided may **not be optimized or game-ready**. Its purpose is to serve as a learning resource, helping you understand and experiment with different concepts and techniques.
