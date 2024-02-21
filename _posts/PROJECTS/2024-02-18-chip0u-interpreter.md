@@ -215,7 +215,7 @@ Live long and prosper! `\\//_`
 [interpreted]: https://en.wikipedia.org/wiki/Interpreter_(computing)
 [EZ-Writer]: https://beyondloom.com/tools/ezwriter.html
 [CHIP-8 extensions]: https://chip-8.github.io/extensions/
-[Reference]: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
+[Reference]: https://www.cs.columbia.edu/~sedwards/classes/2016/4840-spring/designs/Chip8.pdf
 [Guide to making a CHIP-8 emulator]: https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
 [Awesome CHIP-8]: https://github.com/tobiasvl/awesome-chip-8
 [SOHNE]: https://github.com/SOHNE
