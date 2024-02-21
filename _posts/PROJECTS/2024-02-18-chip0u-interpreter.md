@@ -4,7 +4,6 @@ author: leandro
 date: 2024-02-06 08:40:00 +0800
 categories: [Projects, Game Development]
 tags: [chip8, emulator, interpreter, game, development]
-mermaid: true
 image:
   path: /assets/img/posts/chip0u/header.gif
 
@@ -22,9 +21,11 @@ However, even though it is something of an introductory nature, I strongly recom
 
 ## What is CHIP-8?
 
-The [CHIP-8] is a simple [interpreted] programming language, created to make games on 8-bit computers in the 70s and 80s. It was made to be easy to learn and use, and to work on many different hardware.
+The CHIP-8 is a simple [interpreted] programming language, created to make games on 8-bit computers in the 70s and 80s. It was made to be easy to learn and use, and to work on many different hardware.
 
 It was used to make many kinds of games, such as Pong, Space Invaders, Tetris, and others, or even to make simple programs, such as calculators, clocks, and others.
+
+The CHIP-8 was developed by Joseph Weisbecker in the mid-70s, to allow games to be programmed more easily on the COSMAC VIP and Telmac 1800 microcomputers[^chip8]. The CHIP-8 is an interpreted language that runs on a virtual machine, that is, a program that simulates a computer system. The CHIP-8 virtual machine has a simple architecture, with 16 general-purpose registers, a stack, a memory of 4 KB, and a display of 64x32 pixels.
 
 ### Specifications
 
@@ -88,7 +89,7 @@ The drawing instruction `DXYN` is used to draw a sprite on the screen, and it is
 
 But this has some drawbacks, as this method of drawining give us a flickering effect. When the sprite moves, it firstly is cleared from the screen (flipping the pixels), and then it is drawn again. This is not a problem for the original games on real hardware, but it is a problem for the modern interpreters, as it causes a flickering effect.
 
-To mitigate this, I have implemented a workaround for this, which is to use a second 2D array only for pixel colors, and to draw the pixels on the screen only when they change, and when a change is detected, the pixel is drawn with a color, lerping between the colors of the pixel states.
+To mitigate this, the modern interpreters use a "double buffering" technique (well, not exactly a double buffering, but it is similar), where we keep a second array of pixels as color. Wen a draw instruction is called, we draw to the final display based on the colors array, lerping the pixels. This way, we can avoid the flickering effect while having a nice CRT-like effect.
 
 #### Stack
 
@@ -149,12 +150,6 @@ The main execution loop of the CHIP-8 is very simple, and can be divided into 3 
 - `F007` - Store the current value of the delay timer in `VX`
 - ... and more
 
-## Why I did it?
-
-I've always been fascinated by emulators and older machines, and I wanted to learn more about them, while having fun. I also wanted to improve my skills as a game engineer, and to have a project to show to my friends, allowing me to explain to them how games were made in the past.
-
-There are many other reasons to build a CHIP8 interpreter, but what I strongly believe is that it is a great way to deepen my knowledge of programming and Computer Science. And for a plus, to know how the games were made in the past, and to have fun testing them!
-
 ## How I did it
 
 As I'm had no experience with emulators, I started by reading the documentation of CHIP-8, which is easily found on the internet. Then, I searched for more references, such as forums, blogs, and videos, to clarify some doubts. I also found the source code of other interpreters, which can be found on GitHub, and studied how they are implemented. Finally, I tried to design and implement my own interpreter, using the knowledge I had acquired, and the tools I had at my disposal.
@@ -186,8 +181,9 @@ But it wasn't all easy and smooth. I also faced some challenges that made me thi
 
 If you are interested in building your own CHIP8 interpreter, I recommend that you start by reading the documentation of CHIP8, which is available on the internet. Then, you can search for the source code of other interpreters, which can be found on GitHub, and study how they are implemented. Finally, you can try to implement your own interpreter, using the knowledge you have acquired, and the tools you have at your disposal.
 
-For a guide, I recommend the Tobias V. Langhoff blog: [Guide to making a CHIP-8 emulator]
-The next repo contains a lot of references and a very good guide to start your own interpreter: [Awesome CHIP-8]
+- CHIP-8 [Reference] is really useful to understand the instructions and the architecture of the CHIP-8.
+- For a guide, I recommend the Tobias V. Langhoff blog: [Guide to making a CHIP-8 emulator]
+- The next repo contains a lot of references and a very good guide to start your own interpreter: [Awesome CHIP-8]
 
 ## Checkout my CHIP-8 interpreter
 
@@ -211,6 +207,7 @@ Live long and prosper! `\\//_`
 
 ## Footnotes
 
+[^chip8]: [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8)
 [^extensions]: [CHIP-8 extensions](https://chip-8.github.io/extensions/)
 
 [//]: # (Links)
@@ -218,6 +215,7 @@ Live long and prosper! `\\//_`
 [interpreted]: https://en.wikipedia.org/wiki/Interpreter_(computing)
 [EZ-Writer]: https://beyondloom.com/tools/ezwriter.html
 [CHIP-8 extensions]: https://chip-8.github.io/extensions/
+[Reference]: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM
 [Guide to making a CHIP-8 emulator]: https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
 [Awesome CHIP-8]: https://github.com/tobiasvl/awesome-chip-8
 [SOHNE]: https://github.com/SOHNE
