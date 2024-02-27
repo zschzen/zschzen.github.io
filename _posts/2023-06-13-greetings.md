@@ -5,15 +5,20 @@ date: 2023-06-13 10:00:00 +0800
 pin: true
 ---
 
-Hello, dear readers, and welcome! I am excited to embark on this journey of sharing my knowledge and experiences in the realm of game development. Whether you're a curious beginner, or simply someone with an interest in the fascinating world of games, this blog is designed to provide you with valuable insights, helpful resources, and inspiring ideas.
+Hello, dear readers! Welcome aboard!
 
-## Purpose
-Before we dive into the realm of game development, it's important to establish the purpose of this blog. The content you'll find here is primarily created for **learning purposes**. I want to emphasize that the code provided may **not be optimized or game-ready**. Its purpose is to serve as a learning resource, helping you understand and experiment with different concepts and techniques.
+I'm thrilled to start this journey, sharing my experiences in the world of game development. Whether you're a curious beginner or someone who's just fascinated by the gaming universe, this blog is here to give you some valuable insights, handy resources, and inspiring ideas.
 
-While I strive to make the information as accurate and informative as possible, **I'm not immune to making mistakes**. I'm constantly learning and evolving, just like you. Therefore, I encourage you to kindly point out any errors you may come across so that I can promptly rectify them and improve the quality of the content. Your feedback is invaluable in ensuring that we all learn and grow together.
+## Why I'm Doing This
+Before we dive in, let's clarify why I'm running this blog. The stuff you'll find here is mainly for **learning**. Keep in mind that the code I share might not be super polished or ready for prime time gaming. It's all about learning, helping you grasp different concepts and techniques.
+
+Now, I'm not perfect, and **I'm not immune to making mistakes**, just like anyone else. I'm constantly learning and growing, so please don't hesitate to point out any errors you might find. Your feedback is pure gold, helping us all learn and improve together.
+
+> Also, just to clarify, I'm not a teacher. **I'm a professional who likes to share and speak out about my latest discoveries.**
+: {: .prompt-info}
 
 ## Licenses
-As you explore the posts on this blog, you'll encounter various types of code, including shader code, shader graphs, C# code, C++ code, Blueprint code, and more. Unless otherwise specified within the post, all code shared here is released under the **CC0 license**. This means you are free to use it for any purpose, including commercial projects, without the need for attribution or credit. However, I would greatly appreciate it if you find these resources useful and acknowledge their source.
+As you browse through the posts here, you'll come across various code types: shader code, shader graphs, C# code, C++ code, Blueprint code, and more. Unless I say otherwise in the post, all the code I share here is under the **CC0 license**. That means you're free to use it for anything, even in commercial projects, without having to give me credit. But, a little shoutout if you find it helpful would be awesome.
 
 ## Unity Asset Store
 While the code provided here is available for unrestricted use, I kindly request that you refrain from uploading it to the Unity Asset Store. The [Submission Guidelines] clearly dictate that **public tutorial content should not be uploaded**. So, let's respect those guidelines and ensure the proper use of the materials shared in this blog.
