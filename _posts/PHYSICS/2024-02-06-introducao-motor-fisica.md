@@ -179,7 +179,7 @@ Agora que entendemos as terminologias básicas e as etapas de um motor de físic
 [Havok]: https://www.havok.com/
 [PhysX]: https://developer.nvidia.com/physx-sdk
 [Ode]: https://www.ode.org/
-[Newton]: http://newtondynamics.com/
+[Newton]: https://newtondynamics.com/
 [Chipmunk]: https://chipmunk-physics.net/
 [Matter.js]: https://brm.io/matter-js/
 [Cannon.js]: https://schteppe.github.io/cannon.js/
