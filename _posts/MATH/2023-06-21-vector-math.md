@@ -223,17 +223,11 @@ Where $$ \vec{r} $$ is the position vector from the point of rotation to the poi
 Vector3 torque = Vector3.Cross(position, force);
 ```
 
-#### Area of Parallelogram and Triangle
+#### 2D Cross Product
 
-We have two vectors, A and B, that define the sides of a parallelogram. The magnitude of the cross product of these vectors represents the area of the parallelogram formed by A and B. Yes, you read that correctly! The cross product directly yields the length of the parallelogram's base and height combined.
+Due to the nature of the cross product - which results in a vector - it is impossible to calculate the cross product of two 2D vectors, since the result would be a vector placed with right angles to the plane defined by the two input vectors. However, we can calculate the 2D cross product, which results in a scalar value, which is the magnitude of the resulting vector.
 
-```csharp
-float areaParallelogram = Vector3.Cross(A, B).magnitude;
-float areaTriangle = areaParallelogram / 2;
-```
-
-
-{% include iframe.html type='local' url='assets/vectorjs' content='vectors/cross-product' title='Vector Cross Interactive' legend='Visualizations of the parallelogram and triangle in a 2D plane, but the same concept applies to 3D vectors as well!' %}
+The 2D cross product between two vectors $$ \vec{A} = \begin{bmatrix} A_x \\ A_y \end{bmatrix} $$ and $$ \vec{B} = \begin{bmatrix} B_x \\ B_y \end{bmatrix} $$ is calculated as:
 
 ---
 
