@@ -1,5 +1,6 @@
 {% capture iframeClasses %}shadow rounded-10 fade-in lazyload {{ include.pos | default: 'center' }}{% endcapture %}
 {% capture iframeWidth %}{{ include.width | default: '100%' }}{% endcapture %}
+{% capture iframeHeight %}{{ include.height | default: '100%' }}{% endcapture %}
 
 {% capture iframeSrc %}
   {% if include.type == 'web' %}
@@ -19,7 +20,12 @@
 
 <script type="text/javascript">
   function resizeIframe(e) {
-    e.style.height = e.contentWindow.document.documentElement.scrollHeight + "px";
+    // Get the height of the iframe content document
+    var contentHeight = e.contentWindow.document.body.scrollHeight;
+    // Get the height of the window
+    var windowHeight = window.innerHeight;
+    // Set the iframe height to the maximum of contentHeight and windowHeight
+    e.style.height = contentHeight + 'px';
     e.style.visibility = "visible";
     e.style.opacity = "0";
     requestAnimationFrame(function() {
@@ -34,6 +40,10 @@
 </script>
 
 <style>
+  iframe {
+    box-sizing: content-box;
+}
+
   .fade-in {
     opacity: 0;
     transition: opacity .5s ease-in;
@@ -41,10 +51,11 @@
 </style>
 
 <iframe src="{{ iframeSrc }}" class="fade-in {{ iframeClasses }}" 
-        style="border: 0 solid #ccc; overflow: hidden; margin: 0 auto; display: block; visibility: hidden; background-color: {{ iframeBgColor }};"
+        style="border: 0 solid hsla(0, 0%, 0%, 0); overflow: hidden; margin: 0 auto; display: block; visibility: hidden; background-color: {{ iframeBgColor }};"
         scrolling="no" frameborder="0" onload="resizeIframe(this)"
         title="{{ include.title }}"
-        width="{{ iframeWidth }}">
+        width="{{ iframeWidth }}"
+        height="{{ iframeHeight }}">
 </iframe>
 
 {% if include.legend %}
