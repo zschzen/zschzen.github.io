@@ -4,7 +4,6 @@ author: leandro
 date: 2024-02-06 08:40:00 +0800
 categories: [Gamedev, Math, Physics, Portuguese]
 tags: [Physics, Game Development]
-math: false
 mermaid: true
 image:
   path: /assets/img/posts/physics/intro/header.png
