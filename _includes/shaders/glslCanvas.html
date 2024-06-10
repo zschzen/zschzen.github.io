@@ -1,0 +1,16 @@
+{% capture width %}{{ include.width | default: '500' }}{% endcapture %}
+{% capture height %}{{ include.height | default: '500' }}{% endcapture %}
+{% capture justify %}{{ include.justify | default: 'center' }}{% endcapture %}
+
+<div style="display: flex; justify-content: {{ justify }};" class="mt-3">
+  <span>
+    <canvas class="canvas shadow rounded-10" data-fragment-url="{{ site.baseurl }}/{{ include.path }}"
+    width="{{ width }}" height="{{ height }}"></canvas>
+  </span>
+</div>
+
+<div class="text-center mb-3 fade-in">
+  {% if include.legend %}
+  <small class="text-muted">{{ include.legend }}</small>
+  {% endif %}
+</div>
