@@ -139,76 +139,70 @@ void main(){\n\
 
   function loadGlslElements() {
     /** parse CANVAS */
-    {
-      let canvas = document.getElementsByClassName("canvas");
-      for (let i = 0; i < canvas.length; i++) {
-        let c = canvas[i];
-        let glsl = new GlslCanvas(c);
-        glslCanvas.push(glsl);
+    let canvas = document.getElementsByClassName("canvas");
+    for (let i = 0; i < canvas.length; i++) {
+      let c = canvas[i];
+      let glsl = new GlslCanvas(c);
+      glslCanvas.push(glsl);
 
-        c.addEventListener("mouseenter", function (event) {
-          glsl.setUniform("u_mouse_over", 1.0);
-        });
+      c.addEventListener("mouseenter", function (event) {
+        glsl.setUniform("u_mouse_over", 1.0);
+      });
 
-        c.addEventListener("mouseleave", function (event) {
-          glsl.setUniform("u_mouse_over", 0.0);
-        });
+      c.addEventListener("mouseleave", function (event) {
+        glsl.setUniform("u_mouse_over", 0.0);
+      });
 
-        // Add mousedown event
-        c.addEventListener("mousedown", function (event) {
-          glsl.setUniform("u_mouse_down", 1.0);
-        });
+      // Add mousedown event
+      c.addEventListener("mousedown", function (event) {
+        glsl.setUniform("u_mouse_down", 1.0);
+      });
 
-        // Add mouseup event
-        c.addEventListener("mouseup", function (event) {
-          glsl.setUniform("u_mouse_down", 0.0);
-        });
-      }
+      // Add mouseup event
+      c.addEventListener("mouseup", function (event) {
+        glsl.setUniform("u_mouse_down", 0.0);
+      });
     }
 
     /** parse EDITORS */
-    {
-      let ccList = document.querySelectorAll(".codeAndCanvas");
-      for (let i = 0; i < ccList.length; i++) {
-        if (ccList[i].hasAttribute("data")) {
-          let srcFile = ccList[i].getAttribute("data");
-          let editor = new GlslEditor(ccList[i], {
-            canvas_size: 250,
-            canvas_follow: true,
-            canvas_float: "right",
-            tooltips: true,
-            exportIcon: true,
-            autofocus: false,
-            theme: "dracula",
-            lineWrapping: true,
-          });
-          editor.open(srcFile);
-          glslCanvas.push(editor.shader.canvas);
-        }
+    let ccList = document.querySelectorAll(".codeAndCanvas");
+    for (let i = 0; i < ccList.length; i++) {
+      if (ccList[i].hasAttribute("data")) {
+        let srcFile = ccList[i].getAttribute("data");
+        let editor = new GlslEditor(ccList[i], {
+          canvas_size: 250,
+          canvas_follow: true,
+          canvas_float: "right",
+          tooltips: true,
+          exportIcon: true,
+          autofocus: false,
+          theme: "dracula",
+          lineWrapping: true,
+        });
+        editor.open(srcFile);
+        glslCanvas.push(editor.shader.canvas);
       }
     }
 
     /** parse GRPHS */
-    {
-      let sfList = document.querySelectorAll(".simpleFunction");
-      for (let i = 0; i < sfList.length; i++) {
-        if (sfList[i].hasAttribute("data")) {
-          let srcFile = sfList[i].getAttribute("data");
-          let editor = new GlslEditor(sfList[i], {
-            canvas_width: 500,
-            lineNumbers: false,
-            canvas_height: 250,
-            canvas_follow: true,
-            canvas_float: false,
-            autofocus: false,
-            theme: "dracula",
-            frag_header: preFunction,
-            frag_footer: postFunction,
-            tooltips: true,
-          });
-          editor.open(srcFile);
-          glslCanvas.push(editor.shader.canvas);
-        }
+    let sfList = document.querySelectorAll(".simpleFunction");
+    for (let i = 0; i < sfList.length; i++) {
+      if (sfList[i].hasAttribute("data")) {
+        let srcFile = sfList[i].getAttribute("data");
+        let editor = new GlslEditor(sfList[i], {
+          canvas_width: 500,
+          lineNumbers: false,
+          canvas_height: 250,
+          canvas_follow: true,
+          canvas_float: false,
+          autofocus: false,
+          theme: "dracula",
+          frag_header: preFunction,
+          frag_footer: postFunction,
+          tooltips: true,
+        });
+        editor.open(srcFile);
+        glslCanvas.push(editor.shader.canvas);
       }
     }
   }
