@@ -4,8 +4,7 @@
   var link = document.createElement("link");
   link.type = "text/css";
   link.rel = "stylesheet";
-  link.href =
-    "https://patriciogonzalezvivo.github.io/glslEditor/build/glslEditor.css";
+  link.href = "https://unpkg.com/glslEditor@latest/build/glslEditor.css";
   head.insertBefore(link, head.firstChild);
 
   var script = document.createElement("script");
@@ -13,7 +12,7 @@
   script.type = "text/javascript";
   script.async = false;
   script.defer = false;
-  script.src = "https://thebookofshaders.com/glslCanvas/GlslCanvas.js";
+  script.src = "https://unpkg.com/glslCanvas@latest";
   head.insertBefore(script, head.firstChild);
 
   var script = document.createElement("script");
@@ -21,8 +20,8 @@
   script.type = "text/javascript";
   script.async = false;
   script.defer = false;
-  script.src =
-    "https://patriciogonzalezvivo.github.io/glslEditor/build/glslEditor.js";
+  script.type= "module";
+  script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.js";
   head.insertBefore(script, head.firstChild);
 </script>
 
@@ -154,12 +153,10 @@ void main(){\n\
           glsl.setUniform("u_mouse_over", 0.0);
         });
 
-        // Add mousedown event
         c.addEventListener("mousedown", function (event) {
           glsl.setUniform("u_mouse_down", 1.0);
         });
 
-        // Add mouseup event
         c.addEventListener("mouseup", function (event) {
           glsl.setUniform("u_mouse_down", 0.0);
         });
