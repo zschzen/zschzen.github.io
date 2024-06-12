@@ -4,8 +4,7 @@
   var link = document.createElement("link");
   link.type = "text/css";
   link.rel = "stylesheet";
-  link.href =
-    "https://patriciogonzalezvivo.github.io/glslEditor/build/glslEditor.css";
+  link.href = "https://unpkg.com/glslEditor@latest/build/glslEditor.css";
   head.insertBefore(link, head.firstChild);
 
   var script = document.createElement("script");
@@ -13,7 +12,7 @@
   script.type = "text/javascript";
   script.async = false;
   script.defer = false;
-  script.src = "https://thebookofshaders.com/glslCanvas/GlslCanvas.js";
+  script.src = "https://unpkg.com/glslCanvas@latest";
   head.insertBefore(script, head.firstChild);
 
   var script = document.createElement("script");
@@ -21,8 +20,8 @@
   script.type = "text/javascript";
   script.async = false;
   script.defer = false;
-  script.src =
-    "https://patriciogonzalezvivo.github.io/glslEditor/build/glslEditor.js";
+  script.type= "module";
+  script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.js";
   head.insertBefore(script, head.firstChild);
 </script>
 
@@ -139,67 +138,82 @@ void main(){\n\
 
   function loadGlslElements() {
     /** parse CANVAS */
-    let canvas = document.getElementsByClassName("canvas");
-    for (let i = 0; i < canvas.length; i++) {
-      let glsl = new GlslCanvas(canvas[i]);
-      glslCanvas.push(glsl);
+    {
+      let canvas = document.getElementsByClassName("canvas");
+      for (let i = 0; i < canvas.length; i++) {
+        let c = canvas[i];
+        let glsl = new GlslCanvas(c);
+        glslCanvas.push(glsl);
 
-      canvas[i].addEventListener("mouseenter", function (event) {
-        glsl.setUniform("u_mouse_over", 1.0);
-      });
+        c.addEventListener("mouseenter", function (event) {
+          glsl.setUniform("u_mouse_over", 1.0);
+        });
 
-      canvas[i].addEventListener("mouseleave", function (event) {
-        glsl.setUniform("u_mouse_over", 0.0);
-      });
+        c.addEventListener("mouseleave", function (event) {
+          glsl.setUniform("u_mouse_over", 0.0);
+        });
+
+        // Add mousedown event
+        c.addEventListener("mousedown", function (event) {
+          glsl.setUniform("u_mouse_down", 1.0);
+        });
+
+        // Add mouseup event
+        c.addEventListener("mouseup", function (event) {
+          glsl.setUniform("u_mouse_down", 0.0);
+        });
+      }
     }
 
     /** parse EDITORS */
-    let ccList = document.querySelectorAll(".codeAndCanvas");
-    for (let i = 0; i < ccList.length; i++) {
-      if (ccList[i].hasAttribute("data")) {
-        let srcFile = ccList[i].getAttribute("data");
-        let editor = new GlslEditor(ccList[i], {
-          canvas_size: 250,
-          canvas_follow: true,
-          canvas_float: "right",
-          tooltips: true,
-          exportIcon: true,
-          autofocus: false,
-          theme: "dracula",
-          lineWrapping: true,
-        });
-        editor.open(srcFile);
-        glslCanvas.push(editor.shader.canvas);
+    {
+      let ccList = document.querySelectorAll(".codeAndCanvas");
+      for (let i = 0; i < ccList.length; i++) {
+        if (ccList[i].hasAttribute("data")) {
+          let srcFile = ccList[i].getAttribute("data");
+          let editor = new GlslEditor(ccList[i], {
+            canvas_size: 250,
+            canvas_follow: true,
+            canvas_float: "right",
+            tooltips: true,
+            exportIcon: true,
+            autofocus: false,
+            theme: "dracula",
+            lineWrapping: true,
+          });
+          editor.open(srcFile);
+          glslCanvas.push(editor.shader.canvas);
+        }
       }
     }
 
     /** parse GRPHS */
-    let sfList = document.querySelectorAll(".simpleFunction");
-    for (let i = 0; i < sfList.length; i++) {
-      if (sfList[i].hasAttribute("data")) {
-        let srcFile = sfList[i].getAttribute("data");
-        let editor = new GlslEditor(sfList[i], {
-          canvas_width: 500,
-          lineNumbers: false,
-          canvas_height: 250,
-          canvas_follow: true,
-          canvas_float: false,
-          autofocus: false,
-          theme: "dracula",
-          frag_header: preFunction,
-          frag_footer: postFunction,
-          tooltips: true,
-        });
-        editor.open(srcFile);
-        glslCanvas.push(editor.shader.canvas);
+    {
+      let sfList = document.querySelectorAll(".simpleFunction");
+      for (let i = 0; i < sfList.length; i++) {
+        if (sfList[i].hasAttribute("data")) {
+          let srcFile = sfList[i].getAttribute("data");
+          let editor = new GlslEditor(sfList[i], {
+            canvas_width: 500,
+            lineNumbers: false,
+            canvas_height: 250,
+            canvas_follow: true,
+            canvas_float: false,
+            autofocus: false,
+            theme: "dracula",
+            frag_header: preFunction,
+            frag_footer: postFunction,
+            tooltips: true,
+          });
+          editor.open(srcFile);
+          glslCanvas.push(editor.shader.canvas);
+        }
       }
     }
   }
 
-  function pauseGlslElements()
-  {
-    for (let i = 0; i < glslCanvas.length; i++)
-    {
+  function pauseGlslElements() {
+    for (let i = 0; i < glslCanvas.length; i++) {
       let glsl = glslCanvas[i];
       glsl.paused = !glsl.visible;
     }
