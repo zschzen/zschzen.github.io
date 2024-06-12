@@ -9,6 +9,7 @@ uniform float u_time;
 
 const vec3 POSITIVE_BG = vec3( 0.3843, 0.4471, 0.6431 );
 const vec3 NEGATIVE_BG = vec3( 1.0   , 0.3333, 0.3333 );
+const vec3 POINT_COLOR = vec3( 0.55  , 0.91  , 0.99   );
 const vec3 DISTANCE    = vec3( 0.9450, 0.9803, 0.5490 );
 const vec3 BORDER      = vec3( 0.9725, 0.9725, 0.9490 );
 
@@ -107,72 +108,62 @@ vec3 PrintMouseCoord(vec3 vColour, vec2 fragCoord, vec2 iResolution, vec2 iMouse
 
 void main()
 {
-    // Normalize fragment coordinates
-    vec2 uv = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.xx;
-    uv.x = mod(uv.x, 1.0) - 0.5;
+    vec2 clampVal = vec2(.0);
+    vec3 col      = vec3(0.0);
+    vec2 m        = vec2(.0);
+    vec2 uv       = vec2(.0);
 
-    // Displacement vector based on time
-    vec2 disp = vec2(cos(u_time), sin(u_time)) / 4.0;
+    // Normaliza as coordenadas do fragmento
+    uv.xy = (2.0 * gl_FragCoord.xy - u_resolution.xy) / u_resolution.x;
+    uv.x  = mod(uv.x, 1.0) - 0.5;
 
-    vec2 m;
-    if ( u_mouse_over < 0.01 )
     {
-        vec2 t = vec2( disp.x + 0.5, disp.y - 0.5);
-        m = 0.2 + t * vec2(sin(u_time) + 1.0, -cos(u_time) + 1.0) * 0.5;
-    } else {
-        m = (2.0 * u_mouse.xy - u_resolution.xy) / u_resolution.x;
+        vec2 disp = vec2(cos(u_time), sin(u_time)) / 4.0;
+
+        // Coordenadas do mouse ou vetor de deslocamento
+        m = (u_mouse_over < .01)
+                ? 0.2 + (disp + vec2(0.5, -0.5)) * vec2(sin(u_time) + 1.0, -cos(u_time) + 1.0) * 0.5 
+                : (2.0 * u_mouse.xy - u_resolution.xy) / u_resolution.x;
+        m.x = mod(m.x, 1.0) - 0.5;
+
+        // Calcula valores de clamp
+        clampVal = 1.0 - step(abs(m - uv), vec2(1.0) / u_resolution.x);
+
+        // Ajusta UV e m com o deslocamento
+        uv -= disp;
+        m  -= disp;
     }
-    m.x = mod(m.x, 1.0) - .5;
 
-    // Calculate direction and clamped values
-    vec2 clampVal = 1.0 - step(abs(m - uv), vec2(1.0) / u_resolution.x);
-
-    uv -= disp;
-    m -= disp;
-
-    // Initialize background color
-    vec3 col = vec3(0.0);
-    if (gl_FragCoord.x >= u_resolution.x * 0.5) {
-        // Right side
-
-        // Distance to box
+    if (gl_FragCoord.x > u_resolution.x * 0.5) {
+        // Lado direito
         float d = sdBox(uv, vec2(0.1));
-        col = d > 0.01 ? POSITIVE_BG : NEGATIVE_BG;
-
-        // Apply exponential falloff and color modulation
-        col *= 1.0 - exp(-10.0 * abs(d));
-        col *= 0.8 + 0.1 * cos(150.0 * d);
-
-        // Mix with border color
+        col = (d > 0.) ? POSITIVE_BG : NEGATIVE_BG;
+        col *= 1.0 - exp(-50.0 * abs(d));
+        col *= 0.8 + 0.2 * cos(150.0 * d);
         col = mix(col, BORDER, 1.0 - smoothstep(0.0, 0.01, abs(d)));
 
-        // Additional distance calculations and color mixing
-        d = sdBox( m, vec2(0.1) );
-        float pm = length( uv - m );
+        d = sdBox(m, vec2(0.1));
+        float pm = length(uv - m);
         col = mix(col, DISTANCE, 1.0 - smoothstep(0.0, 0.01, abs(pm - abs(d)) - 0.0025));
         col = mix(col, DISTANCE, 1.0 - smoothstep(0.0, 0.01, pm - 0.015));
     } else {
-        // Left side
-
-        // Set color based on UV coordinates
+        // Lado esquerdo
         col = vec3(uv.xy, 0.0);
-
-        // Invert and mix color based on clamped values
-        vec3 invCol = 1.0 - col;
-        col = mix(invCol, col, clampVal.x * clampVal.y);
+        col = mix(1.0 - col, col, clampVal.x * clampVal.y);
     }
 
-    // Highlight closest point on box
+    // Destaca o ponto mais próximo no box
     {
-    vec2 cl = cloBox(m, vec2(0.1));
-    col = mix(col, vec3(1.0, 0.0, 0.0), 1.0 - smoothstep(0.0, 0.01, length(uv - cl) - 0.025));
+        vec2 cl = cloBox(m, vec2(0.1));
+        col = mix(col, POINT_COLOR, 1.0 - smoothstep(0.0, 0.01, length(uv - cl) - 0.025));
     }
 
-    // Print mouse coordinates if mouse is over
-    if (u_mouse_over > 0.01) {
-        col = PrintMouseCoord(col, gl_FragCoord.xy, u_resolution, u_mouse);
+    // Imprime coordenadas do mouse se estiver sobre
+    if (u_mouse_over > 0.)
+    {
+        col = PrintMouseCoord(col, gl_FragCoord.xy, u_resolution.xy, u_mouse.xy);
     }
 
-    // Set fragment color
+    // Define a cor do fragmento
     gl_FragColor = vec4(col, 1.0);
 }
