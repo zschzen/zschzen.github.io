@@ -1,28 +1,41 @@
 <script>
-  var head = document.head || document.getElementsByTagName("head")[0];
+  let head = document.head || document.getElementsByTagName("head")[0];
 
-  var link = document.createElement("link");
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  link.href = "https://unpkg.com/glslEditor@latest/build/glslEditor.css";
-  head.insertBefore(link, head.firstChild);
+  {
+    let link = document.createElement("link");
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = "https://unpkg.com/glslEditor@latest/build/glslEditor.css";
+    head.insertBefore(link, head.firstChild);
+  }
 
-  var script = document.createElement("script");
-  script.id = "glslCanvas";
-  script.type = "text/javascript";
-  script.async = false;
-  script.defer = false;
-  script.src = "https://unpkg.com/glslCanvas@latest";
-  head.insertBefore(script, head.firstChild);
+  {
+    let style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = '.canvas { aspect-ratio: 16 / 9; border: none; outline: none; cursor: pointer; }';
+    head.appendChild(style);
+  }
 
-  var script = document.createElement("script");
-  script.id = "glslEditor";
-  script.type = "text/javascript";
-  script.async = false;
-  script.defer = false;
-  script.type= "module";
-  script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.js";
-  head.insertBefore(script, head.firstChild);
+  {
+    let script = document.createElement("script");
+    script.id = "glslCanvas";
+    script.type = "text/javascript";
+    script.async = false;
+    script.defer = false;
+    script.src = "https://unpkg.com/glslCanvas@latest";
+    head.insertBefore(script, head.firstChild);
+  }
+
+  {
+    let script = document.createElement("script");
+    script.id = "glslEditor";
+    script.type = "text/javascript";
+    script.async = false;
+    script.defer = false;
+    script.type= "module";
+    script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.js";
+    head.insertBefore(script, head.firstChild);
+  }
 </script>
 
 <script type="text/javascript">
