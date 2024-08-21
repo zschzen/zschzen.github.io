@@ -17,15 +17,9 @@ You can check:
 - [My portfolio][Portfolio]
 - [My resume][Resume]
 - [My GameJolt][SOHNE]
-- [My Bio][Bio]
+- [My Links][All Links]
 
 ---
-
-## Personal Projects
-
-{% include embed/youtube.html id='NyLOmoSqyiA' %}
-
-{% include embed/youtube.html id ='LP5MACH9_YY' %}
 
 ## Technical Skills
 - Multithread Programming
@@ -40,9 +34,9 @@ You can check:
 - Rigging
 
 ## Experience
+- Generalist Game Developer, [SOHNE], 01/2011 - present
 - Game Programmer, [LabTIME/UFG], 01/2021 - 03/2023
 - Legacy Delphi Programmer Trainee, [Inforsystem], 01/2020 - 12/2020
-- Generalist Game Developer, [SOHNE], 01/2019 - present
 
 ## Education
 - Bachelor of Technology in Digital Games, [Senac Goiás], 2020
@@ -58,7 +52,7 @@ You can check:
 
 [Resume]: <https://resume.peres.dev/>
 [Portfolio]: <https://portfolio.peres.dev/>
-[Bio]: <https://bio.peres.dev/>
+[All Links]: <https://leandro.peres.dev/>
 
 [SOHNE]: <https://gamejolt.com/@SOHNE>
 [The Legend of Zelda]: <https://pt.wikipedia.org/wiki/The_Legend_of_Zelda>
