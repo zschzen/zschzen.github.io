@@ -4,4 +4,6 @@
   src="https://www.desmos.com/calculator/{{ include.id }}"
   title="Desmos graph"
   frameborder="0"
+  {% if include.width %} width="{{ include.width }}" {% endif %}
+  {% if include.height %} height="{{ include.height }}" {% endif %}
 ></iframe>
