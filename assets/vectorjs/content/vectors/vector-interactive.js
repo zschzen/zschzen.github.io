@@ -1,4 +1,4 @@
-import { Interactive } from "https://vectorjs.org/index.js";
+import { Interactive } from "/assets/vectorjs/js/index.js";
 
 // Initialize the interactive
 let margin = 32;

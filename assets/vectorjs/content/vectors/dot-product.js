@@ -1,4 +1,4 @@
-import { Interactive, BaseElement } from "https://vectorjs.org/index.js";
+import { Interactive, BaseElement } from "/assets/vectorjs/js/index.js";
 
 class NumberWrapper extends BaseElement {
     constructor(value) {
