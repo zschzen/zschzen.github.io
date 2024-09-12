@@ -252,12 +252,6 @@ Where $$ \vec{r} $$ is the position vector from the point of rotation to the poi
 Vector3 torque = Vector3.Cross(position, force);
 ```
 
-#### 2D Cross Product
-
-Due to the nature of the cross product - which results in a vector - it is impossible to calculate the cross product of two 2D vectors, since the result would be a vector placed with right angles to the plane defined by the two input vectors. However, we can calculate the 2D cross product, which results in a scalar value, which is the magnitude of the resulting vector.
-
-The 2D cross product between two vectors $$ \vec{A} = \begin{bmatrix} A_x \\ A_y \end{bmatrix} $$ and $$ \vec{B} = \begin{bmatrix} B_x \\ B_y \end{bmatrix} $$ is calculated as:
-
 ---
 
 [//]: (Externals)
