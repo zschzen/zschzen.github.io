@@ -18,9 +18,9 @@
   {% endif %}
 {% endcapture %}
 
-<iframe src="{{ iframeSrc }}" class="fade-in {{ iframeClasses }}"
-        style="border: 0 solid hsla(0, 0%, 0%, 0); overflow: hidden; margin: 0 auto; display: block; visibility: hidden; background-color: {{ iframeBgColor }};"
-        scrolling="no" frameborder="0" onload="resizeIframe(this)"
+<iframe src="{{ iframeSrc }}" class="{{ iframeClasses }}"
+        style="border: 0 solid hsla(0, 0%, 0%, 0); overflow: hidden; margin: 0 auto; display: block; background-color: {{ iframeBgColor }};"
+        scrolling="no" frameborder="0" 
         title="{{ include.title }}"
         width="{{ iframeWidth }}"
         height="{{ iframeHeight }}">
