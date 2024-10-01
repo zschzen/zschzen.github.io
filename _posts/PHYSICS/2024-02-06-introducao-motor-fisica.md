@@ -2,7 +2,7 @@
 title: Introdução aos Motores de Física
 author: leandro
 date: 2024-02-06 08:40:00 +0800
-categories: [Gamedev, Math, Physics, Portuguese]
+categories: [Physics, Portuguese]
 tags: [Physics, Game Development]
 mermaid: true
 image:
@@ -23,20 +23,6 @@ Lembro, ainda, que este não é um trabalho formal ou acadêmico. Longe disso. �
 
 > For those who don't speak Portuguese, I'm planning to translate this series to English in the future. I just don't see it as a priority right now, as there are already a lot of resources in English about game physics. But if you're interested, let me know and I'll prioritize the translation.
 {: .prompt-info}
-
-# Metodologia
-
-Esta série será conduzida em várias fases, cada uma focada em um aspecto específico do motor físico. A metodologia adotada é uma combinação de teoria e prática, permitindo uma compreensão abrangente dos conceitos e sua aplicação em cenários práticos.
-
-Aqui está um resumo do que vocês podem esperar:
-
-- **Teoria**: Cada post começará com uma discussão teórica. Vou explicar os conceitos fundamentais, definir terminologias importantes e discutir os tópicos relevantes. O objetivo é construir uma base sólida de conhecimento que possa ser aplicada em várias situações.
-
-- **Prática**: Após a discussão teórica, vamos mergulhar na prática. Vou lhe mostrar como os conceitos teóricos podem ser aplicados na vida real. Isso pode incluir a implementação de exemplos práticos, análise de código-fonte, ou discussão sobre boas práticas e otimizações.
-
-- **Exercícios**: Além disso, ao final de cada post, forneceremos exercícios para que você possa praticar e aprimorar o conhecimento adquirido. A prática é fundamental para a compreensão e retenção de conhecimento, e os exercícios são uma excelente forma de aplicar o que você aprendeu.
-
-Porém, não se engane com a minha maneira formal de falar. Não sou um professor, e sim um puro entusiasta. Portanto, não espere uma abordagem acadêmica ou academicista. Meu objetivo é tornar o conteúdo acessível e prático, com a finalidade de dispertar sua curiosidade e te ajudar a aprender de forma dinâmica. Aqui, estamos de igual para igual, aprendendo juntos.
 
 # Pensamentos Introdutórios
 
@@ -147,18 +133,6 @@ Mais detalhadamente, as etapas são:
 Após estes entendimentos básicos, estamos prontos para mergulhar mais fundo no mundo dos motores de física. Nos próximos posts, abordarei tópicos como detecção de colisão, resolução de colisão, integração de velocidade e posição, e muito mais.
 
 Por hora, espero que vocies já consigam definir alguns conceitos e delimitar as etapas de um motor de física.
-
-# Exercícios
-
-1. **Reflexão sobre Motores de Física**: Com base no que você aprendeu neste post, escreva um parágrafo descrevendo o que você entende por "motor de física". Como você explicaria isso para alguém que nunca ouviu falar sobre isso antes?
-
-2. **Aplicações Práticas**: Pense em um jogo ou aplicativo que você gosta. Como você acha que os motores de física são usados nele? Escreva suas ideias e explique por que você acha que eles usam motores de física dessa maneira.
-
-3. **Pesquisa Adicional**: Escolha uma das referências recomendadas no final do post e passe algum tempo explorando-a. Escreva um resumo do que você aprendeu e como isso se relaciona com o que foi discutido neste post.
-
-4. **Pensamento Crítico**: Se você fosse projetar seu próprio motor de física, quais seriam as características mais importantes para você? Por quê? Como você abordaria a detecção e resolução de colisões?
-
-5. **Expansão do Conhecimento**: Agora que você tem uma compreensão básica dos motores de física, que outros tópicos relacionados você está interessado em aprender? Faça uma lista e explique por que cada tópico é de interesse para você.
 
 # Expandindo o Conhecimento
 

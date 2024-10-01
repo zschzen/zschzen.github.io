@@ -312,7 +312,7 @@ Um dos exemplos mais comuns de força na natureza é a gravidade. __Todos os obj
   caption="Simulação de queda livre de um corpo com gráficos que mostram a posição, velocidade e aceleração ao longo do tempo."
 %}
 
-> ![Galileo Galilei](https://upload.wikimedia.org/wikipedia/commons/e/e5/Pisa_experiment.png){: width="972" height="589" .w-50 .right}
+> ![Galileo Galilei](https://upload.wikimedia.org/wikipedia/commons/e/e5/Pisa_experiment.png){: width="400" height="525" .w-50 .right }
 > Você sabia que __objetos de diferentes massas caem na mesma velocidade no vácuo__?
 > Esse fenômeno, inicialmente teorizado por Galileu Galilei no *século XVII*, ocorre porque a aceleração gravitacional é a mesma para todos os objetos, independentemente de sua massa. [Galilei desafiou a crença aristotélica](https://web.archive.org/web/20240906181531/http://penta3.ufrgs.br/fisica/QuedaCorpos/index.html), que predominou por mais de dois milênios e afirmava que objetos mais pesados cairiam mais rápido. Embora a força gravitacional seja proporcional à massa de cada objeto, a inércia (*resistência à aceleração*) também aumenta proporcionalmente, resultando na mesma aceleração para todos os corpos em queda livre no vácuo.
 {: .prompt-tip }
