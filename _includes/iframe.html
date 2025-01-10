@@ -3,9 +3,10 @@
 {% capture iframeHeight %}{{ include.height | default: '100%' }}{% endcapture %}
 
 {% capture iframeSrc %}
-  {% if include.type == 'web' %}
+  {% assign iframeType = include.type | default: 'local' %}
+  {% if iframeType == 'web' %}
     {{ include.url }}
-  {% elsif include.type == 'local' %}
+  {% elsif iframeType == 'local' %}
     {{ site.baseurl }}/{{ include.url }}/index.html?content={{ include.content }}
   {% endif %}
 {% endcapture %}
