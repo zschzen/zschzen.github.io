@@ -7,7 +7,7 @@
   {% if iframeType == 'web' %}
     {{ include.url }}
   {% elsif iframeType == 'local' %}
-    {{ site.baseurl }}/{{ include.url }}/index.html?content={{ include.content }}
+    https://peres.dev/{{ include.url }}/index.html?content={{ include.content }}
   {% endif %}
 {% endcapture %}
 
