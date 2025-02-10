@@ -12,7 +12,7 @@
   {
     let style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = '.canvas { aspect-ratio: 16 / 9; border: none; outline: none; cursor: pointer; }';
+    style.innerHTML = '.canvas { border: none; outline: none; cursor: pointer; }';
     head.appendChild(style);
   }
 
@@ -22,7 +22,7 @@
     script.type = "text/javascript";
     script.async = false;
     script.defer = false;
-    script.src = "https://unpkg.com/glslCanvas@latest";
+    script.src = "https://unpkg.com/glslCanvas@latest/dist/GlslCanvas.min.js";
     head.insertBefore(script, head.firstChild);
   }
 
@@ -33,7 +33,7 @@
     script.async = false;
     script.defer = false;
     script.type= "module";
-    script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.js";
+    script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.min.js";
     head.insertBefore(script, head.firstChild);
   }
 </script>
@@ -151,30 +151,46 @@ void main(){\n\
 
   function loadGlslElements() {
     /** parse CANVAS */
-    {
-      let canvas = document.getElementsByClassName("canvas");
-      for (let i = 0; i < canvas.length; i++) {
-        let c = canvas[i];
-        let glsl = new GlslCanvas(c);
-        glslCanvas.push(glsl);
+{
+  let canvas = document.getElementsByClassName("canvas");
+  let glslCanvas = [];
+  let frameCount = 0;
 
-        c.addEventListener("mouseenter", function (event) {
-          glsl.setUniform("u_mouse_over", 1.0);
-        });
+  function updateFrames() {
+    frameCount++;
 
-        c.addEventListener("mouseleave", function (event) {
-          glsl.setUniform("u_mouse_over", 0.0);
-        });
-
-        c.addEventListener("mousedown", function (event) {
-          glsl.setUniform("u_mouse_down", 1.0);
-        });
-
-        c.addEventListener("mouseup", function (event) {
-          glsl.setUniform("u_mouse_down", 0.0);
-        });
-      }
+    for (let glsl of glslCanvas) {
+      glsl.setUniform("u_frame", frameCount);
     }
+
+    requestAnimationFrame(updateFrames);
+  }
+
+  for (let i = 0; i < canvas.length; i++) {
+    let c = canvas[i];
+    let glsl = new GlslCanvas(c);
+    glslCanvas.push(glsl);
+
+    c.addEventListener("mouseenter", function () {
+      glsl.setUniform("u_mouse_over", 1.0);
+    });
+
+    c.addEventListener("mouseleave", function () {
+      glsl.setUniform("u_mouse_over", 0.0);
+    });
+
+    c.addEventListener("mousedown", function () {
+      glsl.setUniform("u_mouse_down", 1.0);
+    });
+
+    c.addEventListener("mouseup", function () {
+      glsl.setUniform("u_mouse_down", 0.0);
+    });
+  }
+
+  requestAnimationFrame(updateFrames);
+}
+
 
     /** parse EDITORS */
     {
