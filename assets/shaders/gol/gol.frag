@@ -37,10 +37,8 @@ void main() {
 
     // Neighbor sampling
     {
-#define SAMPLE( x, y ) \
-    texture2D( u_buffer0, ( c + vec2( x, y ) ) * invR ).r
 #define NEIGHBORS( x, y ) \
-    n += SAMPLE( x, y )
+    n += texture2D( u_buffer0, ( c + vec2( x, y ) ) * invR ).r
 
       float n = 0.0;
       NEIGHBORS(-1, -1);
@@ -52,7 +50,6 @@ void main() {
       NEIGHBORS( 1,  0);
       NEIGHBORS( 1,  1);
 
-#undef SAMPLE
 #undef NEIGHBORS
 
       // Game of Life rules
