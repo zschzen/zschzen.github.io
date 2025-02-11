@@ -10,16 +10,12 @@ uniform float u_frame;
 
 uniform sampler2D u_buffer0;
 
-#define ZOOM          6.0
+#define ZOOM          1.0
 #define INV_ZOOM      (1.0 / ZOOM)
-
-#define BRUSH_SIZE    (15.0 * INV_ZOOM)
-#define BRUSH_SIZE_SQ (BRUSH_SIZE * BRUSH_SIZE)
-
-#define LINE_THICKNESS 1.0
+#define BRUSH_SIZE    (20.0 * INV_ZOOM)
 
 float quickHash(vec2 p) {
-    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+    return fract(sin(dot(p, vec2(12.9898 + u_time, 78.233 - u_time))) * 43758.5453);
 }
 
 void main() {
@@ -28,29 +24,21 @@ void main() {
     vec2 uv   = c * invR;
 
 #if defined(BUFFER_0)
-    float v = texture2D(u_buffer0, uv).r;
+    vec4 v = texture2D(u_buffer0, uv);
+    v.z    = (v.z + v.x) * 0.95;
 
     // Initial state: use a random noise pattern.
-    if ( u_frame < 4.0 )
+    if (u_frame < 1.0 || (u_mouse_down > 0.0 && length((u_mouse * INV_ZOOM) - c) < BRUSH_SIZE))
     {
-      gl_FragColor = vec4(vec3(quickHash(uv) > 0.8 ? 1.0 : 0.0), 1.0);
-      return;
-    }
-
-    // Mouse interaction
-    if (u_mouse_down > 0.0) {
-        vec2 mousePos = u_mouse * INV_ZOOM;
-        vec2 delta = c - mousePos;
-        if (dot(delta, delta) < BRUSH_SIZE_SQ) {
-            gl_FragColor = vec4(1.0);
-            return;
-        }
+        v.x = quickHash(uv) > 0.8 ? 1.0 : 0.0;
+        gl_FragColor = v;
+        return;
     }
 
     // Neighbor sampling
     {
 #define SAMPLE( x, y ) \
-    float( texture2D( u_buffer0, uv + vec2( x, y ) * invR ).r > 0.0 )
+    texture2D( u_buffer0, ( c + vec2( x, y ) ) * invR ).r
 #define NEIGHBORS( x, y ) \
     n += SAMPLE( x, y )
 
@@ -67,42 +55,22 @@ void main() {
 #undef SAMPLE
 #undef NEIGHBORS
 
-      // Game of Life rules:
-      //   - A live cell survives with 2 or 3 live neighbors.
-      //   - A dead cell is born with exactly 3 live neighbors.
-      float alive   = float(v > 0.0);
-      float survive = float(n == 2.0 || n == 3.0);
-      float birth   = float(n == 3.0);
-      v = mix(v * survive, birth, 1.0 - alive);
+      // Game of Life rules
+      if (n < 2.0 || n > 3.0)
+      {
+          v.x = 0.0;
+      }
+      else if (n == 3.0)
+      {
+          v.x = 1.0;
+      }
+
     }
 
-    // Age fading
-    v -= 0.025 * step(0.4, v);
-    v = clamp(v, 0.0, 1.0);
-
-    gl_FragColor = vec4(vec3(v), 1.0);
+    gl_FragColor = v;
 #else
     // Final display pass
-    vec4  simColor = texture2D(u_buffer0, uv * INV_ZOOM);
-    float gridLine = 0.0;
-
-    {
-// The GRID_EDGE macro computes whether a given coordinate is near a cell boundary.
-// It checks both the lower and upper edge for the provided coordinate.
-#define GRID_EDGE( coord ) \
-      ( max( 1.0 - step( LINE_THICKNESS, ( coord ) ), 1.0 - step( LINE_THICKNESS, ZOOM - ( coord ) ) ) )
-
-      vec2 cellCoord = mod(gl_FragCoord.xy, ZOOM);
-
-      // Determine whether the fragment is on a grid line by checking both axes.
-      gridLine = max(GRID_EDGE(cellCoord.x), GRID_EDGE(cellCoord.y));
-
-#undef GRID_EDGE
-    }
-
-    // Output Grid + Simulation
-    simColor.rgb = mix(simColor.rgb, vec3(0.085), gridLine);
-    gl_FragColor = simColor;
+    gl_FragColor = vec4(texture2D(u_buffer0, uv * INV_ZOOM).xxz, 1.0);
 #endif
 }
 
