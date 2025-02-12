@@ -10,34 +10,7 @@ image:
   path: /assets/img/posts/vector-math/cross.gif
 ---
 
-<script type="text/javascript">
-  function resizeIframe(e) {
-    var contentHeight = e.contentWindow.document.body.scrollHeight;
-    var windowHeight = window.innerHeight;
-    e.style.height = contentHeight + 'px';
-    e.style.visibility = "visible";
-    e.style.opacity = "0";
-    requestAnimationFrame(function() {
-      e.style.opacity = "1";
-      var associatedLegend = e.parentNode.querySelector('.text-center[data-iframe-id="' + e.title + '"]');
-      if (associatedLegend) {
-        associatedLegend.style.visibility = "visible";
-        associatedLegend.style.opacity = "1";
-      }
-    });
-  }
-</script>
-
-<style>
-  iframe {
-    box-sizing: content-box;
-}
-
-  .fade-in {
-    opacity: 0;
-    transition: opacity .5s ease-in;
-  }
-</style>
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
 
 ## Introduction
 
@@ -161,7 +134,11 @@ $$
   \end{align}
 $$
 
-{% include iframe.html type='local' url='assets/vectorjs' content='vectors/dot-product' title='Vector Dot Interactive' %}
+<p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="vEYEBPx" data-pen-title="Dot Product" data-user="LeandroPeres" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/LeandroPeres/pen/vEYEBPx">
+  Dot Product</a> by Leandro Peres (<a href="https://codepen.io/LeandroPeres">@LeandroPeres</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
 
 Geometrically, the dot product measures the extent to which two vectors are aligned with each other. It is positive when the vectors are pointing in the same general direction, negative when they are pointing in opposite directions, and zero when they are orthogonal (perpendicular) to each other.
 

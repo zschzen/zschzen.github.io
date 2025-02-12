@@ -1,34 +1,36 @@
-{% capture iframeClasses %}shadow rounded-10 fade-in lazyload {{ include.pos | default: 'center' }}{% endcapture %}
-{% capture iframeWidth %}{{ include.width | default: '100%' }}{% endcapture %}
-{% capture iframeHeight %}{{ include.height | default: '100%' }}{% endcapture %}
+{%- comment %} Improved iframe include with best practices {% endcomment -%}
+{%- assign iframe_position = include.pos | default: 'center' -%}
+{%- assign iframe_type = include.type | default: 'local' -%}
 
-{% capture iframeSrc %}
-  {% assign iframeType = include.type | default: 'local' %}
-  {% if iframeType == 'web' %}
-    {{ include.url }}
-  {% elsif iframeType == 'local' %}
-    https://peres.dev/{{ include.url }}/index.html?content={{ include.content }}
-  {% endif %}
-{% endcapture %}
+{%- comment %} Build CSS classes string {% endcomment -%}
+{%- capture iframe_classes -%}
+  shadow rounded-10 fade-in lazyload {{ iframe_position }}
+{%- endcapture -%}
 
-{% capture iframeBgColor %}
-  {% if include.bgcolor %}
-    {{ include.bgcolor }}
-  {% else %}
-    #fff
-  {% endif %}
-{% endcapture %}
+{%- comment %} Build iframe source URL {% endcomment -%}
+{%- assign iframe_src = include.url -%}
+{%- if iframe_type == 'local' -%}
+  {%- assign iframe_src = "https://peres.dev/" | append: include.url | append: "/index.html?content=" | append: include.content -%}
+{%- endif -%}
 
-<iframe src="{{ iframeSrc }}" class="{{ iframeClasses }}"
-        style="border: 0 solid hsla(0, 0%, 0%, 0); overflow: hidden; margin: 0 auto; display: block; background-color: {{ iframeBgColor }};"
-        scrolling="no" frameborder="0" 
-        title="{{ include.title }}"
-        width="{{ iframeWidth }}"
-        height="{{ iframeHeight }}">
+{%- comment %} Set up iframe dimensions and styling {% endcomment -%}
+{%- assign iframe_width = include.width | default: '100%' -%}
+{%- assign iframe_height = include.height | default: '450' -%}
+{%- assign bg_color = include.bgcolor | default: '#fff' -%}
+
+<iframe src="{{ iframe_src | strip }}"
+        class="{{ iframe_classes | strip }}"
+        style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: {{ bg_color }};"
+        loading="lazy"
+        data-iframe-resizable
+        title="{{ include.title | default: 'Embedded content' }}"
+        width="{{ iframe_width }}"
+        height="{{ iframe_height }}">
 </iframe>
 
-{% if include.legend %}
-  <div class="text-center mt-2 fade-in" style="opacity: 0; visibility: hidden;" data-iframe-id="{{ include.title }}">
+{%- if include.legend -%}
+  <div class="text-center mt-2" data-iframe-id="{{ include.title }}">
     <small class="text-muted">{{ include.legend }}</small>
   </div>
-{% endif %}
+{%- endif -%}
+
