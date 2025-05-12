@@ -5,7 +5,7 @@
     let link = document.createElement("link");
     link.type = "text/css";
     link.rel = "stylesheet";
-    link.href = "https://unpkg.com/glslEditor@latest/build/glslEditor.css";
+    link.href = "{{ baseurl }}/assets/glsl/glslEditor.css";
     head.insertBefore(link, head.firstChild);
   }
 
@@ -22,7 +22,7 @@
     script.type = "text/javascript";
     script.async = false;
     script.defer = false;
-    script.src = "https://unpkg.com/glslCanvas@latest/dist/GlslCanvas.min.js";
+    script.src = "{{ baseurl }}/assets/glsl/GlslCanvas.min.js";
     head.insertBefore(script, head.firstChild);
   }
 
@@ -33,7 +33,7 @@
     script.async = false;
     script.defer = false;
     script.type= "module";
-    script.src = "https://unpkg.com/glslEditor@latest/build/glslEditor.min.js";
+    script.src = "{{ baseurl }}/assets/glsl/glslEditor.min.js";
     head.insertBefore(script, head.firstChild);
   }
 </script>
