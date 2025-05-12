@@ -1,11 +1,11 @@
 ---
-icon: fas fa-boxes-stacked
+icon: fas fa-palette
 order: 5
 ---
 
 <script>
     function openURL() {
-        var url = "https://github.com/SOHNE/Dura2D";
+        var url = "https://portfolio.peres.dev";
         window.location.href = url;
     }
     openURL();
