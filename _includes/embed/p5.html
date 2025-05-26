@@ -1,0 +1,24 @@
+{% assign title = include.title | default: 'P5.js sketch' %}
+{% assign width = include.width | default: '100%' %}
+{% assign height = include.height | default: '1.25fr' %}
+{% assign id = include.id | url_encode %}
+
+
+<iframe
+  class="embed-video shadow fade-in"
+  style="border: 0 solid hsla(0, 0%, 0%, 0); overflow: hidden; margin: 0 auto; display: block;"
+  loading="lazy"
+  src="https://editor.p5js.org/{{ include.username }}/embed/{{ id }}"
+  title="{{ title }}"
+  frameborder="0"
+  scrolling="no"
+  width="{{ width }}"
+  height="{{ height }}"
+  allowfullscreen
+></iframe>
+
+{% if include.legend %}
+  <div class="text-center mb-4 fade-in" data-iframe-id="{{ title }}">
+    <small class="text-muted">{{ include.legend }}</small>
+  </div>
+{% endif %}

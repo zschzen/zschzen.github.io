@@ -1,0 +1,43 @@
+{% assign title = include.title | default: 'CodePen embed' %}
+{% assign width = include.width | default: '100%' %}
+{% assign height = include.height | default: '500px' %}
+{% assign theme = include.theme | default: 'dark' %}
+{% assign default_tab = include.default_tab | default: 'result' %}
+{% assign user = include.username %}
+{% assign slug = include.slug %}
+{% assign pen_title = include.pen_title | url_encode %}
+{% assign preview = include.preview | default: true %}
+{% assign editable = include.editable | default: true %}
+
+{% capture codepen_src -%}
+https://codepen.io/{{ user }}/embed{%- 
+  if preview -%}/preview{%- 
+  endif -%}/{{ slug }}?{%- 
+  if default_tab -%}default-tab={{ default_tab }}{%- 
+  endif -%}{%- 
+  if theme -%}&theme-id={{ theme }}{%- 
+  endif -%}{%- 
+  if editable -%}&editable=true{%- 
+  endif -%}
+{%- endcapture %}
+
+<iframe
+  class="shadow"
+  style="border: 0; overflow: hidden; display: block; margin: 0 auto;"
+  width="{{ width }}"
+  height="{{ height }}"
+  scrolling="no"
+  title="{{ title }}"
+  src="{{ codepen_src | strip }}"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+>
+</iframe>
+
+{% if include.caption %}
+  <div class="text-center mb-4" data-iframe-id="{{ title }}">
+    <small class="text-muted">{{ include.caption | markdownify }}</small>
+  </div>
+{% endif %}

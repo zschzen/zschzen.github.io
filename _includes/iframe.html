@@ -1,0 +1,36 @@
+{%- comment %} Improved iframe include with best practices {% endcomment -%}
+{%- assign iframe_position = include.pos | default: 'center' -%}
+{%- assign iframe_type = include.type | default: 'local' -%}
+
+{%- comment %} Build CSS classes string {% endcomment -%}
+{%- capture iframe_classes -%}
+  shadow rounded-10 fade-in lazyload {{ iframe_position }}
+{%- endcapture -%}
+
+{%- comment %} Build iframe source URL {% endcomment -%}
+{%- assign iframe_src = include.url -%}
+{%- if iframe_type == 'local' -%}
+  {%- assign iframe_src = "https://peres.dev/" | append: include.url | append: "/index.html?content=" | append: include.content -%}
+{%- endif -%}
+
+{%- comment %} Set up iframe dimensions and styling {% endcomment -%}
+{%- assign iframe_width = include.width | default: '100%' -%}
+{%- assign iframe_height = include.height | default: '450' -%}
+{%- assign bg_color = include.bgcolor | default: '#fff' -%}
+
+<iframe src="{{ iframe_src | strip }}"
+        class="{{ iframe_classes | strip }}"
+        style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: {{ bg_color }};"
+        loading="lazy"
+        data-iframe-resizable
+        title="{{ include.title | default: 'Embedded content' }}"
+        width="{{ iframe_width }}"
+        height="{{ iframe_height }}">
+</iframe>
+
+{%- if include.legend -%}
+  <div class="text-center mt-2" data-iframe-id="{{ include.title }}">
+    <small class="text-muted">{{ include.legend }}</small>
+  </div>
+{%- endif -%}
+

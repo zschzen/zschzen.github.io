@@ -1,0 +1,9 @@
+{% assign paused = include.paused | default: false %}
+<iframe
+  class="embed-video shadow"
+  loading="lazy"
+  src="https://www.shadertoy.com/embed/{{ include.id }}?gui=true&t=10&paused={{ paused }}&muted=true"
+  title="ShaderToy player"
+  frameborder="0"
+  allowfullscreen
+></iframe>
