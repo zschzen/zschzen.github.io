@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
+    "@iconify/json": "catalog:dev",
     "@types/degit": "catalog:types",
     "@types/diacritics": "catalog:types",
     "@types/fs-extra": "catalog:types",
@@ -53,6 +54,7 @@
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
     "unplugin-auto-import": "catalog:build",
+    "unplugin-icons": "catalog:build",
     "unplugin-vue-components": "catalog:build",
     "unplugin-vue-markdown": "catalog:build",
     "unplugin-vue-router": "catalog:build",
