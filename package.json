@@ -5,7 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite-ssg build && tsx ./scripts/copy-fonts.ts",
+
+    "build:common": "cross-env NODE_ENV=production vite-ssg build && tsx ./scripts/copy-fonts.ts",
+    "build": "npm run build:common",
+    "build:gh": "cross-env GH_PAGES=on npm run build:common",
+
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -40,6 +44,7 @@
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
+    "unplugin-auto-import": "catalog:build",
     "unplugin-vue-router": "catalog:build",
     "vite": "catalog:build",
     "vite-ssg": "catalog:build"
