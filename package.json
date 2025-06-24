@@ -12,6 +12,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@unocss/reset": "catalog:frontend",
     "@vueuse/core": "catalog:frontend",
     "vue": "catalog:frontend",
     "vue-router": "catalog:frontend",

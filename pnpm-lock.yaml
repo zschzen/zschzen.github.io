@@ -44,6 +44,9 @@ catalogs:
       specifier: ~5.8.3
       version: 5.8.3
   frontend:
+    '@unocss/reset':
+      specifier: ^66.1.4
+      version: 66.2.3
     '@vueuse/core':
       specifier: ^13.4.0
       version: 13.4.0
@@ -68,6 +71,9 @@ importers:
 
   .:
     dependencies:
+      '@unocss/reset':
+        specifier: catalog:frontend
+        version: 66.2.3
       '@vueuse/core':
         specifier: catalog:frontend
         version: 13.4.0(vue@3.5.17(typescript@5.8.3))
