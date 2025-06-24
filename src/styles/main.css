@@ -1,0 +1,65 @@
+:root {
+  /* Oxocarbon Light colors */
+  --c-bg: #f2f4f8;
+  --c-scrollbar: #dde1e6;
+  --c-scrollbar-hover: #525252;
+}
+
+html {
+  background-color: var(--c-bg);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+html.dark {
+  /* Oxocarbon Dark colors */
+  --c-bg: #161616;
+  --c-scrollbar: #262626;
+  --c-scrollbar-hover: #393939;
+}
+
+::selection {
+  background: #78a9ff44;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #78a9ff;
+  opacity: 0.75;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+* {
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: var(--c-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-scrollbar-hover);
+}
