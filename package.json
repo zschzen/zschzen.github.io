@@ -12,6 +12,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@vueuse/core": "catalog:frontend",
     "vue": "catalog:frontend",
     "vue-router": "catalog:frontend",
     "vue-router-better-scroller": "catalog:frontend"
