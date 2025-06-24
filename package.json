@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "cross-env NODE_ENV=production vite-ssg build && tsx ./scripts/copy-fonts.ts",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -21,19 +21,28 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
+    "@types/degit": "catalog:types",
+    "@types/fs-extra": "catalog:types",
     "@types/node": "catalog:types",
     "@unocss/preset-web-fonts": "catalog:build",
     "@vitejs/plugin-vue": "catalog:build",
+    "cross-env": "catalog:dev",
+    "degit": "catalog:dev",
     "eslint": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
+    "fs-extra": "catalog:dev",
+    "gray-matter": "catalog:build",
     "lint-staged": "catalog:dev",
     "pnpm": "catalog:dev",
+    "rimraf": "catalog:dev",
     "simple-git": "catalog:dev",
     "simple-git-hooks": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
-    "vite": "catalog:build"
+    "unplugin-vue-router": "catalog:build",
+    "vite": "catalog:build",
+    "vite-ssg": "catalog:build"
   },
   "resolutions": {
     "vite": "catalog:build"
