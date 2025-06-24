@@ -2,10 +2,7 @@
 </script>
 
 <template>
-  <div class="flex items-center justify-center h-screen text-6xl">
-    Leandro Peres
-  </div>
+  <main class="px-7 py-10 of-x-hidden">
+    <RouterView />
+  </main>
 </template>
-
-<style scoped>
-</style>
