@@ -18,15 +18,17 @@ import { addCopyButton } from 'shiki-transformer-copy-button'
 import UnoCSS from 'unocss/vite'
 
 import AutoImport from 'unplugin-auto-import/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+
 import Components from 'unplugin-vue-components/vite'
 
 import Markdown from 'unplugin-vue-markdown/vite'
 
 import { VueRouterAutoImports } from 'unplugin-vue-router'
-
 import VueRouter from 'unplugin-vue-router/vite'
-import { defineConfig } from 'vite'
 
+import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 import Exclude from 'vite-plugin-optimize-exclude'
 import SVG from 'vite-svg-loader'
@@ -160,10 +162,18 @@ export default defineConfig({
       dts: true,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
+        IconsResolver({
+          componentPrefix: '',
+        }),
       ],
     }),
 
     Inspect(),
+
+    Icons({
+      defaultClass: 'inline',
+      defaultStyle: 'vertical-align: sub;',
+    }),
 
     SVG({
       svgo: false,
