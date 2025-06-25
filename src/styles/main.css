@@ -18,6 +18,11 @@ html.dark {
   --c-scrollbar-hover: #393939;
 }
 
+/* Unset the resetting for MathJax */
+.MathJax svg {
+  display: inherit !important;
+}
+
 ::selection {
   background: #78a9ff44;
 }

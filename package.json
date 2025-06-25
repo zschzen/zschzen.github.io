@@ -24,6 +24,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@iconify/json": "catalog:dev",
+    "@mdit/plugin-mathjax": "catalog:build",
     "@types/degit": "catalog:types",
     "@types/diacritics": "catalog:types",
     "@types/fs-extra": "catalog:types",

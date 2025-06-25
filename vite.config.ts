@@ -1,11 +1,11 @@
 import { resolve } from 'node:path'
+import { createMathjaxInstance, mathjax } from '@mdit/plugin-mathjax'
 import Vue from '@vitejs/plugin-vue'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+
 import anchor from 'markdown-it-anchor'
-
 import GitHubAlerts from 'markdown-it-github-alerts'
-
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
@@ -97,6 +97,12 @@ export default defineConfig({
         })
 
         md.use(GitHubAlerts)
+
+        md.use(mathjax, createMathjaxInstance({
+          output: 'svg',
+          delimiters: 'dollars', // supports both $...$ and \(...\) syntax
+          a11y: false, // accessibility support
+        }))
       },
     }),
 
