@@ -28,6 +28,7 @@ catalogs:
     vite-plugin-inspect: ^11.1.0
     vite-plugin-optimize-exclude: ^0.0.1
     vite-ssg: ^27.0.1
+    vite-svg-loader: ^5.1.0
   dev:
     '@antfu/eslint-config': ^4.14.1
     '@iconify/json': ^2.2.347

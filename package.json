@@ -72,7 +72,8 @@
     "vite": "catalog:build",
     "vite-plugin-inspect": "catalog:build",
     "vite-plugin-optimize-exclude": "catalog:build",
-    "vite-ssg": "catalog:build"
+    "vite-ssg": "catalog:build",
+    "vite-svg-loader": "catalog:build"
   },
   "resolutions": {
     "vite": "catalog:build"

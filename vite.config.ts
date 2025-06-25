@@ -29,6 +29,7 @@ import { defineConfig } from 'vite'
 
 import Inspect from 'vite-plugin-inspect'
 import Exclude from 'vite-plugin-optimize-exclude'
+import SVG from 'vite-svg-loader'
 import { slugify } from './scripts/slugify'
 
 export default defineConfig({
@@ -163,6 +164,11 @@ export default defineConfig({
     }),
 
     Inspect(),
+
+    SVG({
+      svgo: false,
+      defaultImport: 'url',
+    }),
 
     Exclude(),
   ],
