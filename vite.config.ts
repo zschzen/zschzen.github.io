@@ -1,18 +1,25 @@
 import { resolve } from 'node:path'
 import { createMathjaxInstance, mathjax } from '@mdit/plugin-mathjax'
+import { snippet } from '@mdit/plugin-snippet'
+import { transformerColorizedBrackets } from '@shikijs/colorized-brackets'
+import MarkdownItShiki from '@shikijs/markdown-it'
+
+import { transformerNotationDiff, transformerNotationHighlight, transformerNotationWordHighlight } from '@shikijs/transformers'
+import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import Vue from '@vitejs/plugin-vue'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
-
 import anchor from 'markdown-it-anchor'
 import GitHubAlerts from 'markdown-it-github-alerts'
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
+import { addCopyButton } from 'shiki-transformer-copy-button'
 import UnoCSS from 'unocss/vite'
-import AutoImport from 'unplugin-auto-import/vite'
 
+import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+
 import Markdown from 'unplugin-vue-markdown/vite'
 
 import { VueRouterAutoImports } from 'unplugin-vue-router'
@@ -74,6 +81,26 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       async markdownItSetup(md) {
+        md.use(await MarkdownItShiki({
+          themes: {
+            dark: 'vitesse-dark',
+            light: 'vitesse-light',
+          },
+          defaultColor: false,
+          cssVariablePrefix: '--s-',
+          transformers: [
+            transformerTwoslash({
+              explicitTrigger: true,
+              renderer: rendererRich(),
+            }),
+            transformerNotationDiff(),
+            transformerNotationHighlight(),
+            transformerNotationWordHighlight(),
+            transformerColorizedBrackets(),
+            addCopyButton({ toggle: 2000 }),
+          ],
+        }))
+
         md.use(anchor, {
           slugify,
           permalink: anchor.permalink.linkInsideHeader({
@@ -103,6 +130,17 @@ export default defineConfig({
           delimiters: 'dollars', // supports both $...$ and \(...\) syntax
           a11y: false, // accessibility support
         }))
+
+        md.use(snippet, {
+          currentPath: env => env.filePath,
+          resolvePath: (path, cwd) => {
+            if (path.startsWith('@src')) {
+              return path.replace('@src', './')
+            }
+
+            return resolve(cwd as string, path)
+          },
+        })
       },
     }),
 

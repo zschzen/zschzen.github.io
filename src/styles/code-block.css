@@ -1,0 +1,60 @@
+/* Lines */
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(115, 138, 148, 0.4);
+}
+
+/* Copy Button */
+
+pre:has(code) {
+  position: relative;
+}
+
+pre button.copy {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  padding: 0;
+  display: flex;
+  filter: brightness(0) saturate(100%) invert(50%);
+
+  & span {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  & .ready {
+    background-image: url(/icons/TablerCopy.svg);
+  }
+
+  & .success {
+    display: none;
+    background-image: url(/icons/TablerCopyCheckFilled.svg);
+  }
+
+  &.copied {
+    & .success {
+      display: block;
+    }
+
+    & .ready {
+      display: none;
+    }
+  }
+}

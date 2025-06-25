@@ -12,6 +12,7 @@ import 'markdown-it-github-alerts/styles/github-colors-dark-class.css'
 import './styles/main.css'
 import './styles/prose.css'
 import './styles/markdown.css'
+import './styles/code-block.css'
 import 'uno.css'
 
 export const createApp = ViteSSG(
