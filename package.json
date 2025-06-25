@@ -70,6 +70,7 @@
     "unplugin-vue-markdown": "catalog:build",
     "unplugin-vue-router": "catalog:build",
     "vite": "catalog:build",
+    "vite-plugin-inspect": "catalog:build",
     "vite-ssg": "catalog:build"
   },
   "resolutions": {

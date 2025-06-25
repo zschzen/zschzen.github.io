@@ -27,6 +27,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 
+import Inspect from 'vite-plugin-inspect'
 import { slugify } from './scripts/slugify'
 
 export default defineConfig({
@@ -159,6 +160,8 @@ export default defineConfig({
       resolvers: [
       ],
     }),
+
+    Inspect(),
   ],
 
   build: {
