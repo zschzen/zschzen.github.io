@@ -12,6 +12,9 @@ catalogs:
     '@mdit/plugin-snippet':
       specifier: ^0.22.2
       version: 0.22.2
+    '@shikijs/colorized-brackets':
+      specifier: ^3.7.0
+      version: 3.7.0
     '@shikijs/markdown-it':
       specifier: ^3.6.0
       version: 3.7.0
@@ -226,7 +229,7 @@ importers:
         specifier: catalog:build
         version: 0.22.2(markdown-it@14.1.0)
       '@shikijs/colorized-brackets':
-        specifier: ^3.7.0
+        specifier: catalog:build
         version: 3.7.0
       '@shikijs/markdown-it':
         specifier: catalog:build
