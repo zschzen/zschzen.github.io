@@ -71,6 +71,7 @@
     "unplugin-vue-router": "catalog:build",
     "vite": "catalog:build",
     "vite-plugin-inspect": "catalog:build",
+    "vite-plugin-optimize-exclude": "catalog:build",
     "vite-ssg": "catalog:build"
   },
   "resolutions": {

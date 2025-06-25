@@ -75,6 +75,9 @@ catalogs:
     vite-plugin-inspect:
       specifier: ^11.1.0
       version: 11.2.0
+    vite-plugin-optimize-exclude:
+      specifier: ^0.0.1
+      version: 0.0.1
     vite-ssg:
       specifier: ^27.0.1
       version: 27.0.1
@@ -360,6 +363,9 @@ importers:
       vite-plugin-inspect:
         specifier: catalog:build
         version: 11.2.0(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))
+      vite-plugin-optimize-exclude:
+        specifier: catalog:build
+        version: 0.0.1(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))
       vite-ssg:
         specifier: catalog:build
         version: 27.0.1(prettier@3.6.0)(unhead@2.0.11)(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))(vue-router@4.5.1(vue@3.5.17(typescript@5.8.3)))(vue@3.5.17(typescript@5.8.3))
@@ -3356,6 +3362,11 @@ packages:
     peerDependenciesMeta:
       '@nuxt/kit':
         optional: true
+
+  vite-plugin-optimize-exclude@0.0.1:
+    resolution: {integrity: sha512-vRb2u5XlvNa51bt+mz6QS+UHns2tGi1Z9CHuaAnPOWiAtQCZEjavUf/56oRFXauj/0ROl2FvOJ2YFD1k6sGJNQ==}
+    peerDependencies:
+      vite: ^6.3.5
 
   vite-ssg@27.0.1:
     resolution: {integrity: sha512-RL9atZ4HHLdaa3PuXoiKr6kxw0CSBk4E449Dy2BGhpDArSJJ7WSmmHCJTKr6zmqKUb1ETjRH97fXOx8jXdiugQ==}
@@ -6902,6 +6913,10 @@ snapshots:
       vite-dev-rpc: 1.0.7(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))
     transitivePeerDependencies:
       - supports-color
+
+  vite-plugin-optimize-exclude@0.0.1(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0)):
+    dependencies:
+      vite: 6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0)
 
   vite-ssg@27.0.1(prettier@3.6.0)(unhead@2.0.11)(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))(vue-router@4.5.1(vue@3.5.17(typescript@5.8.3)))(vue@3.5.17(typescript@5.8.3)):
     dependencies:

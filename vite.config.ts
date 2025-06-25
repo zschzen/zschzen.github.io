@@ -28,6 +28,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 
 import Inspect from 'vite-plugin-inspect'
+import Exclude from 'vite-plugin-optimize-exclude'
 import { slugify } from './scripts/slugify'
 
 export default defineConfig({
@@ -162,6 +163,8 @@ export default defineConfig({
     }),
 
     Inspect(),
+
+    Exclude(),
   ],
 
   build: {
