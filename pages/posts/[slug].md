@@ -5,4 +5,4 @@ display: ''
 
 <SubNav />
 
-<ListPosts only-date type="post" />
+<ListRoute />

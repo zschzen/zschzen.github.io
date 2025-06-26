@@ -20,7 +20,19 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/[...404]': RouteRecordInfo<'/[...404]', '/:404(.*)', { 404: ParamValue<true> }, { 404: ParamValue<false> }>,
+    '/notes/': RouteRecordInfo<'/notes/', '/notes', Record<never, never>, Record<never, never>>,
+    '/notes/[slug]': RouteRecordInfo<'/notes/[slug]', '/notes/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
+    '/poems/': RouteRecordInfo<'/poems/', '/poems', Record<never, never>, Record<never, never>>,
+    '/poems/[slug]': RouteRecordInfo<'/poems/[slug]', '/poems/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
+    '/poems/2016/asma': RouteRecordInfo<'/poems/2016/asma', '/poems/2016/asma', Record<never, never>, Record<never, never>>,
+    '/poems/2016/dor-doce-ponto': RouteRecordInfo<'/poems/2016/dor-doce-ponto', '/poems/2016/dor-doce-ponto', Record<never, never>, Record<never, never>>,
+    '/poems/2016/o-sabio-o.-que-disse-nada-com-palavras-vagas': RouteRecordInfo<'/poems/2016/o-sabio-o.-que-disse-nada-com-palavras-vagas', '/poems/2016/o-sabio-o/-que-disse-nada-com-palavras-vagas', Record<never, never>, Record<never, never>>,
+    '/poems/2016/venda': RouteRecordInfo<'/poems/2016/venda', '/poems/2016/venda', Record<never, never>, Record<never, never>>,
+    '/poems/2018/ao-descobrimento': RouteRecordInfo<'/poems/2018/ao-descobrimento', '/poems/2018/ao-descobrimento', Record<never, never>, Record<never, never>>,
+    '/poems/2018/poema-s.-t.': RouteRecordInfo<'/poems/2018/poema-s.-t.', '/poems/2018/poema-s/-t/', Record<never, never>, Record<never, never>>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
+    '/posts/[slug]': RouteRecordInfo<'/posts/[slug]', '/posts/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
+    '/posts/ola': RouteRecordInfo<'/posts/ola', '/posts/ola', Record<never, never>, Record<never, never>>,
     '/projects/': RouteRecordInfo<'/projects/', '/projects', Record<never, never>, Record<never, never>>,
   }
 }
