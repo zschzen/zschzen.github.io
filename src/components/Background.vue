@@ -20,7 +20,7 @@
       (math.random(200) - 100) +
       'vh ' +
       '1px 0.75px ' +
-      rgba((math.random(15) + 240), (math.random(15) + 240), (math.random(15) + 240), (math.random() + 0.5));
+      rgba((math.random(15) + 240), (math.random(15) + 240), (math.random(15) + 240), (math.random() * 0.4));
     @if $i < 100 {
       $result: $result + ', ';
     }
