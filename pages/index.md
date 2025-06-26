@@ -21,7 +21,7 @@ Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, B
 
 ---
 
-☀️ **By day**, I design and code interactive worlds, breathe fresh life into classic hardware, explore new approaches to rendering and document every moment with clear hands on guides—because the best discoveries are meant to be shared.
+<span inline dark:hidden>☀️</span><span hidden dark:inline>🕶️</span> **By day**, I design and code interactive worlds, breathe fresh life into classic hardware, explore new approaches to rendering and document every moment with clear hands on guides—because the best discoveries are meant to be shared.
 
 What drives me is the moment when an idea clicks into place and transforms into something real under my head. I'm always looking for that sweet spot where technology meets genuine human curiosity.
 
