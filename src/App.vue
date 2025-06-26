@@ -12,7 +12,7 @@ import NavBar from './components/NavBar.vue'
     <!-- Router -->
     <RouterView v-slot="{ Component, route }">
       <!-- Transition -->
-      <Transition :name="route.meta?.transition || 'blur'" mode="out-in" appear>
+      <Transition :name="route.meta?.transition || 'fade'" mode="out-in">
         <!-- Page -->
         <div :key="route.path" class="page-wrapper">
           <component :is="Component" />
@@ -30,15 +30,14 @@ import NavBar from './components/NavBar.vue'
   width: 100%;
 }
 
-/* Blur transition */
-.blur-enter-active,
-.blur-leave-active {
-  transition: all 0.2s ease;
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
 }
 
-.blur-enter-from,
-.blur-leave-to {
-  filter: blur(0.5rem);
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
