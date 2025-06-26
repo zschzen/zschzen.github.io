@@ -8,7 +8,9 @@ export default defineConfig({
     [/^btn-(\w+|\[#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?\])$/, ([_, color]) => `op50 px2.5 py1 transition-all duration-200 ease-out no-underline! hover:(op100 text-${color} bg-${color}/10) border border-base! rounded`],
   ],
   rules: [
-    ['m-1', { margin: '1px' }],
+    [/^slide-enter-(\d+)$/, ([_, n]) => ({
+      '--enter-stage': n,
+    })],
   ],
   presets: [
     presetIcons({
@@ -25,6 +27,8 @@ export default defineConfig({
       fonts: {
         sans: 'Inter',
         mono: 'DM Mono',
+        condensed: 'Roboto Condensed',
+        year: 'Ramaraja',
       },
       processors: createLocalFontProcessor(),
     }),
