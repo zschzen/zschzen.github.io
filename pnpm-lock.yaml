@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   build:
+    '@mdit/plugin-img-lazyload':
+      specifier: ^0.22.1
+      version: 0.22.1
     '@mdit/plugin-mathjax':
       specifier: ^0.23.1
       version: 0.23.1
@@ -240,6 +243,9 @@ importers:
       '@iconify/json':
         specifier: catalog:dev
         version: 2.2.352
+      '@mdit/plugin-img-lazyload':
+        specifier: catalog:build
+        version: 0.22.1(markdown-it@14.1.0)
       '@mdit/plugin-mathjax':
         specifier: catalog:build
         version: 0.23.1(markdown-it@14.1.0)
@@ -821,6 +827,15 @@ packages:
 
   '@mdit/helper@0.22.1':
     resolution: {integrity: sha512-lDpajcdAk84aYCNAM/Mi3djw38DJq7ocLw5VOSMu/u2YKX3/OD37a6Qb59in8Uyp4SiAbQoSHa8px6hgHEpB5g==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
+  '@mdit/plugin-img-lazyload@0.22.1':
+    resolution: {integrity: sha512-ombpBQqR1zYjtr4/7s8EvIVx/ymtiflWksXropYz81o0I9Bm9Os1UPuNgjwfT/DEhIit4HMaJhjpKhGkYrOKgA==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -4139,6 +4154,12 @@ snapshots:
   '@mdit-vue/types@2.1.4': {}
 
   '@mdit/helper@0.22.1(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-img-lazyload@0.22.1(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:

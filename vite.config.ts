@@ -1,9 +1,10 @@
 import { resolve } from 'node:path'
+import { imgLazyload } from '@mdit/plugin-img-lazyload'
 import { createMathjaxInstance, mathjax } from '@mdit/plugin-mathjax'
 import { snippet } from '@mdit/plugin-snippet'
 import { transformerColorizedBrackets } from '@shikijs/colorized-brackets'
-import MarkdownItShiki from '@shikijs/markdown-it'
 
+import MarkdownItShiki from '@shikijs/markdown-it'
 import { transformerNotationDiff, transformerNotationHighlight, transformerNotationWordHighlight } from '@shikijs/transformers'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import Vue from '@vitejs/plugin-vue'
@@ -15,19 +16,19 @@ import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import { addCopyButton } from 'shiki-transformer-copy-button'
-import UnoCSS from 'unocss/vite'
 
+import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+
 import Icons from 'unplugin-icons/vite'
 
 import Components from 'unplugin-vue-components/vite'
 
 import Markdown from 'unplugin-vue-markdown/vite'
-
 import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
 
+import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 import Exclude from 'vite-plugin-optimize-exclude'
@@ -146,6 +147,8 @@ export default defineConfig({
             return resolve(cwd as string, path)
           },
         })
+
+        md.use(imgLazyload)
       },
     }),
 

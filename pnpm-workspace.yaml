@@ -2,6 +2,7 @@ packages: []
 
 catalogs:
   build:
+    '@mdit/plugin-img-lazyload': ^0.22.1
     '@mdit/plugin-mathjax': ^0.23.1
     '@mdit/plugin-snippet': ^0.22.2
     '@shikijs/colorized-brackets': ^3.7.0
