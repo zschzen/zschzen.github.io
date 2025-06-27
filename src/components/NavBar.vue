@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useWindowScroll } from '@vueuse/core'
-
 function toTop() {
   window.scrollTo({
     top: 0,
@@ -13,38 +11,49 @@ const { y: scroll } = useWindowScroll()
 
 <template>
   <header class="header z-40">
-    <RouterLink class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none" to="/" focusable="false">
+    <!-- Logo / Home -->
+    <RouterLink
+      class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none"
+      to="/"
+      focusable="false"
+    >
       <Logo />
     </RouterLink>
+
+    <!-- Scroll to top button -->
     <button
-      title="Scroll to top" fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full hover-bg-hex-8883 transition
-      duration-300 z-100 print:hidden :class="scroll > 100 ? 'op30 visible' : 'op0! pointer-events-none invisible'"
+      title="Scroll to top"
+      fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full
+      hover-bg-hex-8883 transition duration-300 z-100 print:hidden
+      :class="scroll > 300 ? 'op30' : 'op0! pointer-events-none'"
       @click="toTop()"
     >
       <div i-ri-arrow-up-line />
     </button>
+
+    <!-- Navigation -->
     <nav class="nav">
       <div class="spacer" />
-      <div class="right xl:fixed xl:right-9" print:op0>
-        <RouterLink to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
-          <div i-ri-article-line md:hidden />
-        </RouterLink>
-        <RouterLink to="/notes" title="Notes">
-          <span class="lt-md:hidden">Notes</span>
-          <div i-ri-file-4-line md:hidden />
-        </RouterLink>
+      <div class="right" print:op0>
+        <!-- Primary navigation -->
         <RouterLink to="/projects" title="Projects">
           <span class="lt-md:hidden">Projects</span>
-          <div i-ri-folder-6-line class="md:hidden" />
+          <div i-ri-folder-6-line md:hidden />
         </RouterLink>
-        <RouterLink to="/poems" title="Poems">
-          <span class="lt-md:hidden">Poems</span>
-          <div i-ri-folder-6-line class="md:hidden" />
+        <RouterLink to="/posts" title="Blog">
+          <span class="lt-md:hidden">Blog</span>
+          <div i-ri-pencil-line md:hidden />
         </RouterLink>
-        <RouterLink to="/lab" title="Lab">
-          <div i-material-symbols-science-outline />
+        <RouterLink to="/lab" title="Experimentations">
+          <span class="lt-md:hidden">Lab</span>
+          <div i-material-symbols-science-outline class="md:hidden" />
         </RouterLink>
+
+        <!-- External links -->
+        <a href="https://resume.peres.dev" target="_blank" title="Resume">
+          <div i-ri-file-pdf-2-line md:hidden />
+          <span class="lt-md:hidden"> Resume</span>
+        </a>
         <a href="https://github.com/zschzen" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
@@ -57,13 +66,15 @@ const { y: scroll } = useWindowScroll()
         <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
           <div i-ri-rss-line />
         </a>
+
+        <!-- Theme toggle -->
         <ToggleTheme />
       </div>
     </nav>
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .header h1 {
   margin-bottom: 0;
 }
