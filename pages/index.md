@@ -17,7 +17,7 @@ Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, B
 > [!WARNING]
 >
 > This portfolio is still under construction.
-> For the full list of my projects, please check my [LinkedIn Projects](https://www.linkedin.com/in/leandroperes/details/projects/).
+> For the full list of my projects, please check my [LinkedIn](https://www.linkedin.com/in/leandroperes).
 
 ---
 
