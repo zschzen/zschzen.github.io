@@ -194,9 +194,5 @@ export default defineConfig({
 
   ssgOptions: {
     formatting: 'minify',
-    includedRoutes(_paths: string[], routes: readonly any[]) {
-      // use original route records
-      return routes.flatMap((route: any) => route.path + (route.path.endsWith('/') ? 'index' : '/index'))
-    },
   },
 })
