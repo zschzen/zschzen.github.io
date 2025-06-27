@@ -3,7 +3,7 @@ title: Leandro Peres
 description: Leandro's Portfolio
 ---
 
-<h6><code>Olá, Vida longa e próspera 🖖🏳️‍🌈</code></h6>
+<h6><code class="bg-transparent!">Olá, Vida longa e próspera 🖖🏳️‍🌈</code></h6>
 
 Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia).
 
@@ -52,4 +52,8 @@ I'm generally accessible; you can also find me on
 
 ---
 
-<h6><pre>!( ・∀)つ且~~⊂(´∀｀ )</pre></h6>
+<h6><code class="bg-transparent! leading-none">
+Come cheer up, my lads<br/>
+  ￣￣￣∨￣￣￣￣￣￣￣￣￣￣￣<br/>
+!( ・∀)つ且~~且⊂(´∀｀ )ﾉ*
+</code></h6>
