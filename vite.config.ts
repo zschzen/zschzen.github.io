@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import { footnote } from '@mdit/plugin-footnote'
 import { imgLazyload } from '@mdit/plugin-img-lazyload'
 import { createMathjaxInstance, mathjax } from '@mdit/plugin-mathjax'
 import { snippet } from '@mdit/plugin-snippet'
@@ -149,6 +150,8 @@ export default defineConfig({
         })
 
         md.use(imgLazyload)
+
+        md.use(footnote)
       },
     }),
 

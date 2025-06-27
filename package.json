@@ -27,6 +27,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@iconify/json": "catalog:dev",
+    "@mdit/plugin-footnote": "catalog:build",
     "@mdit/plugin-img-lazyload": "catalog:build",
     "@mdit/plugin-mathjax": "catalog:build",
     "@mdit/plugin-snippet": "catalog:build",

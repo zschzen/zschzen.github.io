@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   build:
+    '@mdit/plugin-footnote':
+      specifier: ^0.22.2
+      version: 0.22.2
     '@mdit/plugin-img-lazyload':
       specifier: ^0.22.1
       version: 0.22.1
@@ -243,6 +246,9 @@ importers:
       '@iconify/json':
         specifier: catalog:dev
         version: 2.2.352
+      '@mdit/plugin-footnote':
+        specifier: catalog:build
+        version: 0.22.2(markdown-it@14.1.0)
       '@mdit/plugin-img-lazyload':
         specifier: catalog:build
         version: 0.22.1(markdown-it@14.1.0)
@@ -833,6 +839,12 @@ packages:
     peerDependenciesMeta:
       markdown-it:
         optional: true
+
+  '@mdit/plugin-footnote@0.22.2':
+    resolution: {integrity: sha512-lHB6AV61QruvrWXIu/oWncltH2ED8cBUuvX4IO+5TvtWSyyc6wOm3ErPqqTFJqy1SJ1p21oLNcqRGdPF+S3N4w==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.1.0
 
   '@mdit/plugin-img-lazyload@0.22.1':
     resolution: {integrity: sha512-ombpBQqR1zYjtr4/7s8EvIVx/ymtiflWksXropYz81o0I9Bm9Os1UPuNgjwfT/DEhIit4HMaJhjpKhGkYrOKgA==}
@@ -4157,6 +4169,11 @@ snapshots:
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-footnote@0.22.2(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.1.2
       markdown-it: 14.1.0
 
   '@mdit/plugin-img-lazyload@0.22.1(markdown-it@14.1.0)':
