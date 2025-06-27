@@ -1,9 +1,8 @@
 ---
 title: Leandro Peres
+subtitle: Olá, Vida longa e próspera 🖖🏳️‍🌈
 description: Leandro's Portfolio
 ---
-
-<h6><code class="bg-transparent!">Olá, Vida longa e próspera 🖖🏳️‍🌈</code></h6>
 
 Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia).
 
