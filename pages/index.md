@@ -15,6 +15,11 @@ Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, B
   <a href="mailto:hi@peres.dev" target="_blank">hi@peres.dev</a>
 </p>
 
+> [!WARNING]
+>
+> This portfolio is still under construction.
+> For the full list of my projects, please check my [LinkedIn](https://www.linkedin.com/in/leandroperes).
+
 <PhotoGallery
   :photo-names="[
     'p-2025-06-29-08-09-04-001-2',
