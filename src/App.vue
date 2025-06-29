@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Footer from './components/Footer.vue'
+import ImageViewer from './components/ImageViewer.vue'
 import NavBar from './components/NavBar.vue'
 </script>
 
@@ -17,4 +18,7 @@ import NavBar from './components/NavBar.vue'
     <!-- Footer -->
     <Footer />
   </main>
+
+  <!-- Images visualizer -->
+  <ImageViewer />
 </template>
