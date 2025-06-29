@@ -100,6 +100,9 @@ catalogs:
     '@iconify/json':
       specifier: ^2.2.347
       version: 2.2.352
+    ansis:
+      specifier: ^4.1.0
+      version: 4.1.0
     cross-env:
       specifier: ^7.0.3
       version: 7.0.3
@@ -115,12 +118,21 @@ catalogs:
     eslint-plugin-format:
       specifier: ^1.0.1
       version: 1.0.1
+    exifreader:
+      specifier: ^4.31.1
+      version: 4.31.1
+    fast-glob:
+      specifier: ^3.3.3
+      version: 3.3.3
     fs-extra:
       specifier: ^11.3.0
       version: 11.3.0
     lint-staged:
       specifier: ^16.1.0
       version: 16.1.2
+    pathe:
+      specifier: ^2.0.3
+      version: 2.0.3
     pnpm:
       specifier: ^10.12.1
       version: 10.12.3
@@ -297,6 +309,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: catalog:build
         version: 5.2.4(vite@7.0.0(@types/node@22.15.32)(jiti@2.4.2)(sass-embedded@1.89.2)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))(vue@3.5.17(typescript@5.8.3))
+      ansis:
+        specifier: catalog:dev
+        version: 4.1.0
       cross-env:
         specifier: catalog:dev
         version: 7.0.3
@@ -312,6 +327,12 @@ importers:
       eslint-plugin-format:
         specifier: catalog:dev
         version: 1.0.1(eslint@9.29.0(jiti@2.4.2))
+      exifreader:
+        specifier: catalog:dev
+        version: 4.31.1
+      fast-glob:
+        specifier: catalog:dev
+        version: 3.3.3
       fs-extra:
         specifier: catalog:dev
         version: 11.3.0
@@ -339,6 +360,9 @@ importers:
       markdown-it-table-of-contents:
         specifier: catalog:build
         version: 0.9.0
+      pathe:
+        specifier: catalog:dev
+        version: 2.0.3
       pnpm:
         specifier: catalog:dev
         version: 10.12.3
@@ -2054,6 +2078,9 @@ packages:
 
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+
+  exifreader@4.31.1:
+    resolution: {integrity: sha512-rkSg/NejDN9D+8GuRWZ2Y4G8KSrj0hdaeMoew8d0J5cF5oS0p6DVar2PSQ0fP3assu6s1PYh6M1lhtS7Kigk6Q==}
 
   expand-template@2.0.3:
     resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
@@ -5524,6 +5551,10 @@ snapshots:
   esutils@2.0.3: {}
 
   eventemitter3@5.0.1: {}
+
+  exifreader@4.31.1:
+    optionalDependencies:
+      '@xmldom/xmldom': 0.9.8
 
   expand-template@2.0.3: {}
 
