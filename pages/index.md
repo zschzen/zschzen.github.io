@@ -1,8 +1,10 @@
 ---
 title: Leandro Peres
-subtitle: Olá, Vida longa e próspera 🖖🏳️‍🌈
+subtitle: Generalist Game Developer
 description: Leandro's Portfolio
 ---
+
+Olá! Vida longa e próspera 🖖🏳️‍🌈
 
 Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia).
 
@@ -13,10 +15,14 @@ Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, B
   <a href="mailto:hi@peres.dev" target="_blank">hi@peres.dev</a>
 </p>
 
-> [!WARNING]
->
-> This portfolio is still under construction.
-> For the full list of my projects, please check my [LinkedIn](https://www.linkedin.com/in/leandroperes).
+<PhotoGallery
+  :photo-names="[
+    'p-2025-06-29-08-09-04-001-2',
+    'p-2025-06-29-08-13-14-001-2',
+    'p-2025-06-29-08-43-44-001-2',
+    'p-2025-06-29-08-08-18-001-2'
+  ]"
+/>
 
 ---
 
