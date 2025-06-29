@@ -18,9 +18,3 @@ import NavBar from './components/NavBar.vue'
     <Footer />
   </main>
 </template>
-
-<style lang="css" scoped>
-.page-wrapper {
-  width: 100%;
-}
-</style>
