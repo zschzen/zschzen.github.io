@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "photos": "tsx scripts/photos-manage.ts",
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
