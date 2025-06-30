@@ -50,7 +50,6 @@ for (const filepath of files) {
   // 1 hour
   if (timeDiff < 1000 * 60 * 60) {
     console.warn(`Date of ${filepath} is too recent: ${dateRaw}`)
-    continue
   }
 
   const base = `p-${date.toISOString().replace(/[:.a-z]+/gi, '-')}`

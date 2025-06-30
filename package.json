@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "compress": "tsx scripts/img-compress-staged.ts",
     "photos": "tsx scripts/photos-manage.ts",
     "prepare": "simple-git-hooks"
   },
@@ -43,6 +44,7 @@
     "@types/markdown-it-link-attributes": "catalog:types",
     "@types/node": "catalog:types",
     "@types/nprogress": "catalog:types",
+    "@types/prompts": "catalog:types",
     "@unocss/preset-web-fonts": "catalog:build",
     "@vitejs/plugin-vue": "catalog:build",
     "ansis": "catalog:dev",
@@ -64,6 +66,7 @@
     "markdown-it-table-of-contents": "catalog:build",
     "pathe": "catalog:dev",
     "pnpm": "catalog:dev",
+    "prompts": "catalog:dev",
     "rimraf": "catalog:dev",
     "sass-embedded": "catalog:build",
     "sharp": "catalog:dev",
