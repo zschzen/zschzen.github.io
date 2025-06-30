@@ -4,4 +4,4 @@ display: 'Projects'
 ---
 
 > [!IMPORTANT]
-> This site is under active development. For details on my projects, please see my [LinkedIn Projects](https://www.linkedin.com/in/leandroperes/details/projects/).
+> This portfolio is under active development. For details on my projects, please see my [LinkedIn](https://www.linkedin.com/in/leandroperes).
