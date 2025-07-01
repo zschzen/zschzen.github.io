@@ -32,6 +32,7 @@ declare module 'vue-router/auto-routes' {
     '/poems/2018/poema-s.-t.': RouteRecordInfo<'/poems/2018/poema-s.-t.', '/poems/2018/poema-s/-t/', Record<never, never>, Record<never, never>>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
     '/posts/[slug]': RouteRecordInfo<'/posts/[slug]', '/posts/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
+    '/posts/math/basic-trigonometry': RouteRecordInfo<'/posts/math/basic-trigonometry', '/posts/math/basic-trigonometry', Record<never, never>, Record<never, never>>,
     '/posts/ola': RouteRecordInfo<'/posts/ola', '/posts/ola', Record<never, never>, Record<never, never>>,
     '/projects/': RouteRecordInfo<'/projects/', '/projects', Record<never, never>, Record<never, never>>,
   }
