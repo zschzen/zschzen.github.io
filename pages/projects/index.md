@@ -24,19 +24,19 @@ projects:
   Games:
     - name: 'Kwartz'
       link: 'https://gamejolt.com/games/Kwartz/451321'
-      desc: 'Interactive Playground for learning Nuxt'
+      desc: "2D dark‑fantasy side‑scrolling strategy tower‑defense game"
 
     - name: 'Free Breeze'
       link: 'https://gamejolt.com/games/free-breeze/551443'
-      desc: 'Interactive Playground for learning Nuxt'
+      desc: "Cute, colorful multiplayer nature strategy shooter indie game"
 
     - name: 'Robots Fight At Night'
       link: 'https://gamejolt.com/games/Robots-Fight/506349'
-      desc: 'Interactive Playground for learning Nuxt'
+      desc: "Cyberpunk isometric 3D team-based action shooter"
 
     - name: 'The Ashes of Jorge'
       link: 'https://github.com/zschzen/The-ashes-of-Jorge'
-      desc: 'Interactive Playground for learning Nuxt'
+      desc: "2D side‑scrolling beat‑'em‑up action brawler with retro arcade flair"
 
   Tools:
     - name: 'slidev-addon-cpp-runner'
