@@ -5,7 +5,9 @@ import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
-  <Background />
+  <ClientOnly>
+    <Background />
+  </ClientOnly>
 
   <!-- Main navigation bar -->
   <NavBar />
