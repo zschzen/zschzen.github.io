@@ -76,7 +76,9 @@ export default defineConfig({
     }),
 
     Markdown({
-      wrapperComponent: 'WrapperPost',
+      wrapperComponent: id => id.includes('/lab/')
+        ? 'WrapperLab'
+        : 'WrapperPost',
       wrapperClasses: (_id, code) => code.includes('@layout-full-width')
         ? ''
         : 'prose m-auto slide-enter-content',

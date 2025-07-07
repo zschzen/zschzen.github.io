@@ -44,16 +44,15 @@ const { y: scroll } = useWindowScroll()
           <span class="lt-md:hidden">Blog</span>
           <div i-ri-pencil-line md:hidden />
         </RouterLink>
-        <RouterLink to="/lab" title="Experimentations">
-          <span class="lt-md:hidden">Lab</span>
-          <div i-material-symbols-science-outline class="md:hidden" />
-        </RouterLink>
 
         <!-- External links -->
         <a href="https://resume.peres.dev" target="_blank" title="Resume">
           <div i-ri-file-pdf-2-line md:hidden />
           <span class="lt-md:hidden"> Resume</span>
         </a>
+        <RouterLink to="/lab" title="Lab & Experiments">
+          <div i-material-symbols-science-outline />
+        </RouterLink>
         <a href="https://github.com/zschzen" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
