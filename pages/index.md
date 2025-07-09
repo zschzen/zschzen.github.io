@@ -1,24 +1,32 @@
 ---
 title: Leandro Peres
+display: Leandro Peres 🖖🏼
 subtitle: Generalist Game Developer
 description: Leandro's Portfolio
 ---
 
-Olá! Vida longa e próspera 🖖🏳️‍🌈
+From [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia), I architect custom physics and graphics engines, build emulators and game engines from the ground up, and share every breakthrough through hands‑on game‑dev tutorials.
 
-Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia).
+Crafting {Dura2D} {LeveGL} {CameBoy}
 
-<p flex="~ gap-4 wrap" class="mt--2!">
-  <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-pdf-2-line /> Resume</a>
-  <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
-  <a href="https://linkedin.com/in/leandroperes" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
-  <a href="mailto:hi@peres.dev" target="_blank">hi@peres.dev</a>
-</p>
+> <p flex="~ gap-4 wrap" class="mt--2!">
+>   <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-pdf-2-line /> Resume</a>
+>   <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
+>   <a href="https://linkedin.com/in/leandroperes" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
+>   <a href="mailto:hi@peres.dev" target="_blank"><span op75 i-ri-mail-line /> hi@peres.dev</a>
+> </p>
 
-> [!WARNING]
->
-> This portfolio is still under construction.
-> For the full list of my projects, please check my [LinkedIn](https://www.linkedin.com/in/leandroperes).
+☀️ **By day**, I craft interactive worlds, revive classic hardware, and push the boundaries of rendering while writing clear, hands‑on guides to _boldly_ share every discovery.
+
+**Here’s what you’ll find:**
+
+- ✨ My [projects](/projects)
+- 🧪 My latest experiments in the [lab](/lab)
+- 📝 My thoughts in [posts](/posts)
+- 📚 My study [notes](/notes)
+- 🎨 My [poems](/poems)
+
+When the workday ends, you’ll find me with my husband and family, sharing meals, swapping stories, and laughing together. I also tackle math puzzles, write poetry in Portuguese, dive into books, anime or whatever series has captured my interest, and practice crocheting. Those evening hours fuel the big ideas that inspire me to build and create.
 
 <PhotoGallery
   :photo-names="[
@@ -29,27 +37,6 @@ Gamer at heart, emulator whisperer, and graphics tinkerer living in [Goiânia, B
     'p-2025-06-30-11-34-50-388-1'
   ]"
 />
-
----
-
-<span inline dark:hidden>☀️</span><span hidden dark:inline>🕶️</span> **By day**, I design and code interactive worlds, breathe fresh life into classic hardware, explore new approaches to rendering and document every moment with clear hands on guides—because the best discoveries are meant to be shared.
-
-What drives me is the moment when an idea clicks into place and transforms into something real under my head. I'm always looking for that sweet spot where technology meets genuine human curiosity.
-
-Here you’ll:
-
-- ✨ find my [/projects](projects)
-- 🧪 explore my latest experimentations in [/lab](lab)
-- 📝 dive into my [/posts](posts)
-- 📚 browse through my personal study [/notes](notes)
-- 🎨 get a glimpse of my [/poems](poems)
-
-Outside of programming, when the workday ends, I spend time with my husband and family: sharing meals, stories, and plenty of laughter. I also dive into math puzzles, write poetry in Portuguese, and get lost in books, anime, or whatever series has caught my attention. These evening hours give me space to think about the bigger questions that drive me to build and create.
-
-> [!IMPORTANT]
-> I’m on a mission to craft clear, welcoming blog posts and tutorials that keep knowledge **open and free for all**, empowering others to tackle complex topics with confidence.
-
----
 
 I'm generally accessible; you can also find me on
 
