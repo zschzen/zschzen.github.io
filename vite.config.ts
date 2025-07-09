@@ -14,6 +14,7 @@ import matter from 'gray-matter'
 import anchor from 'markdown-it-anchor'
 import GitHubAlerts from 'markdown-it-github-alerts'
 import LinkAttributes from 'markdown-it-link-attributes'
+import MarkdownItMagicLink from 'markdown-it-magic-link'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import { addCopyButton } from 'shiki-transformer-copy-button'
@@ -130,6 +131,17 @@ export default defineConfig({
           includeLevel: [1, 2, 3, 4],
           slugify,
           containerHeaderHtml: '<div class="table-of-contents-anchor"><div class="i-ri-menu-2-fill" /></div>',
+        })
+
+        md.use(MarkdownItMagicLink, {
+          linksMap: {
+            Dura2D: { link: 'https://github.com/SOHNE/Dura2D', imageUrl: 'https://github.com/SOHNE/Dura2D/raw/main/docs/assets/logo.svg' },
+            LeveGL: { link: 'https://github.com/SOHNE/LeveGL', imageUrl: 'https://github.com/SOHNE/LeveGL/raw/main/.github/assets/logo.svg' },
+            CameBoy: { link: 'https://github.com/SOHNE/CameBoy', imageUrl: 'https://github.com/SOHNE/CameBoy/raw/main/.github/assets/logo.svg' },
+
+          },
+          imageOverrides: [
+          ],
         })
 
         md.use(GitHubAlerts)
