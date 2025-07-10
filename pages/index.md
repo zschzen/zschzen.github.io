@@ -9,7 +9,7 @@ From [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia), I architect
 
 Crafting {Dura2D} {LeveGL} {CameBoy}
 
-> <p flex="~ gap-4 wrap" class="mt--2!">
+> <p flex="~ gap-3 wrap" class="mt--2!">
 >   <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-pdf-2-line /> Resume</a>
 >   <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
 >   <a href="https://linkedin.com/in/leandroperes" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
@@ -40,11 +40,12 @@ When the workday ends, you’ll find me with my husband and family, sharing meal
 
 I'm generally accessible; you can also find me on
 
-<p flex="~ gap-2 wrap" class="mt--2!">
+<p flex="~ gap-3 wrap" class="mt--2!">
   <a href="https://bsky.app/profile/peres.dev" target="_blank"><span op75 i-ri-bluesky-fill /> Bluesky</a>
   <a href="https://www.threads.net/@peres.dev" target="_blank"><span op75 i-ri-threads-line /> Threads</a>
   <a href="https://chat.peres.dev" target="_blank"><span op75 i-simple-icons-discord /> Discord</a>
   <a href="https://www.youtube.com/@Leandero" target="_blank"><span op75 i-simple-icons-youtube /> YouTube</a>
+  <a href="https://gamejolt.com/@SOHNE" target="_blank"><span i-simple-icons-gamejolt /> GameJolt</a>
   <a href="https://www.instagram.com/peres.dev" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
 </p>
 

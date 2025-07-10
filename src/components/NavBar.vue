@@ -59,9 +59,6 @@ const { y: scroll } = useWindowScroll()
         <a href="https://linkedin.com/in/leandroperes" target="_blank" title="LinkedIn" class="lt-md:hidden">
           <div i-uil-linkedin-alt />
         </a>
-        <a href="https://gamejolt.com/@SOHNE" target="_blank" title="GameJolt" class="lt-md:hidden">
-          <div i-simple-icons-gamejolt style="font-size:0.9rem;" />
-        </a>
         <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
           <div i-ri-rss-line />
         </a>
