@@ -1,7 +1,6 @@
 {
-  "name": "new.peres.dev",
+  "name": "peres.dev",
   "type": "module",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
