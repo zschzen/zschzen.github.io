@@ -5,10 +5,18 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite-ssg build && tsx ./scripts/copy-fonts.ts",
+
+    "build:ssg": "cross-env NODE_ENV=production vite-ssg build",
+    "build:fonts": "tsx ./scripts/copy-fonts.ts",
+    "build:rss": "tsx ./scripts/rss.ts",
+    "build:post": "npm run build:fonts && npm run build:rss",
+    "build": "npm run build:ssg && npm run build:post",
+
     "preview": "vite preview",
+
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+
     "compress": "tsx scripts/img-compress-staged.ts",
     "photos": "tsx scripts/photos-manage.ts",
     "prepare": "simple-git-hooks"
@@ -55,6 +63,7 @@
     "eslint-plugin-format": "catalog:dev",
     "exifreader": "catalog:dev",
     "fast-glob": "catalog:dev",
+    "feed": "catalog:dev",
     "fs-extra": "catalog:dev",
     "gray-matter": "catalog:build",
     "lint-staged": "catalog:dev",

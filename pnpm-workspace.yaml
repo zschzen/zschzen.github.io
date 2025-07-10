@@ -43,6 +43,7 @@ catalogs:
     eslint-plugin-format: ^1.0.1
     exifreader: ^4.31.1
     fast-glob: ^3.3.3
+    feed: ^5.1.0
     fs-extra: ^11.3.0
     lint-staged: ^16.1.0
     pathe: ^2.0.3
