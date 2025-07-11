@@ -10,7 +10,7 @@ catalogs:
     '@shikijs/markdown-it': ^3.6.0
     '@shikijs/transformers': ^3.6.0
     '@shikijs/twoslash': ^3.6.0
-    '@unocss/preset-web-fonts': ^66.1.4
+    '@unocss/preset-web-fonts': ^66.3.3
     '@vitejs/plugin-vue': ^5.2.4
     gray-matter: ^4.0.3
     markdown-it: ^14.1.0
@@ -21,13 +21,13 @@ catalogs:
     markdown-it-table-of-contents: ^0.9.0
     sass-embedded: ^1.89.2
     shiki-transformer-copy-button: ^0.0.5
-    unocss: ^66.1.4
+    unocss: ^66.3.3
     unplugin-auto-import: ^19.3.0
     unplugin-icons: ^22.1.0
     unplugin-vue-components: ^28.7.0
     unplugin-vue-markdown: ^28.3.1
     unplugin-vue-router: ^0.12.0
-    vite: ^7.0.3
+    vite: ^7.0.4
     vite-plugin-inspect: ^11.1.0
     vite-plugin-optimize-exclude: ^0.0.1
     vite-ssg: ^27.0.1
@@ -57,7 +57,7 @@ catalogs:
     typescript: ~5.8.3
   frontend:
     '@unhead/vue': ^2.0.10
-    '@unocss/reset': ^66.1.4
+    '@unocss/reset': ^66.3.3
     '@vueuse/core': ^13.4.0
     dayjs: ^1.11.13
     nprogress: ^0.2.0
