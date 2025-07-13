@@ -23,6 +23,7 @@ declare module 'vue-router/auto-routes' {
     '/lab': RouteRecordInfo<'/lab', '/lab', Record<never, never>, Record<never, never>>,
     '/notes/': RouteRecordInfo<'/notes/', '/notes', Record<never, never>, Record<never, never>>,
     '/notes/[slug]': RouteRecordInfo<'/notes/[slug]', '/notes/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
+    '/notes/2024/chip8': RouteRecordInfo<'/notes/2024/chip8', '/notes/2024/chip8', Record<never, never>, Record<never, never>>,
     '/poems/': RouteRecordInfo<'/poems/', '/poems', Record<never, never>, Record<never, never>>,
     '/poems/[slug]': RouteRecordInfo<'/poems/[slug]', '/poems/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
     '/poems/2016/asma': RouteRecordInfo<'/poems/2016/asma', '/poems/2016/asma', Record<never, never>, Record<never, never>>,
