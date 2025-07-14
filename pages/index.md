@@ -7,6 +7,7 @@ description: Leandro's Portfolio
 
 From [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia), I architect custom physics and graphics engines, build emulators and game engines from the ground up, and share every breakthrough through hands‑on game‑dev tutorials.
 
+Founder of {SOHNE}<br/>
 Crafting {Dura2D} {LeveGL} {CameBoy}
 
 > <p flex="~ gap-3 wrap" class="mt--2!">
