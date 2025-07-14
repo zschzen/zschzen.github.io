@@ -38,7 +38,7 @@ When the workday ends, you’ll find me with my husband and family, sharing meal
   ]"
 />
 
-I'm generally accessible; you can also find me on
+**_Every answer generates further questions_**, which is why I’m generally accessible; you can also find me on…
 
 <p flex="~ gap-3 wrap" class="mt--2!">
   <a href="https://bsky.app/profile/peres.dev" target="_blank"><span op75 i-ri-bluesky-fill /> Bluesky</a>
@@ -54,5 +54,5 @@ I'm generally accessible; you can also find me on
 <h6><code class="bg-transparent! leading-none">
 Come cheer up, my lads<br/>
   ￣￣￣∨￣￣￣￣￣￣￣￣￣￣￣<br/>
-!( ・∀)つ且~~且⊂(´∀｀ )ﾉ*
+!( ・∀)つ且~≁~且⊂(´∀｀ )ﾉ*
 </code></h6>
