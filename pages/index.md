@@ -1,7 +1,7 @@
 ---
 title: Leandro Peres
-display: Leandro Peres 🖖🏼
-subtitle: Generalist Game Developer
+display: Leandro Peres 🖖
+subtitle: Generalist Game Developer | Physics · Rendering · AI & Gameplay
 description: Leandro's Portfolio
 ---
 
@@ -19,7 +19,7 @@ Crafting {Dura2D} {LeveGL} {CameBoy}
 
 ☀️ **By day**, I craft interactive worlds, revive classic hardware, and push the boundaries of rendering while writing clear, hands‑on guides to _boldly_ share every discovery.
 
-**Here’s what you’ll find:**
+**Here's what you'll find:**
 
 - ✨ My [projects](/projects)
 - 🧪 My latest experiments in the [lab](/lab)
@@ -27,7 +27,7 @@ Crafting {Dura2D} {LeveGL} {CameBoy}
 - 📚 My study [notes](/notes)
 - 🎨 My [poems](/poems)
 
-When the workday ends, you’ll find me with my husband and family, sharing meals, swapping stories, and laughing together. I also tackle math puzzles, write poetry in Portuguese, dive into books, anime or whatever series has captured my interest, and practice crocheting. Those evening hours fuel the big ideas that inspire me to build and create.
+When the workday ends, you'll find me with my husband and family, sharing meals, swapping stories, and laughing together. I also tackle math puzzles, write poetry in Portuguese, dive into books, anime or whatever series has captured my interest, and practice crocheting. Those evening hours fuel the big ideas that inspire me to build and create.
 
 <PhotoGallery
   :photo-names="[
@@ -39,7 +39,7 @@ When the workday ends, you’ll find me with my husband and family, sharing meal
   ]"
 />
 
-**_Every answer generates further questions_**, which is why I’m generally accessible; you can also find me on…
+**_Every answer generates further questions_**, which is why I'm generally accessible; you can also find me on…
 
 <p flex="~ gap-3 wrap" class="mt--2!">
   <a href="https://bsky.app/profile/peres.dev" target="_blank"><span op75 i-ri-bluesky-fill /> Bluesky</a>
@@ -49,6 +49,12 @@ When the workday ends, you’ll find me with my husband and family, sharing meal
   <a href="https://gamejolt.com/@SOHNE" target="_blank"><span i-simple-icons-gamejolt /> GameJolt</a>
   <a href="https://www.instagram.com/peres.dev" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
 </p>
+
+For the curious minds who wonder about my coding habits:
+
+<a href="https://wakatime.com/@4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac" class="inline-block! w-fit! h-fit! border-b-0! my--9!">
+    <img src="https://wakatime.com/badge/user/4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac.svg" alt="Total time coded since Dec 13 2020" />
+</a>
 
 ---
 
