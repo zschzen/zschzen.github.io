@@ -1,7 +1,7 @@
 ---
 title: Leandro Peres
 display: Leandro Peres 🖖
-subtitle: Generalist Game Developer | Physics · Rendering · AI & Gameplay
+subtitle: Physics · Rendering · AI · Gameplay
 description: Leandro's Portfolio
 ---
 
