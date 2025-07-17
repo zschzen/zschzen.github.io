@@ -52,7 +52,7 @@ When the workday ends, you'll find me with my husband and family, sharing meals,
 
 For the curious minds who wonder about my coding habits:
 
-<a href="https://wakatime.com/@4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac" class="inline-block! w-fit! h-fit! border-b-0! my--9!">
+<a href="https://wakatime.com/@4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac" class="inline-block! w-fit! h-fit! border-b-0! my--9!" target="_blank">
     <img src="https://wakatime.com/badge/user/4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac.svg" alt="Total time coded since Dec 13 2020" />
 </a>
 
