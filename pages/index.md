@@ -50,16 +50,20 @@ When the workday ends, you'll find me with my husband and family, sharing meals,
   <a href="https://www.instagram.com/peres.dev" target="_blank"><span op75 i-simple-icons-instagram /> Instagram</a>
 </p>
 
-For the curious minds who wonder about my coding habits:
+For the curious minds who wonder about habits:
 
-<a href="https://wakatime.com/@4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac" class="inline-block! w-fit! h-fit! border-b-0! my--9!" target="_blank">
+<a href="https://wakatime.com/@4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac" class="block! w-fit! border-b-0!" target="_blank">
     <img src="https://wakatime.com/badge/user/4dc0c3b5-1e64-4d6a-84b4-a6cd17b7cdac.svg" alt="Total time coded since Dec 13 2020" />
+</a>
+
+<a href="https://www.last.fm/user/MrMeetes" class="block! w-fit! border-b-0!" target="_blank">
+    <img src="https://badges.lastfm.workers.dev/last-played?user=MrMeetes" alt="Total time coded since Dec 13 2020" />
 </a>
 
 ---
 
-<h6><code class="bg-transparent! leading-none">
+<center><h6><code class="bg-transparent! leading-none">
 Come cheer up, my lads<br/>
   ￣￣￣∨￣￣￣￣￣￣￣￣￣￣￣<br/>
 !( ・∀)つ且~≁~且⊂(´∀｀ )ﾉ*
-</code></h6>
+</code></h6></center>
