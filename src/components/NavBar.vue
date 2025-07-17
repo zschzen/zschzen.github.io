@@ -40,16 +40,20 @@ const { y: scroll } = useWindowScroll()
           <span class="lt-md:hidden">Projects</span>
           <div i-ri-folder-6-line md:hidden />
         </RouterLink>
-        <RouterLink to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
+        <RouterLink to="/posts" title="Posts">
+          <span class="lt-md:hidden">Posts</span>
           <div i-ri-pencil-line md:hidden />
+        </RouterLink>
+        <RouterLink to="/notes" title="Notes" class="lt-md:hidden">
+          <span>Notes</span>
         </RouterLink>
 
         <!-- External links -->
         <a href="https://resume.peres.dev" target="_blank" title="Resume">
-          <div i-ri-file-pdf-2-line md:hidden />
-          <span class="lt-md:hidden"> Resume</span>
+          <span i-ri-file-download-line md:hidden />
+          <span class="lt-md:hidden btn-[#EE5396]"><span i-ri-file-download-line /> Resume</span>
         </a>
+
         <RouterLink to="/lab" title="Lab & Experiments">
           <div i-material-symbols-science-outline />
         </RouterLink>
