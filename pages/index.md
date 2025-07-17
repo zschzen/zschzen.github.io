@@ -11,7 +11,7 @@ Founder of {SOHNE}<br/>
 Crafting {Dura2D} {LeveGL} {CameBoy}
 
 > <p flex="~ gap-3 wrap" class="mt--2!">
->   <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-pdf-2-line /> Resume</a>
+>   <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-download-line /> Resume</a>
 >   <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
 >   <a href="https://linkedin.com/in/leandroperes" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
 >   <a href="mailto:hi@peres.dev" target="_blank"><span op75 i-ri-mail-line /> hi@peres.dev</a>
