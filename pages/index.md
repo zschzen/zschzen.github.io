@@ -19,6 +19,8 @@ Crafting {Dura2D} {LeveGL} {CameBoy}
 
 ☀️ **By day**, I craft interactive worlds, revive classic hardware, and push the boundaries of rendering while writing clear, hands‑on guides to _boldly_ share every discovery.
 
+When the workday ends, I’m with my husband and family, sharing meals, swapping stories, and laughing together. I also solve math puzzles, write Portuguese poetry, lose myself in books or films, and crochet <code>( ⸝⸝´꒳`⸝⸝)</code>. Those evening hours spark the big ideas that drive my creativity.
+
 **Here's what you'll find:**
 
 - ✨ My [projects](/projects)
@@ -26,8 +28,6 @@ Crafting {Dura2D} {LeveGL} {CameBoy}
 - 📝 My thoughts in [posts](/posts)
 - 📚 My study [notes](/notes)
 - 🎨 My [poems](/poems)
-
-When the workday ends, you'll find me with my husband and family, sharing meals, swapping stories, and laughing together. I also tackle math puzzles, write poetry in Portuguese, dive into books, anime or whatever series has captured my interest, and practice crocheting. Those evening hours fuel the big ideas that inspire me to build and create.
 
 <PhotoGallery
   :photo-names="[
