@@ -10,12 +10,19 @@ From [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia), I architect
 Founder of {SOHNE}<br/>
 Crafting {Dura2D} {LeveGL} {CameBoy}
 
-> <p flex="~ gap-3 wrap" class="mt--2!">
->   <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-download-line /> Resume</a>
->   <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
->   <a href="https://linkedin.com/in/leandroperes" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
->   <a href="mailto:hi@peres.dev" target="_blank"><span op75 i-ri-mail-line /> hi@peres.dev</a>
-> </p>
+<center>
+<p class="space-x-sm!">
+  <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-download-line /> Resume</a>
+  <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
+  <a href="https://linkedin.com/in/leandroperes" target="_blank"><span op75 i-simple-icons-linkedin /> LinkedIn</a>
+  <a href="mailto:hi@peres.dev" target="_blank"><span op75 i-ri-mail-line /> hi@peres.dev</a>
+</p>
+
+Please, refer to {Notion} before contacting me.
+
+</center>
+
+---
 
 ☀️ **By day**, I craft interactive worlds, revive classic hardware, and push the boundaries of rendering while writing clear, hands‑on guides to _boldly_ share every discovery.
 
