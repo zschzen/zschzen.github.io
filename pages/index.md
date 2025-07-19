@@ -11,6 +11,7 @@ Founder of {SOHNE}<br/>
 Crafting {Dura2D} {LeveGL} {CameBoy}
 
 <center>
+
 <p class="space-x-sm!">
   <a href="https://resume.peres.dev" target="_blank"><span op75 i-ri-file-download-line /> Resume</a>
   <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
@@ -42,6 +43,7 @@ When the workday ends, I’m with my husband and family, sharing meals, swapping
     'p-2025-06-30-11-34-50-395-1',
     'p-2025-06-30-11-34-50-395-2',
     'p-2025-06-30-11-36-12-896-1',
+    'p-2020-11-10-16-11-59-000-1',
     'p-2025-06-30-11-34-50-388-1'
   ]"
 />
