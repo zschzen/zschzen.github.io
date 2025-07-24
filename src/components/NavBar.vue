@@ -51,7 +51,7 @@ const { y: scroll } = useWindowScroll()
         <!-- External links -->
         <a href="https://resume.peres.dev" target="_blank" title="Resume">
           <span i-ri-file-download-line md:hidden />
-          <span class="lt-md:hidden btn-[#EE5396]"><span i-ri-file-download-line /> Resume</span>
+          <span class="lt-md:hidden btn-[#EE5396]"><span i-ri-file-download-line /> Résumé</span>
         </a>
 
         <RouterLink to="/lab" title="Lab & Experiments">
