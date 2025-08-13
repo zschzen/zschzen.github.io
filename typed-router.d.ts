@@ -35,9 +35,112 @@ declare module 'vue-router/auto-routes' {
     '/poems/2025/ao-edu': RouteRecordInfo<'/poems/2025/ao-edu', '/poems/2025/ao-edu', Record<never, never>, Record<never, never>>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
     '/posts/[slug]': RouteRecordInfo<'/posts/[slug]', '/posts/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
-    '/posts/algorithms/quadtree': RouteRecordInfo<'/posts/algorithms/quadtree', '/posts/algorithms/quadtree', Record<never, never>, Record<never, never>>,
     '/posts/math/basic-trigonometry': RouteRecordInfo<'/posts/math/basic-trigonometry', '/posts/math/basic-trigonometry', Record<never, never>, Record<never, never>>,
     '/posts/ola': RouteRecordInfo<'/posts/ola', '/posts/ola', Record<never, never>, Record<never, never>>,
     '/projects/': RouteRecordInfo<'/projects/', '/projects', Record<never, never>, Record<never, never>>,
   }
+
+  /**
+   * Route file to route info map by unplugin-vue-router.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * Each key is a file path relative to the project root with 2 properties:
+   * - routes: union of route names of the possible routes when in this page (passed to useRoute<...>())
+   * - views: names of nested views (can be passed to <RouterView name="...">)
+   *
+   * @internal
+   */
+  export interface _RouteFileInfoMap {
+    'pages/index.md': {
+      routes: '/'
+      views: never
+    }
+    'pages/[...404].md': {
+      routes: '/[...404]'
+      views: never
+    }
+    'pages/lab.md': {
+      routes: '/lab'
+      views: never
+    }
+    'pages/notes/index.md': {
+      routes: '/notes/'
+      views: never
+    }
+    'pages/notes/[slug].md': {
+      routes: '/notes/[slug]'
+      views: never
+    }
+    'pages/notes/2024/chip8.md': {
+      routes: '/notes/2024/chip8'
+      views: never
+    }
+    'pages/poems/index.md': {
+      routes: '/poems/'
+      views: never
+    }
+    'pages/poems/[slug].md': {
+      routes: '/poems/[slug]'
+      views: never
+    }
+    'pages/poems/2016/asma.md': {
+      routes: '/poems/2016/asma'
+      views: never
+    }
+    'pages/poems/2016/dor-doce-ponto.md': {
+      routes: '/poems/2016/dor-doce-ponto'
+      views: never
+    }
+    'pages/poems/2016/o-sabio-o.-que-disse-nada-com-palavras-vagas.md': {
+      routes: '/poems/2016/o-sabio-o.-que-disse-nada-com-palavras-vagas'
+      views: never
+    }
+    'pages/poems/2016/venda.md': {
+      routes: '/poems/2016/venda'
+      views: never
+    }
+    'pages/poems/2018/ao-descobrimento.md': {
+      routes: '/poems/2018/ao-descobrimento'
+      views: never
+    }
+    'pages/poems/2018/poema-s.-t..md': {
+      routes: '/poems/2018/poema-s.-t.'
+      views: never
+    }
+    'pages/poems/2025/ao-edu.md': {
+      routes: '/poems/2025/ao-edu'
+      views: never
+    }
+    'pages/posts/index.md': {
+      routes: '/posts/'
+      views: never
+    }
+    'pages/posts/[slug].md': {
+      routes: '/posts/[slug]'
+      views: never
+    }
+    'pages/posts/math/basic-trigonometry.md': {
+      routes: '/posts/math/basic-trigonometry'
+      views: never
+    }
+    'pages/posts/ola.md': {
+      routes: '/posts/ola'
+      views: never
+    }
+    'pages/projects/index.md': {
+      routes: '/projects/'
+      views: never
+    }
+  }
+
+  /**
+   * Get a union of possible route names in a certain route component file.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * @internal
+   */
+  export type _RouteNamesForFilePath<FilePath extends string> =
+    _RouteFileInfoMap extends Record<FilePath, infer Info>
+      ? Info['routes']
+      : keyof RouteNamedMap
 }
