@@ -24,6 +24,7 @@ declare module 'vue-router/auto-routes' {
     '/notes/': RouteRecordInfo<'/notes/', '/notes', Record<never, never>, Record<never, never>>,
     '/notes/[slug]': RouteRecordInfo<'/notes/[slug]', '/notes/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
     '/notes/2024/chip8': RouteRecordInfo<'/notes/2024/chip8', '/notes/2024/chip8', Record<never, never>, Record<never, never>>,
+    '/notes/2025/nasm-struc': RouteRecordInfo<'/notes/2025/nasm-struc', '/notes/2025/nasm-struc', Record<never, never>, Record<never, never>>,
     '/poems/': RouteRecordInfo<'/poems/', '/poems', Record<never, never>, Record<never, never>>,
     '/poems/[slug]': RouteRecordInfo<'/poems/[slug]', '/poems/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
     '/poems/2016/asma': RouteRecordInfo<'/poems/2016/asma', '/poems/2016/asma', Record<never, never>, Record<never, never>>,
@@ -73,6 +74,10 @@ declare module 'vue-router/auto-routes' {
     }
     'pages/notes/2024/chip8.md': {
       routes: '/notes/2024/chip8'
+      views: never
+    }
+    'pages/notes/2025/nasm-struc.md': {
+      routes: '/notes/2025/nasm-struc'
       views: never
     }
     'pages/poems/index.md': {
