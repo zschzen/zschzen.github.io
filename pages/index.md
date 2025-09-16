@@ -20,8 +20,6 @@ Crafting {Dura2D} {LeveGL} {CameBoy}
   <a href="mailto:hi@peres.dev" target="_blank"><span op75 i-ri-mail-line /> hi@peres.dev</a>
 </p>
 
-Please, refer to {Notion} before contacting me.
-
 </center>
 
 ---
