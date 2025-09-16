@@ -143,8 +143,6 @@ export default defineConfig({
             LeveGL: { link: 'https://github.com/SOHNE/LeveGL', imageUrl: 'https://github.com/SOHNE/LeveGL/raw/main/.github/assets/logo.svg' },
             CameBoy: { link: 'https://github.com/SOHNE/CameBoy', imageUrl: 'https://github.com/SOHNE/CameBoy/raw/main/.github/assets/logo.svg' },
 
-            Notion: { link: 'https://zschzen.notion.site/How-to-contact-Leandro-234355a6f58d80d0b746c4e9df523db3', imageUrl: 'https://www.notion.so/images/favicon.ico' },
-
           },
           imageOverrides: [
           ],
