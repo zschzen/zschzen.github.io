@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { formatDate } from '~/logics/utils'
+import GiscusComments from './GiscusComments.vue'
 
 const { frontmatter } = defineProps({
   frontmatter: {
@@ -13,6 +14,11 @@ const content = ref<HTMLDivElement>()
 
 onMounted(() => {
 })
+
+const showComments = computed(() => {
+  return frontmatter.disableComments !== true
+    && route.path.split('/').filter(Boolean).length >= 2
+})
 </script>
 
 <template>
@@ -23,10 +29,7 @@ onMounted(() => {
     <h1 class="mb-0 slide-enter-50">
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p
-      v-if="frontmatter.date"
-      class="opacity-50 !-mt-6 slide-enter-50"
-    >
+    <p v-if="frontmatter.date" class="opacity-50 !-mt-6 slide-enter-50">
       {{ formatDate(frontmatter.date, false) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
     <p v-if="frontmatter.place" class="mt--4!">
@@ -54,9 +57,15 @@ onMounted(() => {
   <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8 slide-enter animate-delay-500 print:hidden">
     <span font-mono op50>> </span>
     <RouterLink
-      :to="route.path.split('/').slice(0, -1).join('/') || '/'"
-      class="font-mono op50 hover:op75"
+      :to="route.path.split('/').slice(0, -1).join('/') || '/'" class="font-mono op50 hover:op75"
       v-text="'cd ..'"
     />
+  </div>
+
+  <div v-if="showComments" class="prose m-auto mt-8 mb-8">
+    <hr>
+    <span class="slide-enter animate-delay-500!">
+      <GiscusComments />
+    </span>
   </div>
 </template>
