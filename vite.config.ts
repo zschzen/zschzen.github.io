@@ -142,7 +142,7 @@ export default defineConfig({
             Dura2D: { link: 'https://github.com/SOHNE/Dura2D', imageUrl: 'https://github.com/SOHNE/Dura2D/raw/main/docs/assets/logo.svg' },
             LeveGL: { link: 'https://github.com/SOHNE/LeveGL', imageUrl: 'https://github.com/SOHNE/LeveGL/raw/main/.github/assets/logo.svg' },
             CameBoy: { link: 'https://github.com/SOHNE/CameBoy', imageUrl: 'https://github.com/SOHNE/CameBoy/raw/main/.github/assets/logo.svg' },
-
+            Actis: { link: 'https://github.com/SOHNE/Actis', imageUrl: 'https://github.com/SOHNE/Actis/raw/main/playground/public/favicon.svg' },
           },
           imageOverrides: [
           ],
