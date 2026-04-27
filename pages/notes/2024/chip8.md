@@ -165,7 +165,7 @@ Libraries used:
 - [ImGui](https://www.github.com/ocornut/imgui)
 - [rlImGui](https://github.com/raylib-extras/rlImGui/)
 
-#### What about the sound?
+### What about the sound?
 
 Well, the CHIP8 has a very simple sound model, but i have not implemented it yet...
 
@@ -201,7 +201,6 @@ If you are interested in checking out my CHIP8 interpreter, you can find it on t
 [CHIP-8]: https://en.wikipedia.org/wiki/CHIP-8
 [interpreted]: https://en.wikipedia.org/wiki/Interpreter_(computing)
 [EZ-Writer]: https://beyondloom.com/tools/ezwriter.html
-[CHIP-8 extensions]: https://chip-8.github.io/extensions/
 [Reference]: https://www.cs.columbia.edu/~sedwards/classes/2016/4840-spring/designs/Chip8.pdf
 [Guide to making a CHIP-8 emulator]: https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
 [Awesome CHIP-8]: https://github.com/tobiasvl/awesome-chip-8
