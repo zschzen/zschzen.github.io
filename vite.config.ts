@@ -150,7 +150,7 @@ export default defineConfig({
 
         md.use(GitHubAlerts)
 
-        md.use(mathjax, createMathjaxInstance({
+        md.use(mathjax, await createMathjaxInstance({
           output: 'svg',
           delimiters: 'dollars', // supports both $...$ and \(...\) syntax
           a11y: false, // accessibility support
