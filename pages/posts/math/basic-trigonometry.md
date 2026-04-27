@@ -97,7 +97,7 @@ There's some ways to measure angles. The most common ones are degrees, Radians a
 > [!TIP]
 > There are more ways to measure angles, such as gradians, mils and binary degrees. You can check the [Wikipedia page](https://en.wikipedia.org/wiki/Angle#Units) for more information.
 
-#### Radians vs Degrees
+### Radians vs Degrees
 
 **Degrees** is easy to understand, since it's intuitive for us, humans. However, if we compute using degrees, first the whole circumference is calculated, and then it's multiplied by the fraction of the angle. This is not efficient, since we are calculating the whole circumference when we only need a fraction of it. This is why **radians** are used in programming.
 

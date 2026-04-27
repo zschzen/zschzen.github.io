@@ -1,4 +1,5 @@
 import { useDark } from '@vueuse/core'
+import { nextTick } from 'vue'
 
 export const isDark = useDark()
 
