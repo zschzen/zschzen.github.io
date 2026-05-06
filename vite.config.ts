@@ -17,7 +17,6 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import MarkdownItMagicLink from 'markdown-it-magic-link'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
-import sharp from 'sharp'
 import { addCopyButton } from 'shiki-transformer-copy-button'
 
 import UnoCSS from 'unocss/vite'
@@ -39,6 +38,7 @@ import SVG from 'vite-svg-loader'
 import { slugify } from './scripts/slugify'
 
 const promises: Promise<any>[] = []
+const isProduction = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   resolve: {
@@ -180,11 +180,13 @@ export default defineConfig({
           if (route === 'index' || frontmatter.image || !frontmatter.title)
             return
           const path = `og/${route}.png`
-          promises.push(
-            fs.existsSync(`${id.slice(0, -3)}.png`)
-              ? fs.copy(`${id.slice(0, -3)}.png`, `public/${path}`)
-              : generateOg(frontmatter.title!.replace(/\s-\s.*$/, '').trim(), `public/${path}`),
-          )
+          const pageImage = `${id.slice(0, -3)}.png`
+          if (fs.existsSync(pageImage)) {
+            promises.push(fs.copy(pageImage, `public/${path}`))
+          }
+          else if (isProduction) {
+            promises.push(generateOg(frontmatter.title!.replace(/\s-\s.*$/, '').trim(), `public/${path}`))
+          }
           frontmatter.image = `https://peres.dev/${path}`
         })()
         const head = defaults(frontmatter, options)
@@ -266,6 +268,8 @@ async function generateOg(title: string, output: string) {
 
   console.log(`Generating ${output}`)
   try {
+    const { default: sharp } = await import('sharp')
+
     await sharp(Buffer.from(svg))
       .resize(1200 * 1.1, 630 * 1.1)
       .png()
