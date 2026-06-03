@@ -12,21 +12,14 @@ const { y: scroll } = useWindowScroll()
 <template>
   <header class="header z-40">
     <!-- Logo / Home -->
-    <RouterLink
-      class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none"
-      to="/"
-      focusable="false"
-    >
+    <RouterLink class="w-12 h-12 absolute xl:fixed m-5 select-none outline-none" to="/" focusable="false">
       <Logo />
     </RouterLink>
 
     <!-- Scroll to top button -->
     <button
-      title="Scroll to top"
-      fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full
-      hover-bg-hex-8883 transition duration-300 z-100 print:hidden
-      :class="scroll > 300 ? 'op30' : 'op0! pointer-events-none'"
-      @click="toTop()"
+      title="Scroll to top" fixed right-3 bottom-3 w-10 h-10 hover:op100 rounded-full hover-bg-hex-8883 transition
+      duration-300 z-100 print:hidden :class="scroll > 300 ? 'op30' : 'op0! pointer-events-none'" @click="toTop()"
     >
       <div i-ri-arrow-up-line />
     </button>
@@ -35,6 +28,19 @@ const { y: scroll } = useWindowScroll()
     <nav class="nav">
       <div class="spacer" />
       <div class="right" print:op0>
+        <a href="mailto:hi@peres.dev" target="_blank" title="Email me about work opportunities">
+          <span class="inline-flex items-center gap-2 md:btn-[#42B365]">
+
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute h-full w-full rounded-full bg-[#42B365] opacity-75" />
+              <span class="relative h-3 w-3 rounded-full bg-[#42B365]" />
+            </span>
+
+            <span class="hidden md:inline">Available for Work</span>
+
+          </span>
+        </a>
+
         <!-- Primary navigation -->
         <RouterLink to="/projects" title="Projects">
           <span class="lt-md:hidden">Projects</span>
