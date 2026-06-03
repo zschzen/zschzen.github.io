@@ -26,9 +26,21 @@ const showComments = computed(() => {
     v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8" :lang="frontmatter.lang"
     :class="[frontmatter.wrapperClass]"
   >
-    <h1 class="mb-0 slide-enter-50">
-      {{ frontmatter.display ?? frontmatter.title }}
-    </h1>
+    <div class="flex items-center gap-3 leading-none sm:gap-4">
+      <img
+        v-if="frontmatter.avatar" :src="frontmatter.avatar" :alt="frontmatter.avatarAlt ?? ''"
+        :aria-hidden="frontmatter.avatarAlt ? undefined : 'true'"
+        class="h-14! w-14! shrink-0 rounded-md object-cover sm:h-16! sm:w-16!"
+      >
+      <div class="min-w-0 flex flex-1 flex-col">
+        <h1 class="mb-0! pb-0! leading-none!">
+          {{ frontmatter.display ?? frontmatter.title }}
+        </h1>
+        <p v-if="frontmatter.subtitle" class="mb-0! mt-1! opacity-50 italic leading-tight slide-enter">
+          {{ frontmatter.subtitle }}
+        </p>
+      </div>
+    </div>
     <p v-if="frontmatter.date" class="opacity-50 !-mt-6 slide-enter-50">
       {{ formatDate(frontmatter.date, false) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
@@ -40,9 +52,6 @@ const showComments = computed(() => {
       <span v-else font-bold>
         {{ frontmatter.place }}
       </span>
-    </p>
-    <p v-if="frontmatter.subtitle" class="opacity-50 !-mt-6 italic slide-enter">
-      {{ frontmatter.subtitle }}
     </p>
     <p v-if="frontmatter.draft" class="slide-enter" bg-orange-4:10 text-orange-4 border="l-3 orange-4" px4 py2>
       This is a draft post, the content may be incomplete. Please check back later.
