@@ -30,7 +30,7 @@ const showComments = computed(() => {
       <img
         v-if="frontmatter.avatar" :src="frontmatter.avatar" :alt="frontmatter.avatarAlt ?? ''"
         :aria-hidden="frontmatter.avatarAlt ? undefined : 'true'"
-        class="h-14! w-14! shrink-0 rounded-md object-cover sm:h-16! sm:w-16!"
+        class="h-14! w-14! shrink-0 rounded-md object-cover sm:h-16! sm:w-16! hidden md:block"
       >
       <div class="min-w-0 flex flex-1 flex-col">
         <h1 class="mb-0! pb-0! leading-none!">
