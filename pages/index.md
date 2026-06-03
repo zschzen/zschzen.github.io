@@ -1,6 +1,7 @@
 ---
 title: Leandro Peres
 display: Leandro Peres 🖖
+avatar: /avatar.jpg
 subtitle: Physics · Rendering · AI · Gameplay
 description: Leandro's Portfolio
 ---
