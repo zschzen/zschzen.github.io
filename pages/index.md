@@ -28,13 +28,12 @@ From [Goiânia, Brazil](https://en.wikipedia.org/wiki/Goi%C3%A2nia), I architect
 
 <h6 class="prose normal-case!">Find me on</h6>
 
-<p flex="~ gap-3 wrap" class="mt--2!">
-  <a href="https://github.com/zschzen" target="_blank"><span op75 i-simple-icons-github /> GitHub</a>
-  <a href="https://chat.peres.dev" target="_blank"><span op75 i-simple-icons-discord /> Discord</a>
-  <a href="https://www.youtube.com/@Leandero" target="_blank"><span op75 i-simple-icons-youtube /> YouTube</a>
-  <a href="https://gamejolt.com/@SOHNE" target="_blank"><span i-simple-icons-gamejolt /> GameJolt</a>
-  <a href="https://www.shadertoy.com/user/zschzen" target="_blank">Shadertoy</a>
-</p>
+<div class="contact-links">
+  <ContactCard href="https://github.com/zschzen" icon="i-simple-icons-github" platform="GitHub" handle="/zschzen" />
+  <ContactCard href="https://www.youtube.com/@Leandero" icon="i-simple-icons-youtube" platform="YouTube" handle="@Leandero" />
+  <ContactCard href="https://gamejolt.com/@SOHNE" icon="i-simple-icons-gamejolt" platform="GameJolt" handle="@SOHNE" />
+  <ContactCard href="https://www.shadertoy.com/user/zschzen" icon="i-simple-icons-shadertoy" platform="Shadertoy" handle="/zschzen" />
+</div>
 
 ---
 

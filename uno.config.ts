@@ -9,6 +9,8 @@ export default defineConfig({
       'bg-base': 'bg-[#F2F4F8] dark:bg-[#161616]',
       'color-base': 'text-black dark:text-white',
       'border-base': 'border-[#8884]',
+      'contact-links': 'grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2',
+      'contact-card': 'flex items-center gap-3 min-w-0 bg-[#8881] border border-base! rounded-md p4 no-underline! color-base transition duration-150 ease-out hover:(bg-[#8882]) focus-visible:(bg-[#8882])',
     },
     [/^btn-(\w+|\[#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?\])$/, ([_, color]) => `px2.5 py1 transition-all duration-200 ease-out no-underline! hover:(op100 text-${color} bg-${color}/10) border border-base! rounded`],
   ],
