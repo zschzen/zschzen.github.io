@@ -67,8 +67,9 @@ const showComments = computed(() => {
     <span font-mono op50>> </span>
     <RouterLink
       :to="route.path.split('/').slice(0, -1).join('/') || '/'" class="font-mono op50 hover:op75"
-      v-text="'cd ..'"
-    />
+    >
+      cd ..
+    </RouterLink>
   </div>
 
   <div v-if="showComments" class="prose m-auto mt-8 mb-8">
