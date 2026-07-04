@@ -2,7 +2,7 @@
   "name": "peres.dev",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@11.5.1",
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "dev": "vite",
     "build:ssg": "cross-env NODE_ENV=production vite-ssg build",
