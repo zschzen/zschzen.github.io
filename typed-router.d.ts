@@ -39,6 +39,24 @@ declare module 'vue-router/auto-routes' {
     '/posts/math/basic-trigonometry': RouteRecordInfo<'/posts/math/basic-trigonometry', '/posts/math/basic-trigonometry', Record<never, never>, Record<never, never>>,
     '/posts/ola': RouteRecordInfo<'/posts/ola', '/posts/ola', Record<never, never>, Record<never, never>>,
     '/projects/': RouteRecordInfo<'/projects/', '/projects', Record<never, never>, Record<never, never>>,
+    '/projects/ae6502': RouteRecordInfo<'/projects/ae6502', '/projects/ae6502', Record<never, never>, Record<never, never>>,
+    '/projects/cameboy': RouteRecordInfo<'/projects/cameboy', '/projects/cameboy', Record<never, never>, Record<never, never>>,
+    '/projects/chip0u': RouteRecordInfo<'/projects/chip0u', '/projects/chip0u', Record<never, never>, Record<never, never>>,
+    '/projects/cix502': RouteRecordInfo<'/projects/cix502', '/projects/cix502', Record<never, never>, Record<never, never>>,
+    '/projects/colorblindness': RouteRecordInfo<'/projects/colorblindness', '/projects/colorblindness', Record<never, never>, Record<never, never>>,
+    '/projects/cozer': RouteRecordInfo<'/projects/cozer', '/projects/cozer', Record<never, never>, Record<never, never>>,
+    '/projects/dura2d': RouteRecordInfo<'/projects/dura2d', '/projects/dura2d', Record<never, never>, Record<never, never>>,
+    '/projects/free-breeze': RouteRecordInfo<'/projects/free-breeze', '/projects/free-breeze', Record<never, never>, Record<never, never>>,
+    '/projects/kwartz': RouteRecordInfo<'/projects/kwartz', '/projects/kwartz', Record<never, never>, Record<never, never>>,
+    '/projects/levegl': RouteRecordInfo<'/projects/levegl', '/projects/levegl', Record<never, never>, Record<never, never>>,
+    '/projects/robots-fight-at-night': RouteRecordInfo<'/projects/robots-fight-at-night', '/projects/robots-fight-at-night', Record<never, never>, Record<never, never>>,
+    '/projects/run-coliru': RouteRecordInfo<'/projects/run-coliru', '/projects/run-coliru', Record<never, never>, Record<never, never>>,
+    '/projects/shader-one': RouteRecordInfo<'/projects/shader-one', '/projects/shader-one', Record<never, never>, Record<never, never>>,
+    '/projects/shader-vista': RouteRecordInfo<'/projects/shader-vista', '/projects/shader-vista', Record<never, never>, Record<never, never>>,
+    '/projects/slidev-addon-cpp-runner': RouteRecordInfo<'/projects/slidev-addon-cpp-runner', '/projects/slidev-addon-cpp-runner', Record<never, never>, Record<never, never>>,
+    '/projects/the-ashes-of-jorge': RouteRecordInfo<'/projects/the-ashes-of-jorge', '/projects/the-ashes-of-jorge', Record<never, never>, Record<never, never>>,
+    '/projects/vosgi': RouteRecordInfo<'/projects/vosgi', '/projects/vosgi', Record<never, never>, Record<never, never>>,
+    '/projects/vulkano': RouteRecordInfo<'/projects/vulkano', '/projects/vulkano', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -134,6 +152,78 @@ declare module 'vue-router/auto-routes' {
     }
     'pages/projects/index.md': {
       routes: '/projects/'
+      views: never
+    }
+    'pages/projects/ae6502.md': {
+      routes: '/projects/ae6502'
+      views: never
+    }
+    'pages/projects/cameboy.md': {
+      routes: '/projects/cameboy'
+      views: never
+    }
+    'pages/projects/chip0u.md': {
+      routes: '/projects/chip0u'
+      views: never
+    }
+    'pages/projects/cix502.md': {
+      routes: '/projects/cix502'
+      views: never
+    }
+    'pages/projects/colorblindness.md': {
+      routes: '/projects/colorblindness'
+      views: never
+    }
+    'pages/projects/cozer.md': {
+      routes: '/projects/cozer'
+      views: never
+    }
+    'pages/projects/dura2d.md': {
+      routes: '/projects/dura2d'
+      views: never
+    }
+    'pages/projects/free-breeze.md': {
+      routes: '/projects/free-breeze'
+      views: never
+    }
+    'pages/projects/kwartz.md': {
+      routes: '/projects/kwartz'
+      views: never
+    }
+    'pages/projects/levegl.md': {
+      routes: '/projects/levegl'
+      views: never
+    }
+    'pages/projects/robots-fight-at-night.md': {
+      routes: '/projects/robots-fight-at-night'
+      views: never
+    }
+    'pages/projects/run-coliru.md': {
+      routes: '/projects/run-coliru'
+      views: never
+    }
+    'pages/projects/shader-one.md': {
+      routes: '/projects/shader-one'
+      views: never
+    }
+    'pages/projects/shader-vista.md': {
+      routes: '/projects/shader-vista'
+      views: never
+    }
+    'pages/projects/slidev-addon-cpp-runner.md': {
+      routes: '/projects/slidev-addon-cpp-runner'
+      views: never
+    }
+    'pages/projects/the-ashes-of-jorge.md': {
+      routes: '/projects/the-ashes-of-jorge'
+      views: never
+    }
+    'pages/projects/vosgi.md': {
+      routes: '/projects/vosgi'
+      views: never
+    }
+    'pages/projects/vulkano.md': {
+      routes: '/projects/vulkano'
       views: never
     }
   }
