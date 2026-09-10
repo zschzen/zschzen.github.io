@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="125 75 150 150">
+  <!-- Célula central -->
+  <rect x="175" y="125" width="50" height="50" 
+        fill="#4a90e2" stroke="#2c3e50" stroke-width="3"/>
+  <text x="200" y="150" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">S<tspan baseline-shift="sub" font-size="10">t</tspan></text>
+  
+  <!-- Células vizinhas com numeração -->
+  <rect x="125" y="75" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="150" y="100" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">1</tspan></text>
+  
+  <rect x="175" y="75" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="200" y="100" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">2</tspan></text>
+  
+  <rect x="225" y="75" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="250" y="100" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">3</tspan></text>
+  
+  <rect x="125" y="125" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="150" y="150" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">4</tspan></text>
+  
+  <rect x="225" y="125" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="250" y="150" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">5</tspan></text>
+  
+  <rect x="125" y="175" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="150" y="200" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">6</tspan></text>
+  
+  <rect x="175" y="175" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="200" y="200" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">7</tspan></text>
+  
+  <rect x="225" y="175" width="50" height="50" 
+        fill="#e74c3c" stroke="#2c3e50" stroke-width="2" opacity="0.7"/>
+  <text x="250" y="200" font-family="Courier, monospace" font-size="12" fill="black" text-anchor="middle">N<tspan baseline-shift="sub" font-size="10">8</tspan></text>
+</svg>

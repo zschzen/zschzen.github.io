@@ -36,8 +36,18 @@ declare module 'vue-router/auto-routes' {
     '/poems/2025/ao-edu': RouteRecordInfo<'/poems/2025/ao-edu', '/poems/2025/ao-edu', Record<never, never>, Record<never, never>>,
     '/posts/': RouteRecordInfo<'/posts/', '/posts', Record<never, never>, Record<never, never>>,
     '/posts/[slug]': RouteRecordInfo<'/posts/[slug]', '/posts/:slug', { slug: ParamValue<true> }, { slug: ParamValue<false> }>,
+    '/posts/2d-sdf': RouteRecordInfo<'/posts/2d-sdf', '/posts/2d-sdf', Record<never, never>, Record<never, never>>,
+    '/posts/basic-trigonometric': RouteRecordInfo<'/posts/basic-trigonometric', '/posts/basic-trigonometric', Record<never, never>, Record<never, never>>,
+    '/posts/chip0u-interpreter': RouteRecordInfo<'/posts/chip0u-interpreter', '/posts/chip0u-interpreter', Record<never, never>, Record<never, never>>,
+    '/posts/deferred-jobs': RouteRecordInfo<'/posts/deferred-jobs', '/posts/deferred-jobs', Record<never, never>, Record<never, never>>,
+    '/posts/dinamica-newtoniana': RouteRecordInfo<'/posts/dinamica-newtoniana', '/posts/dinamica-newtoniana', Record<never, never>, Record<never, never>>,
+    '/posts/introducao-motor-fisica': RouteRecordInfo<'/posts/introducao-motor-fisica', '/posts/introducao-motor-fisica', Record<never, never>, Record<never, never>>,
+    '/posts/jogo-da-vida': RouteRecordInfo<'/posts/jogo-da-vida', '/posts/jogo-da-vida', Record<never, never>, Record<never, never>>,
     '/posts/math/basic-trigonometry': RouteRecordInfo<'/posts/math/basic-trigonometry', '/posts/math/basic-trigonometry', Record<never, never>, Record<never, never>>,
+    '/posts/mvvm-unreal': RouteRecordInfo<'/posts/mvvm-unreal', '/posts/mvvm-unreal', Record<never, never>, Record<never, never>>,
     '/posts/ola': RouteRecordInfo<'/posts/ola', '/posts/ola', Record<never, never>, Record<never, never>>,
+    '/posts/twerking-the-lerp': RouteRecordInfo<'/posts/twerking-the-lerp', '/posts/twerking-the-lerp', Record<never, never>, Record<never, never>>,
+    '/posts/vector-math': RouteRecordInfo<'/posts/vector-math', '/posts/vector-math', Record<never, never>, Record<never, never>>,
     '/projects/': RouteRecordInfo<'/projects/', '/projects', Record<never, never>, Record<never, never>>,
     '/projects/ae6502': RouteRecordInfo<'/projects/ae6502', '/projects/ae6502', Record<never, never>, Record<never, never>>,
     '/projects/cameboy': RouteRecordInfo<'/projects/cameboy', '/projects/cameboy', Record<never, never>, Record<never, never>>,
@@ -142,12 +152,52 @@ declare module 'vue-router/auto-routes' {
       routes: '/posts/[slug]'
       views: never
     }
+    'pages/posts/2d-sdf.md': {
+      routes: '/posts/2d-sdf'
+      views: never
+    }
+    'pages/posts/basic-trigonometric.md': {
+      routes: '/posts/basic-trigonometric'
+      views: never
+    }
+    'pages/posts/chip0u-interpreter.md': {
+      routes: '/posts/chip0u-interpreter'
+      views: never
+    }
+    'pages/posts/deferred-jobs.md': {
+      routes: '/posts/deferred-jobs'
+      views: never
+    }
+    'pages/posts/dinamica-newtoniana.md': {
+      routes: '/posts/dinamica-newtoniana'
+      views: never
+    }
+    'pages/posts/introducao-motor-fisica.md': {
+      routes: '/posts/introducao-motor-fisica'
+      views: never
+    }
+    'pages/posts/jogo-da-vida.md': {
+      routes: '/posts/jogo-da-vida'
+      views: never
+    }
     'pages/posts/math/basic-trigonometry.md': {
       routes: '/posts/math/basic-trigonometry'
       views: never
     }
+    'pages/posts/mvvm-unreal.md': {
+      routes: '/posts/mvvm-unreal'
+      views: never
+    }
     'pages/posts/ola.md': {
       routes: '/posts/ola'
+      views: never
+    }
+    'pages/posts/twerking-the-lerp.md': {
+      routes: '/posts/twerking-the-lerp'
+      views: never
+    }
+    'pages/posts/vector-math.md': {
+      routes: '/posts/vector-math'
       views: never
     }
     'pages/projects/index.md': {
