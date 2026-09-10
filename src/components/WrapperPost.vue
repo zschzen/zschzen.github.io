@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { formatDate } from '~/logics/utils'
+import { isDark } from '~/stores/theme'
 import GiscusComments from './GiscusComments.vue'
 
 const { frontmatter } = defineProps({
@@ -12,8 +13,22 @@ const { frontmatter } = defineProps({
 const route = useRoute()
 const content = ref<HTMLDivElement>()
 
+// Render ```mermaid blocks client-side (vite-ssg has no DOM).
+// The fence rule in vite.config.ts emits <pre class="mermaid"> with the raw
+// source, so SSG HTML still carries the diagram text until hydration.
+async function renderMermaid() {
+  if (!content.value?.querySelector('.mermaid'))
+    return
+  const { default: mermaid } = await import('mermaid')
+  mermaid.initialize({ startOnLoad: false, theme: isDark.value ? 'dark' : 'default' })
+  await mermaid.run({ querySelector: '.mermaid', suppressErrors: true })
+}
+
 onMounted(() => {
+  renderMermaid()
 })
+
+watch(() => route.path, () => nextTick(() => renderMermaid()))
 
 const showComments = computed(() => {
   return frontmatter.disableComments !== true

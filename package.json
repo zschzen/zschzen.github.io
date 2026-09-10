@@ -18,11 +18,16 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@actis/core": "catalog:frontend",
+    "@codemirror/legacy-modes": "catalog:frontend",
+    "@codemirror/theme-one-dark": "catalog:frontend",
     "@giscus/vue": "catalog:build",
     "@unhead/vue": "catalog:frontend",
     "@unocss/reset": "catalog:frontend",
     "@vueuse/core": "catalog:frontend",
+    "codemirror": "catalog:frontend",
     "dayjs": "catalog:frontend",
+    "mermaid": "catalog:frontend",
     "nprogress": "catalog:frontend",
     "pinia": "catalog:frontend",
     "shiki": "catalog:frontend",

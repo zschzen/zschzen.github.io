@@ -15,6 +15,9 @@ trustPolicyExclude:
 
 packages: []
 
+overrides:
+  '@actis/core>twgl.js': ^7.0.0
+
 catalogs:
   build:
     '@giscus/vue': ^3.1.1
@@ -72,10 +75,15 @@ catalogs:
     tsx: ^4.23.0
     typescript: ~6.0.3
   frontend:
+    '@actis/core': ^26.9.0
+    '@codemirror/legacy-modes': ^6.5.4
+    '@codemirror/theme-one-dark': ^6.1.3
     '@unhead/vue': ^3.1.7
     '@unocss/reset': ^66.7.4
     '@vueuse/core': ^14.3.0
+    codemirror: ^6.0.2
     dayjs: ^1.11.21
+    mermaid: ^11.0.0
     nprogress: ^0.2.0
     pinia: ^3.0.4
     shiki: ^4.3.1

@@ -52,6 +52,7 @@ export default defineConfig({
       'vue',
       'vue-router',
       '@vueuse/core',
+      'mermaid',
     ],
   },
   plugins: [
@@ -77,6 +78,13 @@ export default defineConfig({
 
     Vue({
       include: [/\.vue$/, /\.md$/],
+      // MathJax SVG output uses <mjx-container> elements. Without this,
+      // Vue resolves the dashed tag as a component and renders <!---->.
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag.startsWith('mjx-'),
+        },
+      },
     }),
 
     Markdown({
@@ -150,11 +158,17 @@ export default defineConfig({
 
         md.use(GitHubAlerts)
 
-        md.use(mathjax, await createMathjaxInstance({
+        const mathjaxInstance = await createMathjaxInstance({
           output: 'svg',
           delimiters: 'dollars', // supports both $...$ and \(...\) syntax
           a11y: false, // accessibility support
-        }))
+        })
+        // Preload every dynamic font file synchronously. MathJax throws a
+        // retry error on first use of a dynamically-loaded glyph (e.g. é
+        // inside \text) when rendering synchronously during the build.
+        await mathjaxInstance?.outputStyle()
+        if (mathjaxInstance)
+          md.use(mathjax, mathjaxInstance)
 
         md.use(snippet, {
           currentPath: env => env.filePath,
@@ -170,6 +184,22 @@ export default defineConfig({
         md.use(imgLazyload)
 
         md.use(footnote)
+
+        // Render ```mermaid blocks as <pre class="mermaid"> carrying the raw
+        // diagram source. WrapperPost renders them client-side (vite-ssg has
+        // no DOM). Delegates every other language to the previous fence rule.
+        {
+          const prevFence = md.renderer.rules.fence
+          md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+            const info = tokens[idx].info.trim().split(/\s+/)[0]
+            if (info === 'mermaid') {
+              return `<pre class="mermaid">${md.utils.escapeHtml(tokens[idx].content)}</pre>\n`
+            }
+            return prevFence
+              ? prevFence(tokens, idx, options, env, self)
+              : self.renderToken(tokens, idx, options)
+          }
+        }
       },
 
       frontmatterPreprocess(frontmatter, options, id, defaults) {
