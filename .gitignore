@@ -150,3 +150,4 @@ drafts
 *.log
 src/data/sponsors-circles.json
 public/assets/fonts
+_WIREFRAME_GITIGNORE/

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { formatDate } from '~/logics/utils'
+import { formatDate, readTime } from '~/logics/utils'
 import { isDark } from '~/stores/theme'
 import GiscusComments from './GiscusComments.vue'
 
@@ -30,67 +30,51 @@ onMounted(() => {
 
 watch(() => route.path, () => nextTick(() => renderMermaid()))
 
+const segments = computed(() => route.path.split('/').filter(Boolean))
+const title = computed(() => frontmatter.display ?? frontmatter.title)
+const kind = computed(() => ({ post: 'Post', note: 'Note', poem: 'Poem' } as Record<string, string>)[String(frontmatter.type ?? '').split('+')[0]])
+
 const showComments = computed(() => {
   return frontmatter.disableComments !== true
-    && route.path.split('/').filter(Boolean).length >= 2
+    && Boolean(frontmatter.date)
+    && segments.value.length >= 2
 })
 </script>
 
 <template>
-  <div
-    v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8" :lang="frontmatter.lang"
-    :class="[frontmatter.wrapperClass]"
-  >
-    <div class="flex items-center gap-3 leading-none sm:gap-4">
-      <img
-        v-if="frontmatter.avatar" :src="frontmatter.avatar" :alt="frontmatter.avatarAlt ?? ''"
-        :aria-hidden="frontmatter.avatarAlt ? undefined : 'true'"
-        class="h-14! w-14! shrink-0 rounded-md object-cover sm:h-16! sm:w-16! hidden md:block"
-      >
-      <div class="min-w-0 flex flex-1 flex-col">
-        <h1 class="mb-0! pb-0! leading-none!">
-          {{ frontmatter.display ?? frontmatter.title }}
-        </h1>
-        <p v-if="frontmatter.subtitle" class="mb-0! mt-1! opacity-50 italic leading-tight slide-enter">
-          {{ frontmatter.subtitle }}
-        </p>
-      </div>
-    </div>
-    <p v-if="frontmatter.date" class="opacity-50 !-mt-6 slide-enter-50">
-      {{ formatDate(frontmatter.date, false) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
+  <header v-if="title" class="col flex flex-col items-start gap-3 pb-10 lg:gap-4 lg:pb-14" :lang="frontmatter.lang">
+    <RouterLink v-if="segments.length >= 2" :to="`/${segments[0]}`" class="link-arrow mt-3 py-3 lg:mt-10 lg:py-0" lang="en">
+      <span class="i-ph-arrow-left h-4! w-4!" aria-hidden="true" /> All writing
+    </RouterLink>
+    <h1 class="h-display-lg pt-3 lg:pt-8" :class="segments.length < 2 && 'lg:pt-24'">
+      {{ title }}
+    </h1>
+    <p v-if="frontmatter.subtitle" class="text-[17px] leading-[1.5] text-muted-foreground lg:text-xl">
+      {{ frontmatter.subtitle }}
     </p>
-    <p v-if="frontmatter.place" class="mt--4!">
-      <span op50>at </span>
-      <a v-if="frontmatter.placeLink" :href="frontmatter.placeLink" target="_blank">
-        {{ frontmatter.place }}
-      </a>
-      <span v-else font-bold>
-        {{ frontmatter.place }}
+    <p v-if="frontmatter.date" class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm leading-[1.4] text-muted-foreground lg:gap-x-4 lg:text-[15px]" lang="en">
+      <span v-if="kind" class="font-medium text-foreground">{{ kind }}</span>
+      <span>{{ formatDate(frontmatter.date, true) }}</span>
+      <span v-if="readTime(frontmatter.duration)">{{ readTime(frontmatter.duration) }}</span>
+      <span v-if="frontmatter.place">
+        <a v-if="frontmatter.placeLink" :href="frontmatter.placeLink" target="_blank" rel="noopener" class="link">{{ frontmatter.place }}</a>
+        <template v-else>{{ frontmatter.place }}</template>
       </span>
+      <span v-if="frontmatter.lang === 'pt'" class="rounded-pill bg-secondary px-1.5 text-[11px] leading-[1.6] text-secondary-foreground">PT</span>
     </p>
-    <p v-if="frontmatter.draft" class="slide-enter" bg-orange-4:10 text-orange-4 border="l-3 orange-4" px4 py2>
+    <p v-if="frontmatter.draft" class="mt-2 w-full rounded-lg bg-secondary px-4 py-3 text-[15px] text-secondary-foreground" lang="en">
       This is a draft post, the content may be incomplete. Please check back later.
     </p>
-  </div>
+  </header>
+
   <article
     ref="content" :lang="frontmatter.lang"
     :class="[frontmatter.tocAlwaysOn ? 'toc-always-on' : '', frontmatter.class]"
   >
     <slot />
   </article>
-  <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8 slide-enter animate-delay-500 print:hidden">
-    <span font-mono op50>> </span>
-    <RouterLink
-      :to="route.path.split('/').slice(0, -1).join('/') || '/'" class="font-mono op50 hover:op75"
-    >
-      cd ..
-    </RouterLink>
-  </div>
 
-  <div v-if="showComments" class="prose m-auto mt-8 mb-8">
-    <hr>
-    <span class="slide-enter animate-delay-500!">
-      <GiscusComments />
-    </span>
+  <div v-if="showComments" class="col mt-16 print:hidden">
+    <GiscusComments />
   </div>
 </template>

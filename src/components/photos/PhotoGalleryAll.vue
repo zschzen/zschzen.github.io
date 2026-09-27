@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import type { Photo } from '../../../photos/data'
 import raw from '../../../photos/data'
-import { gallaryView } from '../../logics'
 
 const props = defineProps<{
   limit?: number
 }>()
 
-const photos = computed(() => {
+// Matches PhotoGrid's `view` prop. Local to this component — nothing else
+// reads it, and the old `../../logics` barrel it was imported from never existed.
+const gallaryView = ref<'cover' | 'contain'>('cover')
+
+const photos = computed<Photo[]>(() => {
   if (props.limit)
     return raw.slice(0, props.limit)
   return raw

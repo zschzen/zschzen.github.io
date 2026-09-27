@@ -3,6 +3,12 @@ title: Chip0u - CHIP-8 Emulator
 display: Chip0u
 subtitle: CHIP-8 interpreter written in C++20
 description: Chip0u is a learning-oriented CHIP-8 interpreter written in C++20, with a GUI for loading and running ROMs.
+category: Emulators
+year: 2024
+role: SOHNE, open source
+tags: [C++20, CHIP-8]
+link: https://github.com/SOHNE/Chip0u
+linkLabel: Source on GitHub
 ---
 
 Chip0u is a learning-oriented dive into CHIP-8 emulation, the classic first step of emulator development. It loads assembled CHIP-8 ROMs through a GUI and aims only at simplicity, taking inspiration from the design and logic of existing interpreters.

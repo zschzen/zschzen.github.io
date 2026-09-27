@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Footer from './components/Footer.vue'
 import ImageViewer from './components/ImageViewer.vue'
-import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
@@ -9,18 +7,13 @@ import NavBar from './components/NavBar.vue'
     <Background />
   </ClientOnly>
 
-  <!-- Main navigation bar -->
-  <NavBar />
+  <SiteHeader />
 
-  <!-- Main content -->
-  <main class="px-7 py-10 of-x-hidden">
-    <!-- Router -->
+  <main id="top">
     <RouterView />
-
-    <!-- Footer -->
-    <Footer />
   </main>
 
-  <!-- Images visualizer -->
+  <SiteFooter />
+
   <ImageViewer />
 </template>

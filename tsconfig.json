@@ -3,11 +3,10 @@
     "target": "ESNext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "types": [
@@ -16,12 +15,18 @@
       "unplugin-vue-router/client"
     ],
     "strict": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
   "include": [
-    "./typed-router.d.ts"
+    "./src/**/*",
+    "./scripts/**/*",
+    "./lab/**/*",
+    "./photos/**/*",
+    "./*.ts",
+    "./*.d.ts"
   ],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules", "public"]
 }

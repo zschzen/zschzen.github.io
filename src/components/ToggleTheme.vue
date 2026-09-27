@@ -3,7 +3,7 @@ import { toggleDark } from '~/stores/theme'
 </script>
 
 <template>
-  <a class="select-none" title="Toggle Color Scheme" @click="toggleDark">
-    <div i-ri-sun-line dark:i-ri-moon-line />
-  </a>
+  <button type="button" class="btn-icon" aria-label="Toggle color scheme" title="Toggle color scheme" @click="toggleDark">
+    <span class="i-ph-sun dark:i-ph-moon h-4! w-4!" aria-hidden="true" />
+  </button>
 </template>

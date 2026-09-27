@@ -3,6 +3,9 @@ title: Cozer - 2D Game Engine
 display: Cozer
 subtitle: 2D game engine with Lua scripting and ECS support
 description: Cozer is a 2D game engine built around an entity-component-system core with Lua as the scripting layer.
+category: Engines
+role: SOHNE
+tags: [ECS, Lua]
 ---
 
 Cozer is a 2D game engine built around two ideas: an entity-component-system core, and Lua as the scripting layer on top of it. Engine code stays structural; game code stays small and scriptable.

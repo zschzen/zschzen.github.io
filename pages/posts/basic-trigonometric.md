@@ -13,6 +13,7 @@ Trigonometry is a fundamental branch of mathematics that is **crucial** for many
 In this post, we will take a look at the basics of trigonometry, including the definitions of sine and cosine, and how to use them to **place and move objects** All using just $\sin$ and $\cos$!
 
 At the end, you will be able to:
+
 - Understand the **basics** of trigonometry.
 - **Place and move objects** using sine and cosine.
 
@@ -73,15 +74,13 @@ We've discovered a relationship between the angle $\theta$ and the coordinates o
 
 The coordinates of the point $P$ on the unit circle are equal to the cosine and sine of the angle $\theta$, respectively.
 
-$$  P = (x, y) = (\cos(\theta), \sin(\theta)) $$
-
+$$ P = (x, y) = (\cos(\theta), \sin(\theta)) $$
 
 <iframe src="/assets/vectorjs/index.html?content=basic-unit-circle" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Basic Unit Circle" width="100%" height="450"></iframe>
 
 <div class="text-center mt-2">
   <small class="text-muted">A unit circle with a radius of 1. Addapted from <a href="https://vectorjs.org/examples/unit-circle/">Vector.js (Kurt Bruns)</a>.</small>
 </div>
-
 
 The **interactive unit circle** above also plots the result of **$\sin$** and **$\cos$** for a given angle **$\theta$**.
 This is a great way to visualize the relationship, but also to understand the behavior of **$\sin$** and **$\cos$**. They are **periodic functions**, which means that they repeat themselves after a certain interval. In this case, the interval is **$2\pi$** (**$\tau$**), with a range of **$[-1, 1]$**.
@@ -90,16 +89,16 @@ This is a great way to visualize the relationship, but also to understand the be
 
 There's some ways to measure angles. The most common ones are degrees, Radians and turns. The following table shows the conversion between these units:
 
-| Degrees | Radians | Turns |
-|:-------:|:--------:|:-----:|
-| $0^{\circ}$       | 0        | 0     |
-| $30^{\circ}$ | $\frac{\pi}{6}$ | $\frac{1}{12}$ |
-| $45^{\circ}$ | $\frac{\pi}{4}$ | $\frac{1}{8}$ |
-| $60^{\circ}$ | $\frac{\pi}{3}$ | $\frac{1}{6}$ |
-| $90^{\circ}$ | $\frac{\pi}{2}$ | $\frac{1}{4}$ |
-| $180^{\circ}$ | $\pi$ | $\frac{1}{2}$ |
-| $270^{\circ}$ | $\frac{3\pi}{2}$ | $\frac{3}{4}$ |
-| $360^{\circ}$ | $2\pi$ | 1 |
+|    Degrees    |     Radians      |     Turns      |
+| :-----------: | :--------------: | :------------: |
+|  $0^{\circ}$  |        0         |       0        |
+| $30^{\circ}$  | $\frac{\pi}{6}$  | $\frac{1}{12}$ |
+| $45^{\circ}$  | $\frac{\pi}{4}$  | $\frac{1}{8}$  |
+| $60^{\circ}$  | $\frac{\pi}{3}$  | $\frac{1}{6}$  |
+| $90^{\circ}$  | $\frac{\pi}{2}$  | $\frac{1}{4}$  |
+| $180^{\circ}$ |      $\pi$       | $\frac{1}{2}$  |
+| $270^{\circ}$ | $\frac{3\pi}{2}$ | $\frac{3}{4}$  |
+| $360^{\circ}$ |      $2\pi$      |       1        |
 
 > [!NOTE]
 > The symbol $\tau$ (Tau) are commonly used to represent $2\pi$.
@@ -107,7 +106,7 @@ There's some ways to measure angles. The most common ones are degrees, Radians a
 > [!TIP]
 > There are more ways to measure angles, such as gradians, mils and binary degrees. You can check the [Wikipedia page](https://en.wikipedia.org/wiki/Angle#Units) for more information.
 
-#### Radians vs Degrees
+### Radians vs Degrees
 
 **Degrees** is easy to understand, since it's intuitive for us, humans. However, if we compute using degrees, first the whole circumference is calculated, and then it's multiplied by the fraction of the angle. This is not efficient, since we are calculating the whole circumference when we only need a fraction of it. This is why **radians** are used in programming.
 
@@ -131,16 +130,15 @@ $$
 \end{align}
 $$
 
-
 ### Convertions
 
 To convert between the representations, we can check at the below table:
 
-|     | Degrees | Radians | Turns |
-|:---:|:-------:|:-------:|:-----:|
-| Degrees | - | $\theta_{rad} = \theta_{deg} \times \frac{\pi}{180}$ | $\theta_{turn} = \theta_{deg} \times \frac{1}{360}$ |
-| Radians | $\theta_{deg} = \theta_{rad} \times \frac{180}{\pi}$ | - | $\theta_{turn} = \theta_{rad} \times \frac{1}{2\pi}$ |
-| Turns | $\theta_{deg} = \theta_{turn} \times 360$ | $\theta_{rad} = \theta_{turn} \times 2\pi$ | - |
+|         |                       Degrees                        |                       Radians                        |                        Turns                         |
+| :-----: | :--------------------------------------------------: | :--------------------------------------------------: | :--------------------------------------------------: |
+| Degrees |                          -                           | $\theta_{rad} = \theta_{deg} \times \frac{\pi}{180}$ | $\theta_{turn} = \theta_{deg} \times \frac{1}{360}$  |
+| Radians | $\theta_{deg} = \theta_{rad} \times \frac{180}{\pi}$ |                          -                           | $\theta_{turn} = \theta_{rad} \times \frac{1}{2\pi}$ |
+|  Turns  |      $\theta_{deg} = \theta_{turn} \times 360$       |      $\theta_{rad} = \theta_{turn} \times 2\pi$      |                          -                           |
 
 ### When to use each one?
 
@@ -157,7 +155,7 @@ float sine = Mathf.Sin(radians);
 ```
 
 In `Unreal Engine`:
-    
+
 ```cpp
 float angle = 90.0F;
 FMath::Cos(FMath::DegreesToRadians(angle));
@@ -240,7 +238,7 @@ private void Update()
         var pointAngle = baseAngle + i * Mathf.PI * 2 / numPoints;
         var x = Mathf.Cos(pointAngle) * radius;
         var y = Mathf.Sin(pointAngle) * radius;
-        
+
         point.transform.localPosition = new Vector3(x, y, 0F);
     }
 }
@@ -260,7 +258,7 @@ void Update()
     angle += speed * Time.deltaTime;
     float y = amplitude * Mathf.Sin(angle);
     transform.position = new Vector3(0f, y);
-}   
+}
 ```
 
 ### Pendulum motion

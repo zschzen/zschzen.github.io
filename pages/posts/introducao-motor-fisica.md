@@ -24,23 +24,23 @@ Lembro, ainda, que este não é um trabalho formal ou acadêmico. Longe disso. �
 > [!NOTE]
 > For those who don't speak Portuguese, I'm planning to translate this series to English in the future. I just don't see it as a priority right now, as there are already a lot of resources in English about game physics. But if you're interested, let me know and I'll prioritize the translation.
 
-# Pensamentos Introdutórios
+## Pensamentos Introdutórios
 
 Antes de mergulharmos nos detalhes, vamos começar com algumas reflexões introdutórias. Vamos definir o que é um motor de física, discutir sua importância e porquê você deveria se importar com isso.
 
-#### O que é um Motor de Física?
+### O que é um Motor de Física?
 
 Um motor de física é um software que simula o comportamento de objetos no mundo virtual. Ele é responsável por replicar fenômenos físicos, como gravidade, fricção, colisão e resposta a forças externas.
 
 Os motores de física são usados em jogos, simulações e aplicativos interativos para criar uma experiência mais realista e imersiva, como já mencionado.
 
-##### E um motor de física customizado?
+#### E um motor de física customizado?
 
 Há diversos motores de física disponíveis no mercado, como [Box2D], [Bullet], [Havok], [PhysX], [Ode], [Newton], [Chipmunk], [Matter.js], [Cannon.js], [P2.js], ... e a lista segue. Porém, é perfeitamente possível criar um motor de física customizado, seja por necessidade, curiosidade ou diversão.
 
 Uma das principais necessidades de um motor de física customizado é a sua flexibilidade e adaptabilidade ao motor de jogo em questão.
 
-#### Por que os Motores de Física customizados são importantes?
+### Por que os Motores de Física customizados são importantes?
 
 Os motores de física customizados são importantes por uma série de razões. Aqui estão algumas delas:
 
@@ -50,7 +50,7 @@ Os motores de física customizados são importantes por uma série de razões. A
 
 - **Inovação**: Motores de física customizados podem permitir a implementação de mecânicas de jogo inovadoras que não seriam possíveis com motores de física padrão.
 
-#### Quando não usar um Motor de Física customizado?
+### Quando não usar um Motor de Física customizado?
 
 Apesar de os motores de física serem poderosos, eles não são uma solução mágica e nem tão abrangentes quanto se poderia esperar. Eles têm suas limitações e desafios, e é importante entender esses aspectos para usá-los de forma eficaz. Por exemplo, em um jogo que necessita de um comportamento físico muito específico, ou em casos similares, a codificação direta pode ser mais eficiente e prática, poupando recursos humanos e computacionais.
 
@@ -60,11 +60,12 @@ Existem abordagens alternativas, como a codificação direta, também conhecida 
 
 Imagine criar uma ferramenta tão flexível que pretende abranger a maior quantidade de casos possíveis. Ela será, portanto, mais custosa computacionalmente do que uma ferramenta especializada, que atende a um caso específico.
 
-# Terminologias Importantes
+## Terminologias Importantes
 
 Para não se sentirem perdidos, vamos começar com algumas definições de suma importância. As utilizarei ao longo da série, então é importante que vocês as compreendam bem.
 
-#### **Corpo Rígido (Rigid-Body)**  
+### **Corpo Rígido (Rigid-Body)**
+
 Um corpo rígido é um objeto idealizado que não se deforma ou se dobra. Em jogos e simulações, são usados pelo motor de física para representar objetos que se movem e colidem uns com os outros.
 
 Um típico corpo rígido é definido por sua posição, orientação, velocidade linear, velocidade angular, massa, inércia e forma.
@@ -72,7 +73,8 @@ Um típico corpo rígido é definido por sua posição, orientação, velocidade
 > [!NOTE]
 > Em futuros posts, falarei mais sobre estes campos e alguns outros que não estão listados aqui, como inverso da massa, inverso da inércia, forças, torques, e assim por diante.
 
-#### **Colisor (Collider)**  
+### **Colisor (Collider)**
+
 Um colisor é uma forma geométrica atribuída a um corpo rígido que define a área dentro da qual ocorre a detecção de colisão. Pode ser uma caixa, esfera, cápsula ou malha personalizada.
 
 Escolhemos o colisor com base na forma do corpo rígido que ele representa, mas aplicamos formas geométricas mais simples para simplificar a detecção de colisão, uma vez que suas regras matemáticas são mais fáceis de lidar e computacionalmente mais eficientes.
@@ -80,18 +82,21 @@ Escolhemos o colisor com base na forma do corpo rígido que ele representa, mas 
 > [!TIP]
 > Collider é uma terminologia comum em motores de física como Unity e Unreal Engine. Em outros motores, como [Box2D], o termo é _**Fixture**_.
 
-#### **Colisão (Collision)**  
+### **Colisão (Collision)**
+
 Uma colisão ocorre quando dois colisores se sobrepõem ou estão em contato em ao menos um ponto. A detecção de colisão é uma das tarefas mais importantes de um motor de física, pois é responsável por detectar quando dois corpos rígidos estão dde fato fisicamente interagindo.
 
 A problemática da colisão gira em torno na definição do _**quando**_ e _**onde**_ a colisão ocorre entre dois colisores.
 
-#### **Contato (Contact)**  
+### **Contato (Contact)**
+
 Pontos de contato, ou apenas contatos, que foram detectados durante a colisão. Ele fornece informações detalhadas sobre como os corpos rígidos interagem, bem como pontos de contato, normais, profundidades de penetração e outros detalhes.
 
-#### **Contact Manifold**  
+### **Contact Manifold**
+
 O contact manifold é um conjunto de pontos de contato que foram detectados durante a colisão. Ele fornece informações detalhadas sobre como os corpos rígidos interagem.
 
-# Etapas da detecção de colisão
+## Etapas da detecção de colisão
 
 Agora que entendemos as terminologias básicas, vamos dar uma olhada nas etapas que um motor de física percorre para simular o comportamento desejado.
 
@@ -108,33 +113,36 @@ graph LR
 
 Mais detalhadamente, as etapas são:
 
-1. ##### **Broadphase**  
-    Esta é a primeira etapa da detecção de colisão. Ela é responsável por reduzir o número de pares de colisão que precisam ser verificados. Isso pode ser feito dividindo o espaço em regiões menores e verificando quais corpos rígidos estão em cada região. Se dois corpos rígidos não estão na mesma região, eles não podem estar colidindo, então não precisamos verificar a colisão entre eles.
+1. ### **Broadphase**
 
-    Em contraposição, imagine que temos 1000 corpos rígidos em cena. Se verificarmos a colisão entre todos os pares de corpos rígidos, teríamos que verificar 1000 * 1000 = 1.000.000 pares de colisão - o que é muito ineficiente e custoso para cada quadro do jogo. A broadphase nos ajuda a reduzir esse número para algo mais gerenciável, transformando um algorítimo de execução O(n^2) em algo mais próximo de O(n log n).
+   Esta é a primeira etapa da detecção de colisão. Ela é responsável por reduzir o número de pares de colisão que precisam ser verificados. Isso pode ser feito dividindo o espaço em regiões menores e verificando quais corpos rígidos estão em cada região. Se dois corpos rígidos não estão na mesma região, eles não podem estar colidindo, então não precisamos verificar a colisão entre eles.
 
-    Nesta fase, é perfeitamente aceitável que a broadphase nos dê falsos positivos, ou seja, pares de corpos rígidos que não estão colidindo, mas que a broadphase acha que estão. Isso é aceitável porque a próxima etapa, a narrowphase, verificará se esses pares estão de fato colidindo.
+   Em contraposição, imagine que temos 1000 corpos rígidos em cena. Se verificarmos a colisão entre todos os pares de corpos rígidos, teríamos que verificar 1000 \* 1000 = 1.000.000 pares de colisão - o que é muito ineficiente e custoso para cada quadro do jogo. A broadphase nos ajuda a reduzir esse número para algo mais gerenciável, transformando um algorítimo de execução O(n^2) em algo mais próximo de O(n log n).
 
-2. ##### **Detecção de Colisão (Narrowphase)**  
-    A narrowphase é a segunda etapa da detecção de colisão. Ela é responsável por verificar se os pares de corpos rígidos que a broadphase nos deu são de fato colidindo. Ela nos dá uma resposta definitiva sobre se dois corpos rígidos estão colidindo ou não.
+   Nesta fase, é perfeitamente aceitável que a broadphase nos dê falsos positivos, ou seja, pares de corpos rígidos que não estão colidindo, mas que a broadphase acha que estão. Isso é aceitável porque a próxima etapa, a narrowphase, verificará se esses pares estão de fato colidindo.
 
-    A narrowphase é onde a forma dos colisores é levada em consideração. Ela verifica se as formas dos colisores se sobrepõem ou estão em contato, e se estão, ela nos dá informações detalhadas sobre a colisão, como pontos de contato, normais, profundidades de penetração e outros detalhes.
+2. ### **Detecção de Colisão (Narrowphase)**
 
-3. ##### **Resolução de Colisão (Resolution)**  
-    A resolução de colisão é a etapa onde os corpos rígidos são movidos para fora da sobreposição e os contatos são resolvidos. Isso pode envolver a aplicação de forças e torques para mover os corpos rígidos para fora da sobreposição, ou a aplicação de impulsos para separar os corpos rígidos.
+   A narrowphase é a segunda etapa da detecção de colisão. Ela é responsável por verificar se os pares de corpos rígidos que a broadphase nos deu são de fato colidindo. Ela nos dá uma resposta definitiva sobre se dois corpos rígidos estão colidindo ou não.
 
-    A resolução de colisão é uma etapa muito importante, pois é responsável por garantir que os corpos rígidos não fiquem sobrepostos e que as forças e torques sejam aplicados corretamente para mover os corpos rígidos para fora da sobreposição.
+   A narrowphase é onde a forma dos colisores é levada em consideração. Ela verifica se as formas dos colisores se sobrepõem ou estão em contato, e se estão, ela nos dá informações detalhadas sobre a colisão, como pontos de contato, normais, profundidades de penetração e outros detalhes.
+
+3. ### **Resolução de Colisão (Resolution)**
+
+   A resolução de colisão é a etapa onde os corpos rígidos são movidos para fora da sobreposição e os contatos são resolvidos. Isso pode envolver a aplicação de forças e torques para mover os corpos rígidos para fora da sobreposição, ou a aplicação de impulsos para separar os corpos rígidos.
+
+   A resolução de colisão é uma etapa muito importante, pois é responsável por garantir que os corpos rígidos não fiquem sobrepostos e que as forças e torques sejam aplicados corretamente para mover os corpos rígidos para fora da sobreposição.
 
 > [!NOTE]
 > Há motores que dividem em ainda mais etapas, como a detecção de colisão em si, a resolução de colisão, a integração de velocidade e a integração de posição. Mas para fins didáticos, vamos nos ater a estas três etapas principais.
 
-# Conclusão
+## Conclusão
 
 Após estes entendimentos básicos, estamos prontos para mergulhar mais fundo no mundo dos motores de física. Nos próximos posts, abordarei tópicos como detecção de colisão, resolução de colisão, integração de velocidade e posição, e muito mais.
 
 Por hora, espero que vocies já consigam definir alguns conceitos e delimitar as etapas de um motor de física.
 
-# Expandindo o Conhecimento
+## Expandindo o Conhecimento
 
 Agora que entendemos as terminologias básicas e as etapas de um motor de física, é hora de expandir o conhecimento. Aqui estão algumas referências que recomendo fortemente para quem deseja aprofundar o conhecimento em motores de física:
 

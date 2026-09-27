@@ -3,6 +3,5 @@ title: Poems | Leandro Peres
 display: ''
 ---
 
-<SubNav />
-
-<ListRoute />
+<!-- @layout-full-width -->
+<ListPosts :under="$route.path" />

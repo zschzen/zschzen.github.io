@@ -3,11 +3,16 @@ title: Robots Fight At Night - Cyberpunk Team Shooter
 display: Robots Fight At Night
 subtitle: Cyberpunk isometric 3D team-based action shooter
 description: Robots Fight At Night is a cyberpunk isometric 3D team-based action shooter with low-poly, retro-arcade flair, made with Unity.
+category: Games
+year: 2020
+role: SOHNE, project manager
+tags: [Unity, 3D]
+link: https://gamejolt.com/games/Robots-Fight/506349
+linkLabel: Play on Game Jolt
+cover: /projects/robots-fight-at-night.webp
 ---
 
 Robots Fight At Night is a cyberpunk, isometric, team-based action shooter: low-poly 3D robots trading fire through a dystopian night, with a retro-arcade flair.
-
-![Robots Fight At Night](/projects/robots-fight-at-night.webp)
 
 Accessibility made it into the credits: the game uses [Colorblindness](/projects/colorblindness), a SOHNE package for simulating color-blind palettes, to keep the neon readable for everyone.
 

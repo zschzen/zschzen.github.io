@@ -3,6 +3,13 @@ title: Vulkano - Vulkan Rendering Library
 display: Vulkano
 subtitle: A simple Vulkan rendering library
 description: Vulkano is a simple Vulkan rendering library written in C++.
+category: Engines
+year: 2024–2025
+role: SOHNE, open source
+tags: [C++, Vulkan]
+link: https://github.com/SOHNE/Vulkano
+linkLabel: Source on GitHub
+icon: vulkano
 ---
 
 Vulkano is a simple Vulkan rendering library written in C++, developed under [SOHNE](https://github.com/SOHNE). It is the Vulkan sibling of [LeveGL](/projects/levegl): the same appetite for small, readable rendering code, pointed at an explicit, modern API.

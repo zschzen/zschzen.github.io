@@ -3,18 +3,36 @@ title: LeveGL - Minimal C99 Rendering Library
 display: LeveGL
 subtitle: A simple rendering library for a simpler world
 description: LeveGL is a lightweight rendering library written in C99, inspired by the simplicity of Raylib and the robustness of liblava.
+category: Engines
+year: 2024–Present
+role: SOHNE, open source
+tags: [C99, OpenGL ES]
+link: https://github.com/SOHNE/LeveGL
+linkLabel: Source on GitHub
+icon: levegl
+facts:
+  Started: November 2024
+  Language: C99
+  Graphics: OpenGL, OpenGL ES
+  Build: CMake, CPM.cmake
+  Platforms: Linux, macOS, Windows, Web, PSP
+media:
+  - lab: '2025-07-03'
+    caption: Running on the PSP with Dura2D
 ---
 
 LeveGL is a lightweight rendering library written in C99, developed under [SOHNE](https://github.com/SOHNE). It draws inspiration from the simplicity of [Raylib](https://github.com/raysan5/raylib) and the robustness of [liblava](https://github.com/liblava/liblava): a handful of calls gets you a window, a frame loop, and shapes on screen.
 
 It started as a study project, and the API is still unstable and moving. That is part of the point: the codebase stays small and clear enough to learn from.
 
-![Basic shapes rendered with LeveGL](https://github.com/user-attachments/assets/9c34d665-8b42-44ad-9cf4-acc414f27277)
-
 ## Features
 
 - **Raylib-style API**: `InitWindow`, `SetTargetFPS`, draw, repeat. No boilerplate before the first triangle.
 - **Immediate-mode drawing**: shapes and primitives are drawn directly inside the frame loop.
+- **Batched 2D shapes**: rectangles, circles and lines share batched draw calls behind an extensible API.
+- **One API, two backends**: a unified layer over desktop OpenGL (through the GLAD loader) and OpenGL ES.
+- **Swappable window backends**: the windowing layer is chosen at compile time, without touching user code.
+- **Fetch and build**: CMake with CPM.cmake pulls every dependency, so a clone builds as is.
 - **Small, readable core**: written to be read, not just linked against.
 
 ## Tech

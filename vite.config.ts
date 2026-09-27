@@ -67,7 +67,7 @@ export default defineConfig({
         if (!path)
           return
 
-        if (!path.includes('projects/index.md') && path.endsWith('.md')) {
+        if (path.endsWith('.md')) {
           const { data } = matter(fs.readFileSync(path, 'utf-8'))
           route.addToMeta({
             frontmatter: data,
@@ -78,8 +78,6 @@ export default defineConfig({
 
     Vue({
       include: [/\.vue$/, /\.md$/],
-      // MathJax SVG output uses <mjx-container> elements. Without this,
-      // Vue resolves the dashed tag as a component and renders <!---->.
       template: {
         compilerOptions: {
           isCustomElement: tag => tag.startsWith('mjx-'),
@@ -88,21 +86,31 @@ export default defineConfig({
     }),
 
     Markdown({
-      wrapperComponent: id => id.includes('/lab/')
-        ? 'WrapperLab'
-        : 'WrapperPost',
-      wrapperClasses: (_id, code) => code.includes('@layout-full-width')
-        ? ''
-        : 'prose m-auto slide-enter-content',
+      wrapperComponent: (id) => {
+        if (id.includes('/lab/'))
+          return 'WrapperLab'
+        if (id.includes('/pages/projects/') && !id.endsWith('index.md'))
+          return 'WrapperProject'
+        return 'WrapperPost'
+      },
+      // Lab notes sit inside the lab dialog, which does its own layout.
+      wrapperClasses: (id, code) => id.includes('/lab/')
+        ? 'prose'
+        : code.includes('@layout-full-width')
+          ? ''
+          : 'prose col slide-enter-content',
       headEnabled: true,
-      exportFrontmatter: false,
+      // lab/data.ts reads title/category/link from these named exports
+      exportFrontmatter: true,
       exposeFrontmatter: false,
       exposeExcerpt: false,
       markdownItOptions: {
         quotes: '""\'\'',
       },
       async markdownItSetup(md) {
-        md.use(await MarkdownItShiki({
+        const use = md.use.bind(md) as unknown as (...plugins: unknown[]) => unknown
+
+        use(await MarkdownItShiki({
           themes: {
             dark: 'vitesse-dark',
             light: 'vitesse-light',
@@ -122,7 +130,7 @@ export default defineConfig({
           ],
         }))
 
-        md.use(anchor, {
+        use(anchor, {
           slugify,
           permalink: anchor.permalink.linkInsideHeader({
             symbol: '#',
@@ -130,7 +138,7 @@ export default defineConfig({
           }),
         })
 
-        md.use(LinkAttributes, {
+        use(LinkAttributes, {
           matcher: (link: string): boolean => /^(?:https?:\/\/|\/\/|mailto:)/i.test(link),
           attrs: {
             target: '_blank',
@@ -138,13 +146,13 @@ export default defineConfig({
           },
         })
 
-        md.use(TOC, {
+        use(TOC, {
           includeLevel: [1, 2, 3, 4],
           slugify,
           containerHeaderHtml: '<div class="table-of-contents-anchor"><div class="i-ri-menu-2-fill" /></div>',
         })
 
-        md.use(MarkdownItMagicLink, {
+        use(MarkdownItMagicLink, {
           linksMap: {
             SOHNE: { link: 'https://sohne.github.io', imageUrl: '/sohne-logo.svg' },
             Dura2D: { link: 'https://github.com/SOHNE/Dura2D', imageUrl: 'https://github.com/SOHNE/Dura2D/raw/main/docs/assets/logo.svg' },
@@ -156,38 +164,32 @@ export default defineConfig({
           ],
         })
 
-        md.use(GitHubAlerts)
+        use(GitHubAlerts)
 
         const mathjaxInstance = await createMathjaxInstance({
           output: 'svg',
           delimiters: 'dollars', // supports both $...$ and \(...\) syntax
           a11y: false, // accessibility support
         })
-        // Preload every dynamic font file synchronously. MathJax throws a
-        // retry error on first use of a dynamically-loaded glyph (e.g. é
-        // inside \text) when rendering synchronously during the build.
         await mathjaxInstance?.outputStyle()
         if (mathjaxInstance)
-          md.use(mathjax, mathjaxInstance)
+          use(mathjax, mathjaxInstance)
 
-        md.use(snippet, {
-          currentPath: env => env.filePath,
-          resolvePath: (path, cwd) => {
+        use(snippet, {
+          currentPath: (env: { filePath: string }) => env.filePath,
+          resolvePath: (path: string, cwd: string) => {
             if (path.startsWith('@src')) {
               return path.replace('@src', './')
             }
 
-            return resolve(cwd as string, path)
+            return resolve(cwd, path)
           },
         })
 
-        md.use(imgLazyload)
+        use(imgLazyload)
 
-        md.use(footnote)
+        use(footnote)
 
-        // Render ```mermaid blocks as <pre class="mermaid"> carrying the raw
-        // diagram source. WrapperPost renders them client-side (vite-ssg has
-        // no DOM). Delegates every other language to the previous fence rule.
         {
           const prevFence = md.renderer.rules.fence
           md.renderer.rules.fence = (tokens, idx, options, env, self) => {
@@ -204,7 +206,7 @@ export default defineConfig({
 
       frontmatterPreprocess(frontmatter, options, id, defaults) {
         (() => {
-          if (!id.endsWith('.md'))
+          if (!id.endsWith('.md') || id.includes('/lab/'))
             return
           const route = basename(id, '.md')
           if (route === 'index' || frontmatter.image || !frontmatter.title)
@@ -219,8 +221,10 @@ export default defineConfig({
           }
           frontmatter.image = `https://peres.dev/${path}`
         })()
-        const head = defaults(frontmatter, options)
-        return { head, frontmatter }
+        if (id.includes('/lab/'))
+          return { head: {}, frontmatter }
+        const { title = 'Leandro Peres', meta } = defaults(frontmatter, options) ?? {}
+        return { head: { title, meta }, frontmatter }
       },
     }),
 

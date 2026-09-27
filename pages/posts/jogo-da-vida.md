@@ -13,7 +13,6 @@ type: post
 
 <GlslShaders />
 
-
 ## O que ser?
 
 Imagine um universo onde a matemática dança com a simplicidade, onde o compasso de pequenos pontos vivos segue o ritmo efêmero do nascer e do morrer, em um balé sincronizado a cada geração. Não, não se trata de um poema sobre o cosmos, embora até pudesse ser. Falo aqui do [Jogo da Vida de Conway], uma das mais fascinantes interseções entre a lógica matemática e a beleza emergente da vida.
@@ -21,7 +20,6 @@ Imagine um universo onde a matemática dança com a simplicidade, onde o compass
 Em 1970, enquanto o mundo vivia suas revoluções culturais e tecnológicas, um matemático chamado [John Conway] (1937 - 2020) brincava com papel quadriculado em sua mesa. Dessa brincadeira aparentemente simples, nasceu algo extraordinário: um universo [Turing-completo] governado por apenas quatro regras matemáticas, tão simples que qualquer um poderia entendê-las, mas tão profundas que até hoje intrigam cientistas e entusiastas.
 
 É bem provável que você já tenha se deparado com alguma forma de representação deste jogo de zero jogadores, o que significa que sua evolução é determinada por seu estado inicial, não necessitando de contribuição de jogadores humanos. De qualquer forma, contemple-o abaixo, implementado através de um fragment shader:
-
 
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
@@ -33,12 +31,11 @@ Em 1970, enquanto o mundo vivia suas revoluções culturais e tecnológicas, um 
   <small class="text-muted">Clique e arraste para criar células e observe seus padrões evolutivos.</small>
 </div>
 
-
 ## Regras
 
 Neste sistema, cada célula opera como uma unidade individual dentro de um ambiente dinâmico, onde seu estado ($S$) no tempo $t+1$ é determinado por uma função $f$ que leva em conta os estados de seus vizinhos no tempo $t$.
 
-$$ S_{t+1} = f(N_1, N_2, ..., N_8) $$
+$$ S\_{t+1} = f(N_1, N_2, ..., N_8) $$
 
 ![Visualização Gráfico Velocidade Constante](/assets/img/posts/game-of-life/visualization.svg)
 _Célula central $S_t$ e suas 8 vizinhas $N_1$–$N_8$ em uma grade 3×3._
@@ -61,12 +58,10 @@ As regras desta dança cósmica são simples:
 
 Na linguagem **C + C++**, a implementação seria de alguma forma parecida com o pseudo-código abaixo:
 
-
 <iframe src="https://coliru.peres.dev/?gist=a360023e30b7cf4b190106472e829407" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Embedded content" width="100%" height="600px"></iframe>
 
-
 > [!NOTE]
-> O **double buffer**, neste caso, é ***fundamental*** devido à natureza da atualização simultânea das células. Se modificássemos o **grid diretamente**, *as células processadas primeiro influenciariam indevidamente as seguintes*. Para evitar isso, utilizamos dois **arrays**: um para o **estado atual** e outro para a **próxima geração** ($t+1$). Assim, todas as células são calculadas com base em um único **estado imutável**, *eliminando interferências entre os cálculos*. No final, os **buffers são trocados**.
+> O **double buffer**, neste caso, é **_fundamental_** devido à natureza da atualização simultânea das células. Se modificássemos o **grid diretamente**, _as células processadas primeiro influenciariam indevidamente as seguintes_. Para evitar isso, utilizamos dois **arrays**: um para o **estado atual** e outro para a **próxima geração** ($t+1$). Assim, todas as células são calculadas com base em um único **estado imutável**, _eliminando interferências entre os cálculos_. No final, os **buffers são trocados**.
 
 ---
 
@@ -74,5 +69,4 @@ Na linguagem **C + C++**, a implementação seria de alguma forma parecida com o
 [Jogo da Vida de Conway]: https://pt.wikipedia.org/wiki/Jogo_da_vida
 [John Conway]: https://pt.wikipedia.org/wiki/John_Conway
 [Turing-completo]: https://pt.wikipedia.org/wiki/Turing_completude
-
 [//]: (EOF)

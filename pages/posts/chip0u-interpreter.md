@@ -130,9 +130,9 @@ The main execution loop of the CHIP-8 is very simple, and can be divided into 3 
    - Read the instruction from the memory, and increment the program counter
 2. Decode the instruction, and execute it
    - The instruction is a `16-bit` value, which is divided into several parts
-        - The first `4 bits` are the opcode, which is used to identify the instruction
-        - The next `12 bits` are the 'arguments', which are used to pass the data to the instruction
-        - `0x1234` is a common way to represent the instruction, where `0x1` is the opcode, and `0x234` is the arguments
+     - The first `4 bits` are the opcode, which is used to identify the instruction
+     - The next `12 bits` are the 'arguments', which are used to pass the data to the instruction
+     - `0x1234` is a common way to represent the instruction, where `0x1` is the opcode, and `0x234` is the arguments
 3. Execute the instruction, and update the timers
 
 ### Some imporant instructions
@@ -165,7 +165,7 @@ Libraries used:
 - [ImGui](https://www.github.com/ocornut/imgui)
 - [rlImGui](https://github.com/raylib-extras/rlImGui/)
 
-#### What about the sound?
+### What about the sound?
 
 Well, the CHIP8 has a very simple sound model, but i have not implemented it yet...
 
@@ -205,21 +205,20 @@ See you in the next post!
 
 Live long and prosper! `\\//_`
 
-
 ## Footnotes
 
 [^chip8]: [CHIP-8](https://en.wikipedia.org/wiki/CHIP-8)
+
 [^extensions]: [CHIP-8 extensions](https://chip-8.github.io/extensions/)
 
-[//]: # (Links)
+[//]: # 'Links'
 [CHIP-8]: https://en.wikipedia.org/wiki/CHIP-8
 [interpreted]: https://en.wikipedia.org/wiki/Interpreter_(computing)
 [EZ-Writer]: https://beyondloom.com/tools/ezwriter.html
-[CHIP-8 extensions]: https://chip-8.github.io/extensions/
 [Reference]: https://www.cs.columbia.edu/~sedwards/classes/2016/4840-spring/designs/Chip8.pdf
 [Guide to making a CHIP-8 emulator]: https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
 [Awesome CHIP-8]: https://github.com/tobiasvl/awesome-chip-8
 [SOHNE]: https://github.com/SOHNE
 [CHIP0U - CHIP8 Interpreter]: https://github.com/SOHNE/Chip0u
 [CHIP0U - Live Demo]: https://chip0u.glitch.me/
-[//]: # (EOF)
+[//]: # 'EOF'

@@ -3,11 +3,16 @@ title: slidev-addon-cpp-runner - Run C and C++ in Slides
 display: slidev-addon-cpp-runner
 subtitle: Run C and C++ code inside Slidev presentations
 description: A Slidev addon that compiles and runs C and C++ code blocks live inside presentations, powered by Coliru's compilation API.
+category: Tools
+year: 2025
+role: SOHNE, open source
+tags: [TypeScript, Slidev]
+link: https://github.com/SOHNE/slidev-addon-cpp-runner
+linkLabel: Source on GitHub
+cover: https://github.com/SOHNE/slidev-addon-cpp-runner/raw/main/.github/assets/screenshot-light.png
 ---
 
 A C and C++ execution addon for [Slidev](https://sli.dev)'s Monaco Runner, powered by [Coliru](https://coliru.stacked-crooked.com/)'s compilation API. Mark a code block with `{monaco-run}` and the slide compiles and runs it live, in front of the audience.
-
-![slidev-addon-cpp-runner running C++ inside a slide](https://github.com/SOHNE/slidev-addon-cpp-runner/raw/main/.github/assets/screenshot-light.png)
 
 ## Features
 

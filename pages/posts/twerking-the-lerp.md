@@ -15,8 +15,8 @@ When it comes to bringing animations to life, smooth and visually captivating tr
 > [!NOTE]
 > Also named as **Tweening**, **Animation Curves** or **Easing Functions**, these techniques provide a way to control the interpolation or transition between values in animations.
 
-
 ## What is an easing function?
+
 Easing functions are mathematical equations that define the rate of change of a value over time. In other terms, they control the speed of an animation from its start to its end, from $a$ to $b$ in $t$ given time. $t$ is a decimal number (usually between `0` and `1`) that represents the percentage of the animation that has been completed.
 
 Mathematically, the equation can be broken down as follows:
@@ -37,24 +37,23 @@ float Lerp(float a, float b, float t) => a + ( b - a ) * t;
 
 - $( b - a )$: Determines the "distance" or change between the values you are interpolating.
 
-- $( b - a ) * t$: Multiplying the difference by $t$ scales the change. As it varies usually from `0` to `1`, this expression will determine how far along the interpolation you are. 
-If $t$ is `0`, the result will be $a$, if $t$ is `1`, the result will be $b$, and if $t$ is `0.5`, the result will be $\frac{a + b}{2}$ (halfway between $a$ and $b$).
+- $( b - a ) * t$: Multiplying the difference by $t$ scales the change. As it varies usually from `0` to `1`, this expression will determine how far along the interpolation you are.
+  If $t$ is `0`, the result will be $a$, if $t$ is `1`, the result will be $b$, and if $t$ is `0.5`, the result will be $\frac{a + b}{2}$ (halfway between $a$ and $b$).
 
 - $a + ( b - a ) * t$: Finally, adding the scaled difference to the initial value $a$ gives you the interpolated value based on the parameter $t$.
 
 If we visualize the values on a Cartesian plane, we can imagine that the $t$ parameter represents the `x axis`, and the result of the equation represents the `y axis`:
 
-
 <iframe class="embed-video shadow" loading="lazy" src="https://www.desmos.com/calculator/gje0gmsvkn" title="Desmos graph" frameborder="0" width="85%" height="620vh"></iframe>
-
 
 You can see that the output (Y's axis) is a straight line, that goes from `0` to `1` constantly. The name is self-explanatory, it's a <b>Linear interpolation</b>.
 
 ## Only linear?
+
 If you take a look at the previous graph, you will notice that the line is ~linear~. This is because the `t` parameter is not changing over time, it is always the same. But imagine this approach in a rocket launch, for an example. The rocket would always move at the same speed, which is not realistic at all!
 
-
 ### Ease in
+
 So it's time to do some little math changes to shine the movment look. We want the rockect to gain speed over time, so we need to change the `t` parameter. To achieve this, we can use an **ease in** function, a mathematical function, that **~starts slow and ends fast~**.
 
 The ease in quadratic function is the simpliest ease in equation.
@@ -87,6 +86,7 @@ Let's see some other function examples:
 > You can also test by yourself the different easing functions in the previous graph.
 
 ### Flip
+
 Flipping an easing function reverses its progression, creating an opposite direction effect. Mathematically, to flip a linear easing function $y = x$, subtract the input value `x` from 1: $y = 1 - x$.
 
 ```csharp
@@ -94,6 +94,7 @@ float Flip(float t) => 1 - t;
 ```
 
 ### Ease out
+
 For a rocket landing, we want the rocket to start fast and end slow. To achieve this, we can use flip the quadratic function. With that, we just discovered the **ease out** function, that **starts fast and ends slow**.
 
 After applying it to a quadratic function, we get: $f(t) = (1 - t)^2$.
@@ -105,6 +106,7 @@ float OutQuad(float t) => Flip( InQuad( Flip( t ) ) );
 ```
 
 Some **ease out** function examples:
+
 - **Out Sine**: $\sin(\frac{\pi}{2}t)$
 - **Out Quad**: $1 - (1 - t)^2$
 - **Out Cubic**: $1 - (1 - t)^3$
@@ -117,6 +119,7 @@ Some **ease out** function examples:
 - **Out Bounce**: $\cos(\frac{\pi}{2}t)$
 
 ### Ease in out
+
 If we want to combine both effects, we can use the **ease in out** function, that merges the **ease in** and **ease out** functions.
 
 ```csharp
@@ -132,6 +135,7 @@ float InOutQuad(float t) => Lerp( InQuad( t ), OutQuad( t ), t );
 ```
 
 ## Enhancing the lerp technique
+
 But what if we want a function that can express a lot of different movements in a easy way? We can use a **cubic polynomial**[^cubic]!
 
 To achieve this, we need to ensure that the function **always** starts at `0` and ends at `1`.
@@ -150,7 +154,7 @@ $$
 $$
 
 - The updated function becomes:
-$$ f(t) = at^3 + bt^2 + ct $$
+  $$ f(t) = at^3 + bt^2 + ct $$
 
 - We want the graph to end at `1`, so we set $f(1) = 1$:
 
@@ -188,20 +192,22 @@ float Custom(float t, float a, float b)
 > Try to play with the values in this [Desmos graph](https://www.desmos.com/calculator/qir47lza31).
 
 ## Embrace the Easing Frontier
+
 Is that it? Not even close! There are new approaches you can test by yourself!
 
 In case you’re interested in additional resources on the topic of easing, I recommend checking out the content by [Freya Holmér]. I personally used her material to study and incorporate some of the content in this post:
 
 <iframe style="border: 0; display: block; margin: 0 auto;" width="100%" height="450" scrolling="no" title="YouTube video" src="https://www.youtube-nocookie.com/embed/-Ii3MrJFBkQ" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 Now you have some knowledge to create your own easing functions. Experiment with blending various functions and watch as your animations spring to life in unexpected ways.
 
-But wait, there's more! Have you heard about [Splines](https://en.wikipedia.org/wiki/Spline_(mathematics)) and [Bezier Curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)? They’re definitely worth a look!
+But wait, there's more! Have you heard about [Splines](<https://en.wikipedia.org/wiki/Spline_(mathematics)>) and [Bezier Curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)? They’re definitely worth a look!
 
 May you live long and animate with great success!
 
 [//]: (Externals)
+
 [^cubic]: Cubic equation. Available in: <https://en.wikipedia.org/wiki/Cubic_equation>.
+
 [Freya Holmér]: https://cat.gay
 [//]: (EOF)

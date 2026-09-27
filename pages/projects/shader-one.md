@@ -3,6 +3,12 @@ title: Shader.One - Fragment Shader Editor
 display: Shader.One
 subtitle: Fragment shader web-based editor
 description: "Shader.One is a web-based fragment shader editor: write GLSL and watch it render live in the browser."
+category: Tools
+year: 2024
+role: SOHNE
+tags: [WebGL, GLSL]
+link: https://shader.one
+linkLabel: Open Shader.One
 ---
 
 Shader.One is a web-based fragment shader editor: GLSL on one side, the rendered result on the other, updating as you type.

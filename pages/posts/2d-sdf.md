@@ -12,7 +12,6 @@ type: post
 
 <GlslShaders />
 
-
 ## Representando Formas com SDFs
 
 Sabe-se que, para uma representação gráfica, é necessário introduzir vértices e índices no estágio de rasterização na pipeline para que os pixels sejam renderizados na tela. Isso é verdade até mesmo para objetos 2D em cena, pois utilizamos principalmente malhas poligonais para representar formas.
@@ -29,7 +28,6 @@ O foco dos meus posts é mostrar como os conteúdos deles podem ser entendidos p
 
 Já vamos começar visualizando o conceito de forma interativa. Isso nos permitirá ter uma compreensão intuitiva do que estamos prestes a explorar.
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/morph_sdf.frag" width="350" height="350"></canvas>
@@ -40,7 +38,6 @@ Já vamos começar visualizando o conceito de forma interativa. Isso nos permiti
   <small class="text-muted">Mova com o mouse o círculo amarelo para visualizar a menor distância até a superfície.</small>
 </div>
 
-
 Um conceito fundamental que está na base dessas funções é o cálculo da distância de qualquer ponto até a superfície mais próxima. Para cada ponto no espaço UV, **calculamos a menor distância até a superfície de um objeto**. Este cálculo de distância é a pedra angular para a compreensão das SDFs.
 
 Ao analisar as formas dessas funções de distância, notamos que elas possuem um interior e um exterior bem definidos. Esta característica é a razão pela qual são chamadas de `SDFs`, pois há uma alteração de sinal que distingue claramente o interior do objeto de seu exterior.
@@ -48,9 +45,8 @@ Ao analisar as formas dessas funções de distância, notamos que elas possuem u
 Portanto, a notação `SDF(p)` que comumente representa a função de distância de um ponto `p` de tal modo que:
 
 $$
-\textbf{SDF}(p) = \begin{cases} +d(p, O) & \text{se } p \text{ está fora de } O \\ -d(p, O) & \text{se } p \text{ está dentro de } O \\ 0 & \text{se } p \text{ está na superfície de } O \end{cases} 
+\textbf{SDF}(p) = \begin{cases} +d(p, O) & \text{se } p \text{ está fora de } O \\ -d(p, O) & \text{se } p \text{ está dentro de } O \\ 0 & \text{se } p \text{ está na superfície de } O \end{cases}
 $$
-
 
 Onde:
 
@@ -61,9 +57,7 @@ Onde:
 
 Entendemos então a forma mais básica na natureza: o **Círculo**! O círculo é uma figura geométrica simples por definição, dotada propriedades fascinantes para um entendimento inical acerca dos **(SDFs)**.
 
-
 <iframe class="embed-video shadow" loading="lazy" src="https://www.desmos.com/calculator/sgw56jayt3" title="Desmos graph" frameborder="0"></iframe>
-
 
 A distância entre um ponto e uma círculo é a distância do ponto ao centro do círculo menos o raio do círculo. Em termos matemáticos, se temos um círculo com centro em **c** e raio **r**, e queremos encontrar a distância de um ponto **p** até o círculo, a função SDF para o círculo é dada por:
 
@@ -72,6 +66,7 @@ $$
 $$
 
 Nesta equação,
+
 - `||p - c||` representa a distância euclidiana entre o ponto **p** e o centro **c**.
 - `r` é o raio do círculo.
 
@@ -151,13 +146,11 @@ Ao remapear as coordenadas para um intervalo equidistante de [`-1` a `+1`], a pa
 
 Eis uma animação em Glsl que linearmente interpola entre as coordenadas 'originais' e as remapeadas: ( ou visualize-a na plataforma [Shadertoy](https://www.shadertoy.com/view/43K3Rw) ):
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/center_space.frag" width="350" height="350"></canvas>
   </span>
 </div>
-
 
 ```glsl
 uniform vec2 u_resolution;
@@ -204,13 +197,11 @@ P_x \\ P_y
 x \\ y  \end{bmatrix} = \begin{bmatrix} P_x - x \\ P_y - y \end{bmatrix}
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/transform_translate.frag" width="400" height="225"></canvas>
   </span>
 </div>
-
 
 ```glsl
 vec2
@@ -240,13 +231,11 @@ x . \sin \emptyset+y \cdot \cos \emptyset
 \end{array}\right]
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/transform_rotate.frag" width="400" height="225"></canvas>
   </span>
 </div>
-
 
 ```glsl
 vec2
@@ -263,13 +252,10 @@ opRotate( in vec2 p, in float a )
 
 Caso haja interesse em se profundar, há o artigo [Matriz de rotação - Wikipédia](https://pt.wikipedia.org/wiki/Matriz_de_rota%C3%A7%C3%A3o) que pode ajudar a elucidar tanto o porquê quanto o como em outras aplicações. Além disso, há um excelente vídeo da magnífica [Freya Holmér].
 
-
 <iframe style="border: 0; display: block; margin: 0 auto;" width="100%" height="450" scrolling="no" title="YouTube video" src="https://www.youtube-nocookie.com/embed/7j5yW5QDC2U" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 > [!WARNING]
-> Outra coisa a mencionar é que se você estiver usando as funções _Rotate_ e _Translate_, a **ordem em que você as usa dá resultados diferentes**. Se você quer que a forma sempre gire em seu próprio eixo/centro, a função _Rotate_ deve ser usada depois do _Translate_. 
-
+> Outra coisa a mencionar é que se você estiver usando as funções _Rotate_ e _Translate_, a **ordem em que você as usa dá resultados diferentes**. Se você quer que a forma sempre gire em seu próprio eixo/centro, a função _Rotate_ deve ser usada depois do _Translate_.
 
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
@@ -280,7 +266,6 @@ Caso haja interesse em se profundar, há o artigo [Matriz de rotação - Wikipé
 <div class="text-center mb-3">
   <small class="text-muted">À esquerda, <i>Translate</i> seguido de <i>Rotate</i>. À direita, <i>Rotate</i> seguido de <i>Translate</i>.</small>
 </div>
-
 
 #### Scale
 
@@ -297,13 +282,11 @@ P_y \cdot y
 \end{array}\right]
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/transform_scale.frag" width="400" height="225"></canvas>
   </span>
 </div>
-
 
 ```glsl
 mat2
@@ -327,13 +310,11 @@ SDF_1 \cup SDF_2 \\
 \end{equation}
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/op_union.frag" width="250" height="250"></canvas>
   </span>
 </div>
-
 
 ```glsl
 float
@@ -354,13 +335,11 @@ SDF_1 \cap SDF_2 \\
 \end{equation}
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/op_intersect.frag" width="250" height="250"></canvas>
   </span>
 </div>
-
 
 ```glsl
 float
@@ -381,13 +360,11 @@ SDF_1 - SDF_2 \\
 \end{equation}
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/op_subtract.frag" width="250" height="250"></canvas>
   </span>
 </div>
-
 
 ```glsl
 float
@@ -408,13 +385,11 @@ SDF_1 \oplus SDF_2 \\
 \end{equation}
 $$
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/op_xor.frag" width="250" height="250"></canvas>
   </span>
 </div>
-
 
 ```glsl
 float
@@ -430,13 +405,11 @@ opXor( in float a, in float b )
 
 Smooth union permite combinar dois campos de distância de forma contínua e suave, eliminando arestas e transições bruscas.
 
-
 <div style="display: flex; justify-content: center;" class="mt-3">
   <span>
     <canvas class="canvas shadow rounded-10" data-fragment-url="/assets/shaders/hello_sdf/op_s_union.frag" width="250" height="250"></canvas>
   </span>
 </div>
-
 
 ```glsl
 float opSmoothUnion( float d1, float d2, float k )
@@ -451,9 +424,7 @@ float opSmoothUnion( float d1, float d2, float k )
 
 Existem, é claro, outras operações `smooth`. Veja-as em ação:
 
-
 <iframe class="embed-video shadow" loading="lazy" src="https://www.shadertoy.com/embed/lt3BW2?gui=true&t=10&paused=true&muted=true" title="ShaderToy player" frameborder="0" allowfullscreen></iframe>
-
 
 ## Outras formas primitivas
 
@@ -599,6 +570,7 @@ float sdBox( in vec2 p, in vec2 b )
 > Para mais formas, visite [Inigo Quilez - 2D distance functions](https://iquilezles.org/articles/distfunctions2d/)
 
 ## Conclusão
+
 Se você ainda não percebeu, sou um grande entusiasta dos campos de distância, e espero que agora você também veja o poder dos `SDFs`! Caso ainda esteja cético, não se preocupe. Mais posts estão a caminho, abordando técnicas ainda mais avançadas e em 3D!
 
 E se as palavras não forem suficientes para convencê-lo, talvez as imagens hipnotizantes que acompanham esses posts façam o truque. Elas são tão fascinantes que você pode se encontrar perdido nelas por horas... Mas não se preocupe, não é um efeito colateral permanente… eu acho...

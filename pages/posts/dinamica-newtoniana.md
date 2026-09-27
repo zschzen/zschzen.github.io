@@ -16,9 +16,9 @@ Em resumo: vamos usar a mecânica newtoniana básica e vetores para mover as coi
 
 ## Introdução à Mecânica Clássica
 
-A __[mecânica clássica]__ é uma área da física que estuda o movimento dos corpos e as forças que agem sobre eles. Tendo como destaque o [Isaac Newton] no século XVII, ela fornece um "*framework*" teórico para descrever e prever o comportamento de objetos físicos em escalas observáveis. Baseando-se em conceitos como __posição__, __velocidade__, __aceleração__, __massa__ e __força__, a mecânica newtoniana utiliza ferramentas matemáticas, incluindo cálculo diferencial e integral, para analisar sistemas físicos.
+A **[mecânica clássica]** é uma área da física que estuda o movimento dos corpos e as forças que agem sobre eles. Tendo como destaque o [Isaac Newton] no século XVII, ela fornece um "_framework_" teórico para descrever e prever o comportamento de objetos físicos em escalas observáveis. Baseando-se em conceitos como **posição**, **velocidade**, **aceleração**, **massa** e **força**, a mecânica newtoniana utiliza ferramentas matemáticas, incluindo cálculo diferencial e integral, para analisar sistemas físicos.
 
-Mas não se preocupe com essas últimas palavras ~*chiques*~. Vamos por partes.
+Mas não se preocupe com essas últimas palavras ~_chiques_~. Vamos por partes.
 
 ### Dinâmica Newtoniana
 
@@ -26,13 +26,13 @@ Sendo direta e muito eficiente para descrever fenômenos cotidianos, ela se base
 
 1. **Inércia**: Um objeto permanece em repouso ou em [movimento retilíneo uniforme], a menos que uma força externa atue sobre ele. Isso explica a tendência natural de objetos manterem seu estado de movimento, como o seu repouso.
 
-2. **Força e Aceleração**: A força aplicada sobre um objeto é proporcional à sua massa e à aceleração resultante. Essa relação, expressa pela fórmula $F = m \cdot a$, permite calcular o efeito das forças nos corpos. 
+2. **Força e Aceleração**: A força aplicada sobre um objeto é proporcional à sua massa e à aceleração resultante. Essa relação, expressa pela fórmula $F = m \cdot a$, permite calcular o efeito das forças nos corpos.
 
 3. **Ação e Reação**: Para cada ação, há uma reação de mesma intensidade e em direção oposta. Isso explica, por exemplo, por que, ao empurrar o chão, o chão exerce uma força igual e contrária sobre você, permitindo que você ande.
 
 ### Além de Newton: Lagrange e Hamilton
 
-Embora poderosa e bastante útil para nossos estudos, a mecânica newtoniana não consegue solucionar todos os cenários. Em sistemas mais complexos, especialmente aqueles com múltiplos graus de liberdade, a **[mecânica lagrangiana]** se destaca como uma alternativa eficiente. Baseada no conceito de energia e no *princípio da menor ação*, essa abordagem simplifica o estudo de sistemas onde o cálculo direto das forças é desafiador (e quando não é, não é mesmo?), proporcionando, assim, uma nova perspectiva na compreensão da dinâmica.
+Embora poderosa e bastante útil para nossos estudos, a mecânica newtoniana não consegue solucionar todos os cenários. Em sistemas mais complexos, especialmente aqueles com múltiplos graus de liberdade, a **[mecânica lagrangiana]** se destaca como uma alternativa eficiente. Baseada no conceito de energia e no _princípio da menor ação_, essa abordagem simplifica o estudo de sistemas onde o cálculo direto das forças é desafiador (e quando não é, não é mesmo?), proporcionando, assim, uma nova perspectiva na compreensão da dinâmica.
 
 A **[mecânica hamiltoniana]**, por outro lado, oferece uma visão mais profunda dos sistemas dinâmicos, focando na energia total do sistema. Essa abordagem é especialmente útil para entender fenômenos de conservação de energia e prever o comportamento de sistemas ao longo do tempo.
 
@@ -41,14 +41,13 @@ A **[mecânica hamiltoniana]**, por outro lado, oferece uma visão mais profunda
 
 ---
 
-Bom... sei que é muita informação para absorver de uma só vez, especialmente com as diferentes abordagens da mecânica clássica. E acredite, como entusiasta, já tive minha cabeça explodida algumas vezes ao estudar um pouco da *Lagrangiana*. Mas, vamos nos ater ao básico: a mecânica newtoniana. Ela é simples e eficiente para simular movimentos e colisões em jogos. Com suas três leis, você já pode começar a entender e implementar as bases de um motor de física. Não se preocupe em dominar tudo de uma vez; começamos com Newton e vamos avançando aos poucos.
+Bom... sei que é muita informação para absorver de uma só vez, especialmente com as diferentes abordagens da mecânica clássica. E acredite, como entusiasta, já tive minha cabeça explodida algumas vezes ao estudar um pouco da _Lagrangiana_. Mas, vamos nos ater ao básico: a mecânica newtoniana. Ela é simples e eficiente para simular movimentos e colisões em jogos. Com suas três leis, você já pode começar a entender e implementar as bases de um motor de física. Não se preocupe em dominar tudo de uma vez; começamos com Newton e vamos avançando aos poucos.
 
 ## Posição
 
 Na vida mundana, todos nós temos uma noção do conceito de posição. Quando você diz a um amigo onde está sentado em uma sala de aula ou descreve a localização de um objeto em sua casa, você está, de fato, falando sobre posição e fornecendo coordenadas.
 
-Na física, usamos vetores para descrever a posição de forma mais precisa. Um vetor de posição é simplesmente uma __seta que vai de um ponto de referência (que chamamos de origem) até o objeto__ em questão.
-
+Na física, usamos vetores para descrever a posição de forma mais precisa. Um vetor de posição é simplesmente uma **seta que vai de um ponto de referência (que chamamos de origem) até o objeto** em questão.
 
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="500px" scrolling="no" title="Posição por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/KKOPjgg?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
@@ -56,13 +55,12 @@ Na física, usamos vetores para descrever a posição de forma mais precisa. Um 
   <small class="text-muted">Na demonstração acima, a origem é colocada no centro, o eixo x vai da esquerda para a direita e o eixo y vai de baixo para cima. Você pode mover a posição clicando na tela.</small>
 </div>
 
-
 > [!TIP]
 > É importante entender que a posição é sempre relativa a um ponto de referência. Por exemplo, o sistema de referência muda a percepção de movimento para quem está dentro de um ônibus em movimento e para quem está parado na rua observando tal ônibus.
 
 ---
 
-Começamos a construir nossa engine de física com partículas 2D. O primeiro passo em `C++` é declarar a *classe* dos __Vetores__:
+Começamos a construir nossa engine de física com partículas 2D. O primeiro passo em `C++` é declarar a _classe_ dos **Vetores**:
 
 ```cpp
 struct Vector2D
@@ -110,20 +108,18 @@ Onde:
 - $\vec{\Delta p}$ é a mudança na posição (também um vetor)
 - $\Delta t$ é o intervalo de tempo
 
-
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="500px" scrolling="no" title="Velocidade por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/mdNbNpR?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
 <div class="text-center mb-4">
   <small class="text-muted">Agora, a posição se move com base na velocidade. Clique para mudar a direção.</small>
 </div>
 
-
 > [!WARNING]
-> Você entende que a velocidade é um vetor, o que significa que ela tem tanto magnitude ("_rapidez_") quanto direção. Por exemplo, um carro viajando a `60 km/h` para o norte tem uma velocidade diferente de um carro viajando a `60 km/h` para o sul, __mesmo que ambos estejam se movendo com a mesma magnitude__.
+> Você entende que a velocidade é um vetor, o que significa que ela tem tanto magnitude ("_rapidez_") quanto direção. Por exemplo, um carro viajando a `60 km/h` para o norte tem uma velocidade diferente de um carro viajando a `60 km/h` para o sul, **mesmo que ambos estejam se movendo com a mesma magnitude**.
 
 ---
 
-Em nossao sistema de parículas, basta __adicionar à posição a *velocidade* multiplicada pelo *delta time*__ – ou o tempo de processamento do quadro. Isto é de grande importância para manter a continuidade no movimento, garantindo que as partículas se movam de maneira consistente e proporcional ao tempo, independentemente da taxa de quadros por segundo (*FPS*). Assim, o movimento das partículas não parecerá mais rápido ou mais lento caso haja varância na taxa de quadros, favorecendo uma simulação mais realista e fluida.
+Em nossao sistema de parículas, basta **adicionar à posição a _velocidade_ multiplicada pelo _delta time_** – ou o tempo de processamento do quadro. Isto é de grande importância para manter a continuidade no movimento, garantindo que as partículas se movam de maneira consistente e proporcional ao tempo, independentemente da taxa de quadros por segundo (_FPS_). Assim, o movimento das partículas não parecerá mais rápido ou mais lento caso haja varância na taxa de quadros, favorecendo uma simulação mais realista e fluida.
 
 ```cpp
 struct Particle
@@ -153,13 +149,11 @@ Onde:
 - $\vec{\Delta v}$ é a mudança na velocidade (também um vetor)
 - $\Delta t$ é o intervalo de tempo
 
-
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="500px" scrolling="no" title="Forças por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/BaXBMbg?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
 <div class="text-center mb-4">
   <small class="text-muted">Simulação de forças aplicadas a um objeto, com visualização de velocidade, aceleração e dados gráficos. Clique ou arraste para definir um novo alvo.</small>
 </div>
-
 
 ```cpp
 struct Body
@@ -179,15 +173,15 @@ struct Body
 
 ## Integração
 
-Como leitor atento, você certamente visualizou as relações fundamentais: a taxa de variação da *posição* corresponde à *velocidade*, enquanto a taxa de variação da *velocidade* define a *aceleração*. Podemos, no entanto, analisar esses conceitos sob uma outra perspectiva: a posição de um objeto em determinado instante resulta do **acúmulo dos efeitos da velocidade ao longo do tempo**, ao passo que sua velocidade nesse mesmo momento é consequência do **acúmulo dos efeitos da aceleração durante o período considerado**.
+Como leitor atento, você certamente visualizou as relações fundamentais: a taxa de variação da _posição_ corresponde à _velocidade_, enquanto a taxa de variação da _velocidade_ define a _aceleração_. Podemos, no entanto, analisar esses conceitos sob uma outra perspectiva: a posição de um objeto em determinado instante resulta do **acúmulo dos efeitos da velocidade ao longo do tempo**, ao passo que sua velocidade nesse mesmo momento é consequência do **acúmulo dos efeitos da aceleração durante o período considerado**.
 
 Como exemplo, visualize um carro que está se movendo a `100 km/h` na direção ao norte $\uparrow$ por `2 horas`. Logo, ele deve estar a `200 km` a norte de seu ponto de partida. Esta é a ideia mais básica da integração. Uma **integral representa o acúmulo da taxa de mudança ao longo de uma janela de tempo**, no nosso caso.
 
-A *diferenciação* está associada à noção de `diferença`, capturando a taxa instantânea de variação, enquanto a *integração* se relaciona com o conceito de `soma`, acumulando essas variações ao longo do tempo. Em verdade, a origem do símbolo da integral $\int$ remonta a um "S" estilizado, derivado do termo latino "summa", que significa "soma" ou "total".
+A _diferenciação_ está associada à noção de `diferença`, capturando a taxa instantânea de variação, enquanto a _integração_ se relaciona com o conceito de `soma`, acumulando essas variações ao longo do tempo. Em verdade, a origem do símbolo da integral $\int$ remonta a um "S" estilizado, derivado do termo latino "summa", que significa "soma" ou "total".
 
 ### Área e Integração
 
-A integração pode ser visualizada geometricamente como a área sob uma curva em um gráfico. Para ilustrar, examinemos a relação entre velocidade e posição. Quando a velocidade é constante, a __variação na posição é calculada pelo produto da velocidade pelo tempo decorrido__. Esta relação é representada graficamente pela área da região sombreada no gráfico abaixo.
+A integração pode ser visualizada geometricamente como a área sob uma curva em um gráfico. Para ilustrar, examinemos a relação entre velocidade e posição. Quando a velocidade é constante, a **variação na posição é calculada pelo produto da velocidade pelo tempo decorrido**. Esta relação é representada graficamente pela área da região sombreada no gráfico abaixo.
 
 <img src="/assets/img/posts/physics/newton/integral1.svg" alt="Visualização Gráfico Velocidade Constante" width="400">
 _Velocidade constante (linha azul) e variação na posição (área sombreada)._
@@ -197,15 +191,13 @@ Se traçarmos o gráfico da área, ele ficará assim. Este é o gráfico da inte
 <img src="/assets/img/posts/physics/newton/integral2.svg" alt="Visualização Gráfico Velocidade ao longo do tempo" width="400">
 _Posição ao longo do tempo com velocidade constante (linha vermelha)._
 
-Pode não ser tão óbvio quando o gráfico não é reto. Mas se você imaginar que a forma consiste em muitas faixas retangulares estreitas, você pode aproximar sua área. __Integração é o acúmulo de mudança ao longo do tempo__. Você pode pensar em cada faixa como uma aproximação do efeito da velocidade em um curto período de tempo. Ao somar as áreas de todas as faixas, você pode encontrar a quantidade total de mudança.
-
+Pode não ser tão óbvio quando o gráfico não é reto. Mas se você imaginar que a forma consiste em muitas faixas retangulares estreitas, você pode aproximar sua área. **Integração é o acúmulo de mudança ao longo do tempo**. Você pode pensar em cada faixa como uma aproximação do efeito da velocidade em um curto período de tempo. Ao somar as áreas de todas as faixas, você pode encontrar a quantidade total de mudança.
 
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="600px" scrolling="no" title="Massa por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/bGXdEOW?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
 <div class="text-center mb-4">
   <small class="text-muted">Os métodos de [soma de Riemann](https://pt.wikipedia.org/wiki/Soma_de_Riemann) nos ajudam a estimar áreas sob curvas, demonstrando como diferentes abordagens podem influenciar a precisão das aproximações.</small>
 </div>
-
 
 ### Integração Numérica
 
@@ -216,10 +208,10 @@ O próximo passo, de acordo com livros de matemática comuns, seria tornar essas
 
 ### Método de Euler
 
-Em jogos de computador ou animações, frequentemente usamos o **[Método de Euler]** para atualizar a posição de um objeto `quadro a quadro`. Isso envolve adicionar a velocidade (ou velocidade multiplicada pelo tempo) à posição atual a cada quadro. Esse método, com o qual você já deve estar familiarizado, também pode ser visto como uma *aproximação* numérica de uma integral.
+Em jogos de computador ou animações, frequentemente usamos o **[Método de Euler]** para atualizar a posição de um objeto `quadro a quadro`. Isso envolve adicionar a velocidade (ou velocidade multiplicada pelo tempo) à posição atual a cada quadro. Esse método, com o qual você já deve estar familiarizado, também pode ser visto como uma _aproximação_ numérica de uma integral.
 
 > [!TIP]
-> Para visualizar o *método de Euler* em ação, verifique a interação na seção [Velocidade](#velocidade) demonstrada anteriormente.
+> Para visualizar o _método de Euler_ em ação, verifique a interação na seção [Velocidade](#velocidade) demonstrada anteriormente.
 
 Existem versões aprimoradas do método de Euler, como o [Método de Runge-Kutta], que são reconhecidas como técnicas bem mais avançadas de integração numérica. No entanto, como não abordaremos esse tópico em detalhe aqui, recomendo consultar outras fontes para um entendimento mais profundo.
 
@@ -238,8 +230,7 @@ Onde:
 - $\vec{a}$ é a aceleração (um vetor)
 
 > [!NOTE]
-> Esta equação nos diz que a força resultante aplicada a um objeto é __igual ao produto de sua massa pela aceleração que ela produz__.
-
+> Esta equação nos diz que a força resultante aplicada a um objeto é **igual ao produto de sua massa pela aceleração que ela produz**.
 
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="500px" scrolling="no" title="Massa por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/mdNbNxW?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
@@ -247,9 +238,8 @@ Onde:
   <small class="text-muted">A aceleração dos objetos é inversamente proporcional à massa, conforme a relação a = F/m, direcionando-os ao cursor.</small>
 </div>
 
-
 > [!WARNING]
-> Note que __quanto maior a massa de um objeto, maior será a força necessária__ para mudar seu estado de movimento.
+> Note que **quanto maior a massa de um objeto, maior será a força necessária** para mudar seu estado de movimento.
 
 ### Inverso da Massa
 
@@ -294,21 +284,20 @@ struct Body
 
 ### Múltiplas forças
 
-Quando diversas forças atuam sobre um objeto, __a força resultante é a soma vetorial de todas as forças individuais__. Isso pode ser expresso da seguinte forma:
+Quando diversas forças atuam sobre um objeto, **a força resultante é a soma vetorial de todas as forças individuais**. Isso pode ser expresso da seguinte forma:
 
-$$ F_{\text{total}} = \sum F_i $$
+$$ F\_{\text{total}} = \sum F_i $$
 
 Onde $F_{\text{total}}$ é a força resultante e $F_i$ representa cada força aplicada. Compreender essa relação é crucial para analisar sistemas mais complexos e prever o movimento resultante.
 
 > [!TIP]
-> A letra do alfabeto grego *Sigma*, `∑`, ou mesmo o `Π`, parecem-lhe uns símbolos estranhos e amedrontadores? Veja só a imagem abaixo e você, programadore, nunca mais se assustará:
+> A letra do alfabeto grego _Sigma_, `∑`, ou mesmo o `Π`, parecem-lhe uns símbolos estranhos e amedrontadores? Veja só a imagem abaixo e você, programadore, nunca mais se assustará:
 > ![Visualização Somatório e Produto](/assets/img/posts/physics/newton/summation.png)
 > _Por [@FreyaHolmer](https://x.com/FreyaHolmer)_
 
 ## Gravidade
 
-Um dos exemplos mais comuns de força na natureza é a gravidade. __Todos os objetos com massa exercem uma atração gravitacional uns sobre os outros__. Na superfície da Terra, a gravidade é uma força constante que atrai os objetos em direção ao centro do planeta.
-
+Um dos exemplos mais comuns de força na natureza é a gravidade. **Todos os objetos com massa exercem uma atração gravitacional uns sobre os outros**. Na superfície da Terra, a gravidade é uma força constante que atrai os objetos em direção ao centro do planeta.
 
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="500px" scrolling="no" title="Gravidade por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/eYqOwBE?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
@@ -316,25 +305,22 @@ Um dos exemplos mais comuns de força na natureza é a gravidade. __Todos os obj
   <small class="text-muted">Simulação de queda livre de um corpo com gráficos que mostram a posição, velocidade e aceleração ao longo do tempo.</small>
 </div>
 
-
 > [!TIP]
 > <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Pisa_experiment.png" alt="Galileo Galilei" style="float: right; margin: 0 1rem 1rem 0; width: 400;">
-> Você sabia que __objetos de diferentes massas caem na mesma velocidade no vácuo__?
-> Esse fenômeno, inicialmente teorizado por Galileu Galilei no *século XVII*, ocorre porque a aceleração gravitacional é a mesma para todos os objetos, independentemente de sua massa. [Galilei desafiou a crença aristotélica](https://web.archive.org/web/20240906181531/http://penta3.ufrgs.br/fisica/QuedaCorpos/index.html), que predominou por mais de dois milênios e afirmava que objetos mais pesados cairiam mais rápido. Embora a força gravitacional seja proporcional à massa de cada objeto, a inércia (*resistência à aceleração*) também aumenta proporcionalmente, resultando na mesma aceleração para todos os corpos em queda livre no vácuo.
+> Você sabia que **objetos de diferentes massas caem na mesma velocidade no vácuo**?
+> Esse fenômeno, inicialmente teorizado por Galileu Galilei no _século XVII_, ocorre porque a aceleração gravitacional é a mesma para todos os objetos, independentemente de sua massa. [Galilei desafiou a crença aristotélica](https://web.archive.org/web/20240906181531/http://penta3.ufrgs.br/fisica/QuedaCorpos/index.html), que predominou por mais de dois milênios e afirmava que objetos mais pesados cairiam mais rápido. Embora a força gravitacional seja proporcional à massa de cada objeto, a inércia (_resistência à aceleração_) também aumenta proporcionalmente, resultando na mesma aceleração para todos os corpos em queda livre no vácuo.
 
 ---
 
 Se combinarmos tudo que vimos até aqui, e ajustarmos para imprimir o instante da posição, temos:
 
-
 <iframe src="https://coliru.peres.dev/?gist=9458d54a96751f8cb0722e926cad272d" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Embedded content" width="100%" height="600px"></iframe>
-
 
 ## Gravitação universal
 
 A gravidade da Terra é apenas uma manifestação da força gravitacional universal que age entre todos os objetos. Todos os objetos são atraídos uns pelos outros, e a magnitude dessa atração é expressa pela seguinte equação:
 
-$$ {\displaystyle F=G{\frac {m_{1}m_{2}}{r^{2}}}\ } $$
+$$ {\displaystyle F=G{\frac {m*{1}m*{2}}{r^{2}}}\ } $$
 
 Onde:
 
@@ -342,19 +328,16 @@ Onde:
 - $G$ é a constante gravitacional, que vale aproximadamente $6{,}6743 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$
 - $r$ é a distância entre os centros dos objetos.
 
-
 > [!NOTE]
-> Em um corpo celeste como a Terra, apenas a força de queda em direção ao seu centro é percebida como gravidade, já que esse corpo é geralmente muito mais pesado do que tudo ao redor. Note que o termo "*gravidade*" pode se referir tanto a essa força descendente específica quanto à força universal entre todos os objetos, dependendo do contexto.
+> Em um corpo celeste como a Terra, apenas a força de queda em direção ao seu centro é percebida como gravidade, já que esse corpo é geralmente muito mais pesado do que tudo ao redor. Note que o termo "_gravidade_" pode se referir tanto a essa força descendente específica quanto à força universal entre todos os objetos, dependendo do contexto.
 
 A demonstração abaixo é uma simulação simples da força gravitacional universal atuando entre objetos com massas diferentes. Porém, como não somos astrônomos buscando uma simulação `1:1`, uma simulação exata da realidade, podemos alterar ao nosso bel prazer, como adicionar repulsão.
-
 
 <iframe class="shadow" style="border: 0; overflow: hidden; display: block; margin: 0 auto;" width="100%" height="500px" scrolling="no" title="Gravitação Universal por Leandro Peres" src="https://codepen.io/LeandroPeres/embed/preview/NWQGOgv?default-tab=result&theme-id=dark&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
 
 <div class="text-center mb-4">
   <small class="text-muted">Simulação de corpos gravitacionais com controle de massa, quantidade e alternância entre atração e repulsão.</small>
 </div>
-
 
 ---
 
@@ -388,7 +371,7 @@ SimulateOrbit( Particle & planet, Particle & satellite, int steps )
   for (int i = 0; i < steps; ++i)
   {
     Vector2D force = CalculateGravitationalForce( planet, satellite );
-    
+
     satellite.AddForce( force );
     planet.AddForce( force * -1.0 );
 
@@ -427,7 +410,7 @@ int main()
 ```
 
 > [!WARNING]
-> Pela [Terceira Lei de Newton](#dinâmica-newtoniana), toda força gera uma reação de igual intensidade, mas no sentido oposto. Isso significa que, __ao aplicarmos uma força positiva em um corpo, devemos aplicar uma força negativa de mesma magnitude no outro corpo__ envolvido na dinâmica, garantindo, assim, o equilíbrio entre as forças.
+> Pela [Terceira Lei de Newton](#dinâmica-newtoniana), toda força gera uma reação de igual intensidade, mas no sentido oposto. Isso significa que, **ao aplicarmos uma força positiva em um corpo, devemos aplicar uma força negativa de mesma magnitude no outro corpo** envolvido na dinâmica, garantindo, assim, o equilíbrio entre as forças.
 
 ---
 
@@ -438,7 +421,6 @@ int main()
 [movimento retilíneo uniforme]: https://pt.wikipedia.org/wiki/Movimento_retil%C3%ADneo_uniforme
 [mecânica lagrangiana]: https://pt.wikipedia.org/wiki/Mec%C3%A2nica_de_Lagrange
 [mecânica hamiltoniana]: https://pt.wikipedia.org/wiki/Mec%C3%A2nica_hamiltoniana
-
 [Método de Euler]: https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Euler
 [Método de Runge-Kutta]: https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Runge-Kutta
 [//]: (EOF)

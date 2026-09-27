@@ -3,6 +3,5 @@ title: Notes | Leandro Peres
 display: ''
 ---
 
-<SubNav />
-
-<ListPosts only-date type="note" />
+<!-- @layout-full-width -->
+<ListPosts type="note" />

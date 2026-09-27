@@ -11,6 +11,7 @@
     "build:post": "npm run build:fonts && npm run build:rss",
     "build": "npm run build:ssg && npm run build:post",
     "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "compress": "tsx scripts/img-compress-staged.ts",
@@ -96,7 +97,8 @@
     "vite-plugin-inspect": "catalog:build",
     "vite-plugin-optimize-exclude": "catalog:build",
     "vite-ssg": "catalog:build",
-    "vite-svg-loader": "catalog:build"
+    "vite-svg-loader": "catalog:build",
+    "vue-tsc": "catalog:dev"
   },
   "resolutions": {
     "vite": "catalog:build"

@@ -1,8 +1,7 @@
 ---
-title: Blog | Leandro Peres
+title: Writing | Leandro Peres
 display: ''
 ---
 
-<SubNav />
-
-<ListRoute />
+<!-- @layout-full-width -->
+<ListPosts :under="$route.path" />

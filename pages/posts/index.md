@@ -1,8 +1,7 @@
 ---
-title: Blog | Leandro Peres
+title: Writing | Leandro Peres
 display: ''
 ---
 
-<SubNav />
-
-<ListPosts only-date type="post" />
+<!-- @layout-full-width -->
+<ListPosts />

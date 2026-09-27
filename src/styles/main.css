@@ -1,21 +1,135 @@
+/* Design tokens (portfolio.pen). Dark values are derived; the wireframe only
+   specifies light mode. */
 :root {
-  /* Oxocarbon Light colors */
-  --c-bg: #f2f4f8;
-  --c-scrollbar: #dde1e6;
-  --c-scrollbar-hover: #525252;
+  --background: #f5f5f3;
+  --foreground: #141414;
+  --muted-foreground: #6a6a66;
+  --primary: #141414;
+  --primary-foreground: #f5f5f3;
+  --primary-muted-foreground: #b3b3ae;
+  --secondary: #e8e8e4;
+  --secondary-foreground: #141414;
+  --secondary-muted-foreground: #5a5a56;
+  --secondary-hover: #deded9;
+  --overlay: #141414d9;
+  --overlay-foreground: #f5f5f3;
+
+  --c-bg: var(--background);
+  --c-scrollbar: var(--secondary);
+  --c-scrollbar-hover: var(--muted-foreground);
 }
 
+html.dark {
+  --background: #141414;
+  --foreground: #f0f0ee;
+  --muted-foreground: #9b9b96;
+  --primary: #f0f0ee;
+  --primary-foreground: #141414;
+  --primary-muted-foreground: #6a6a66;
+  --secondary: #242422;
+  --secondary-foreground: #f0f0ee;
+  --secondary-muted-foreground: #a5a5a0;
+  --secondary-hover: #2e2e2b;
+}
+
+/* Background stays on html (not body) so the fixed starfield paints above it. */
 html {
-  background-color: var(--c-bg);
+  background-color: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-html.dark {
-  /* Oxocarbon Dark colors */
-  --c-bg: #161616;
-  --c-scrollbar: #262626;
-  --c-scrollbar-hover: #393939;
+/* Anchors clear the sticky header. */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Scroll lock while a dialog (mobile menu, lab entry) is open. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+.rail {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding-left: var(--col-inset);
+  padding-right: 1.25rem;
+  scroll-padding-left: var(--col-inset);
+  scrollbar-width: none;
+}
+
+/* Where .col content starts inside a full-width element: the centered 720px
+   column plus .col's own 1.25rem padding below lg (none at lg). % resolves
+   against the element using it, so rails and filter rows that bleed to the
+   screen edges still line their first item up with the page. Inside an lg
+   .col (720px wide) it comes out as 0. */
+.rail,
+.px-col {
+  --col-inset: calc(max(0px, (100% - 720px) / 2) + 1.25rem);
+}
+
+@media (min-width: 1024px) {
+  .rail,
+  .px-col {
+    --col-inset: calc((100% - 720px) / 2);
+  }
+}
+
+/* Filter tabs, sort and search rows: full width below lg, in .col at lg. */
+.px-col {
+  padding-inline: var(--col-inset);
+}
+
+/* Media carousels (MediaCarousel.vue): slides are --slide wide, and the end
+   padding lets the last one scroll to the column start like the others. */
+.media-rail {
+  --slide: 300px;
+  padding-right: max(1.25rem, calc(100% - var(--col-inset) - var(--slide)));
+}
+
+@media (min-width: 1024px) {
+  .media-rail {
+    --slide: 720px;
+  }
+}
+
+/* Rails scroll by mouse drag too (v-drag-scroll). */
+@media (hover: hover) and (pointer: fine) {
+  .rail {
+    cursor: grab;
+  }
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail > * {
+  flex: none;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .rail {
+    gap: 1rem;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Unset the resetting for MathJax */
@@ -24,7 +138,7 @@ html.dark {
 }
 
 ::selection {
-  background: #78a9ff44;
+  background: color-mix(in srgb, var(--foreground) 18%, transparent);
 }
 
 #nprogress {
@@ -32,7 +146,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: #be95ff;
+  background: var(--foreground);
   opacity: 0.75;
   position: fixed;
   z-index: 1031;

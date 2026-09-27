@@ -1,61 +1,86 @@
 <script setup lang="ts">
-defineProps<{ projects: Record<string, any[]> }>()
+import { useProjects } from '~/logics/content'
+import { useQueryState } from '~/logics/utils'
 
-function slug(name: string) {
-  return name.toLowerCase().replace(/[\s\\/]+/g, '-')
-}
+const projects = useProjects()
+const type = useQueryState('type', 'all')
+const sort = useQueryState('sort', 'newest')
+
+const categories = [...new Set(projects.map(p => p.category).filter(Boolean))].sort() as string[]
+const tabs = [
+  { value: 'all', label: 'All', count: projects.length },
+  ...categories.map(c => ({ value: c.toLowerCase(), label: c, count: projects.filter(p => p.category === c).length })),
+]
+
+const list = computed(() => {
+  const items = type.value === 'all'
+    ? projects
+    : projects.filter(p => p.category?.toLowerCase() === type.value)
+  return sort.value === 'oldest' ? [...items].reverse() : items
+})
 </script>
 
 <template>
-  <div class="max-w-300 mx-auto">
-    <p text-center mt--6 mb5 op50 text-lg italic>
-      Projects that I created or maintaining.
-    </p>
+  <div>
+    <header class="page-intro">
+      <h1 class="h-display">
+        Projects
+      </h1>
+      <p class="page-sub">
+        Engines, games, tools and emulators I've built since 2011.
+      </p>
+    </header>
 
-    <div
-      v-for="(items, key, cidx) in projects" :key="key"
-      slide-enter :style="{ '--enter-stage': cidx + 1 }"
-    >
-      <div :id="slug(key)" select-none relative h18 mt5 pointer-events-none>
-        <span text-5em color-transparent absolute left--1rem top-0 font-bold leading-1em text-stroke-1.5 text-stroke-hex-aaa op35 dark:op20>{{ key }}</span>
+    <div class="flex flex-col gap-1 pt-6 lg:col lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:pt-10">
+      <FilterTabs v-model="type" :options="tabs" label="Filter projects by type" class="px-col" />
+      <div class="px-col">
+        <label class="relative inline-flex items-center">
+          <span class="sr-only">Sort projects</span>
+          <select v-model="sort" class="cursor-pointer appearance-none bg-transparent py-3 pr-6 text-[15px] font-medium leading-[1.4] lg:py-2">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+          <span class="i-ph-caret-down pointer-events-none absolute right-0 h-4! w-4!" aria-hidden="true" />
+        </label>
       </div>
+    </div>
 
-      <div grid="~ cols-1 sm:cols-2 lg:cols-3 gap-4" py2 text-left>
-        <component
-          :is="item.path ? 'RouterLink' : item.link ? 'a' : 'div'"
-          v-for="item in items"
-          :key="item.name"
-          v-bind="item.path
-            ? { to: item.path }
-            : item.link
-              ? { href: item.link, target: '_blank', rel: 'noopener' }
-              : {}"
-          class="group mb4 flex flex-col of-hidden border border-base rounded-md bg-[#8881] color-base font-normal no-underline transition duration-200 hover:bg-[#8882]"
-        >
-          <div class="aspect-video flex items-center justify-center of-hidden border-b border-base">
-            <img v-if="item.image" :src="item.image" alt="" aria-hidden="true" loading="lazy" class="h-full w-full object-cover">
-            <Dura2D v-else-if="item.icon === 'dura2d'" class="h-16 w-16 op60 transition duration-200 group-hover:op100" />
-            <LeveGL v-else-if="item.icon === 'levegl'" class="h-16 w-16 op60 transition duration-200 group-hover:op100" />
-            <Vulkano v-else-if="item.icon === 'vulkano'" class="h-16 w-16 op60 transition duration-200 group-hover:op100" />
-            <span v-else aria-hidden="true" class="text-3em font-bold op10 transition duration-200 group-hover:op20">{{ item.name[0] }}</span>
-          </div>
-          <div class="flex flex-1 flex-col gap1 p3">
-            <span>{{ item.name }}</span>
-            <span class="text-sm op50 line-clamp-2">{{ item.desc }}</span>
-            <div v-if="item.tags?.length" class="mt-auto flex flex-wrap gap1 pt2">
-              <span v-for="tag in item.tags" :key="tag" class="border border-base rounded px1.5 py0.5 text-xs font-mono op50">{{ tag }}</span>
+    <ul class="col flex flex-col gap-6 pt-4 lg:gap-10 lg:pt-10">
+      <li v-for="p in list" :key="p.path">
+        <RouterLink :to="p.path" class="group flex gap-4 lg:gap-6">
+          <ProjectThumb :project="p" class="h-18 w-32 shrink-0 rounded-md! lg:h-[149px] lg:w-66 lg:rounded-lg!" />
+          <div class="flex min-w-0 flex-1 flex-col gap-1 lg:gap-2">
+            <div class="flex items-center justify-between gap-4">
+              <h2 class="text-base font-medium leading-[1.35] decoration-1 underline-offset-4 group-hover:underline lg:text-xl lg:leading-[1.3] lg:tracking-[-0.2px]">
+                {{ p.title }}
+              </h2>
+              <span class="hidden shrink-0 text-[15px] leading-[1.4] text-muted-foreground lg:block">{{ p.status ?? p.year }}</span>
             </div>
+            <p class="text-sm leading-[1.45] text-muted-foreground lg:text-[15px] lg:leading-[1.4]">
+              <span v-if="p.status ?? p.year" class="lg:hidden">{{ p.status ?? p.year }}<template v-if="p.role">. </template></span>{{ p.role }}
+            </p>
+            <p class="text-sm leading-[1.5] lg:text-[15px] lg:leading-[1.55]">
+              {{ p.subtitle }}
+            </p>
+            <ul v-if="p.tags?.length" class="hidden flex-wrap gap-1.5 pt-1 lg:flex">
+              <li v-for="tag in p.tags" :key="tag" class="tag">
+                {{ tag }}
+              </li>
+            </ul>
           </div>
-        </component>
-      </div>
-    </div>
+        </RouterLink>
+      </li>
+    </ul>
 
-    <div text-center mt8 pb5>
-      <a href="https://github.com/search?o=desc&s=updated&type=repositories&q=user%3Azschzen+user%3ASOHNE" target="_blank" op50 hover:op75>
-        All open-source projects, sorted by recent updates
+    <p class="col pt-10 lg:pt-14">
+      <a
+        href="https://github.com/search?o=desc&s=updated&type=repositories&q=user%3Azschzen+user%3ASOHNE"
+        target="_blank"
+        rel="noopener"
+        class="link-arrow py-2.5 lg:py-0"
+      >
+        All open-source projects <span class="i-ph-arrow-up-right h-4! w-4!" aria-hidden="true" />
       </a>
-    </div>
+    </p>
   </div>
 </template>
-
-<style scoped></style>

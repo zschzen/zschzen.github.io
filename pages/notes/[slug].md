@@ -1,8 +1,7 @@
 ---
-title: Poems | Leandro Peres
+title: Notes | Leandro Peres
 display: ''
 ---
 
-<SubNav />
-
-<ListRoute />
+<!-- @layout-full-width -->
+<ListPosts :under="$route.path" />

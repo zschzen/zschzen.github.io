@@ -3,6 +3,12 @@ title: Colorblindness - Unity Color-blindness Simulation
 display: Colorblindness
 subtitle: Unity post-processing for simulating color-blind palettes
 description: A Unity URP/HDRP package that simulates eight types of color blindness through the post-processing volume system.
+category: Tools
+year: 2020
+role: SOHNE, open source
+tags: [Unity, Accessibility]
+link: https://github.com/SOHNE/Colorblindness
+linkLabel: Source on GitHub
 ---
 
 Colorblindness is a Unity package that simulates how a scene looks to color-blind players. It plugs into the Scriptable Render Pipeline's volume system and applies color matrices through the Channel Mixer, covering eight profiles: protanopia, protanomaly, deuteranopia, deuteranomaly, tritanopia, tritanomaly, achromatopsia, and achromatomaly.

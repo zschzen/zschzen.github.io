@@ -3,11 +3,32 @@ title: Dura2D - 2D Game Physics Engine
 display: Dura2D
 subtitle: An educational 2D game physics engine, written in C++
 description: Dura2D is an educational 2D game physics engine with a constraint-based solver, warm starting, and dynamic AABB tree broad-phase.
+category: Engines
+year: 2023–Present
+role: SOHNE, open source
+tags: [C++, Physics, WebAssembly]
+link: https://github.com/SOHNE/Dura2D
+linkLabel: Source on GitHub
+cover: https://github.com/SOHNE/Dura2D/raw/main/res/dura2d.gif
+icon: dura2d
+featured: true
+order: 1
+facts:
+  Started: November 2023
+  Language: C++
+  Build: CMake, Emscripten
+  Platforms: Linux, macOS, Windows, Web
+media:
+  - src: https://github.com/SOHNE/Dura2D/raw/main/res/dura2d.gif
+    alt: Dura2D interactive demo
+    caption: Interactive demo
+  - lab: '2025-03-04'
+    caption: Running on a Nintendo Switch
+  - lab: '2024-01-31'
+    caption: Early solver tests
 ---
 
 Dura2D is an educational 2D physics engine developed under [SOHNE](https://github.com/SOHNE). Instead of hiding the machinery behind an API, it is built to expose how game physics actually works: how bodies integrate, how contacts are solved, and how collision detection scales.
-
-![Dura2D interactive demo](https://github.com/SOHNE/Dura2D/raw/main/res/dura2d.gif)
 
 <!-- TODO: more screenshots. Drop files into public/projects/dura2d/ and reference them here. -->
 

@@ -15,6 +15,7 @@ Vectors are mathematical entities that represent both **magnitude** and **direct
 Also, they are used by shaders to perform calculations on the GPU, such as lighting, shadows, reflections, storing color information, and much more.
 
 Vectors typically contain spatial coordinates and can be classified into different dimensions. Let's take a closer look at each dimension:
+
 - **1D**: Holds a scalar value that represents a single property, such as speed or time.
 - **2D**: Contains two properties, such as position or velocity.
 - **3D**: Contains three properties, such as position or velocity.
@@ -40,14 +41,12 @@ $\vec{P} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$ $\vec{F} = \begin{bmatrix} 1 \\
 
 This interactive graph shows the player's position and facing direction:
 
-
 <iframe src="/assets/vectorjs/index.html?content=vectors/vector-interactive" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Vector Interactive" width="100%" height="450"></iframe>
-
 
 ### Magnitude
 
 Based on the previous example, we can deduce the **distance** of the player from the origin of the world.
-Note that in a Cartesian coordinate system, a vector forms a ***Right Triangle***, allowing us to deduce the length of the position vector in terms of units using the ***Pythagorean Theorem***:
+Note that in a Cartesian coordinate system, a vector forms a **_Right Triangle_**, allowing us to deduce the length of the position vector in terms of units using the **_Pythagorean Theorem_**:
 
 $$
 \eqalign{
@@ -83,9 +82,7 @@ $$ \vec{V} = \begin{bmatrix} x1 \\ y1 \\ z1 \end{bmatrix} \pm \begin{bmatrix} x2
 
 For subtraction, we need to invert the second vector and then add it to the first vector.
 
-
 <iframe src="/assets/vectorjs/index.html?content=vectors/vector-basic-interactive" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Vector Basic Interactive" width="100%" height="450"></iframe>
-
 
 ### Normalization
 
@@ -97,15 +94,14 @@ $$ \hat{V} = \frac{\vec{V}}{|\vec{V}|} = \frac{1}{\sqrt{x^2 + y^2 + z^2}} \begin
 
 This normalization process ensures that vectors of different magnitudes can be compared and scaled uniformly, allowing us to perform operations such as addition, subtraction, and dot product in a way that the magnitude of the vectors does not affect the result. Ensuring, in this way, that the direction of the vector is the only thing that matters.
 
-
 <iframe src="/assets/vectorjs/index.html?content=vectors/normalize" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Vector Normalize Interactive" width="100%" height="450"></iframe>
-
 
 ### Inverse
 
 The inverse of a vector is a vector with the same magnitude but in the opposite direction. Thus, the inverse of $a$ is $-a$.
 
 To calculate the inverse of a vector, we simply invert the sign of each component of the vector:
+
 $$
   \begin{align}
     \vec{V} &= \begin{bmatrix} x \\ y \\ z \end{bmatrix} \\
@@ -113,9 +109,7 @@ $$
   \end{align}
 $$
 
-
 <iframe src="/assets/vectorjs/index.html?content=vectors/vector-invert-interactive" style="border: none; overflow: hidden; margin: 0 auto; display: block; background-color: #fff;" loading="lazy" title="Vector Invert Interactive" width="100%" height="450"></iframe>
-
 
 ## Dot Product
 
@@ -196,7 +190,6 @@ The resulting vector is perpendicular to both input vectors and its direction fo
 
 The 2D cross product results in a scalar value, which is the magnitude of the resulting vector.
 
-
 The dot product and cross product are fundamental operations in vector mathematics, and they find applications in various areas such as geometry, physics, and computer graphics.
 
 ### Cross Product in Games
@@ -232,7 +225,3 @@ Vector3 torque = Vector3.Cross(position, force);
 ---
 
 [//]: (Externals)
-
-[^footnote]: NERCURY. <b>Practical use of Vector Math in Games</b>. 2013. Available at: <a href="https://www.gamedev.net/tutorials/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968">https://www.gamedev.net/tutorials/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/</a>. Accessed on: Jan 4, 2021.
-[Right Triangle]: https://en.wikipedia.org/wiki/Right_triangle
-[Pythagorean Theorem]: https://en.wikipedia.org/wiki/Pythagorean_theorem

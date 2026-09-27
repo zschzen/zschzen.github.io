@@ -39,30 +39,36 @@ declare module 'vue-router/auto-routes' {
     '/posts/2d-sdf': RouteRecordInfo<'/posts/2d-sdf', '/posts/2d-sdf', Record<never, never>, Record<never, never>>,
     '/posts/basic-trigonometric': RouteRecordInfo<'/posts/basic-trigonometric', '/posts/basic-trigonometric', Record<never, never>, Record<never, never>>,
     '/posts/chip0u-interpreter': RouteRecordInfo<'/posts/chip0u-interpreter', '/posts/chip0u-interpreter', Record<never, never>, Record<never, never>>,
-    '/posts/deferred-jobs': RouteRecordInfo<'/posts/deferred-jobs', '/posts/deferred-jobs', Record<never, never>, Record<never, never>>,
     '/posts/dinamica-newtoniana': RouteRecordInfo<'/posts/dinamica-newtoniana', '/posts/dinamica-newtoniana', Record<never, never>, Record<never, never>>,
     '/posts/introducao-motor-fisica': RouteRecordInfo<'/posts/introducao-motor-fisica', '/posts/introducao-motor-fisica', Record<never, never>, Record<never, never>>,
     '/posts/jogo-da-vida': RouteRecordInfo<'/posts/jogo-da-vida', '/posts/jogo-da-vida', Record<never, never>, Record<never, never>>,
     '/posts/math/basic-trigonometry': RouteRecordInfo<'/posts/math/basic-trigonometry', '/posts/math/basic-trigonometry', Record<never, never>, Record<never, never>>,
-    '/posts/mvvm-unreal': RouteRecordInfo<'/posts/mvvm-unreal', '/posts/mvvm-unreal', Record<never, never>, Record<never, never>>,
     '/posts/ola': RouteRecordInfo<'/posts/ola', '/posts/ola', Record<never, never>, Record<never, never>>,
     '/posts/twerking-the-lerp': RouteRecordInfo<'/posts/twerking-the-lerp', '/posts/twerking-the-lerp', Record<never, never>, Record<never, never>>,
     '/posts/vector-math': RouteRecordInfo<'/posts/vector-math', '/posts/vector-math', Record<never, never>, Record<never, never>>,
     '/projects/': RouteRecordInfo<'/projects/', '/projects', Record<never, never>, Record<never, never>>,
+    '/projects/actis': RouteRecordInfo<'/projects/actis', '/projects/actis', Record<never, never>, Record<never, never>>,
     '/projects/ae6502': RouteRecordInfo<'/projects/ae6502', '/projects/ae6502', Record<never, never>, Record<never, never>>,
     '/projects/cameboy': RouteRecordInfo<'/projects/cameboy', '/projects/cameboy', Record<never, never>, Record<never, never>>,
     '/projects/chip0u': RouteRecordInfo<'/projects/chip0u', '/projects/chip0u', Record<never, never>, Record<never, never>>,
     '/projects/cix502': RouteRecordInfo<'/projects/cix502', '/projects/cix502', Record<never, never>, Record<never, never>>,
     '/projects/colorblindness': RouteRecordInfo<'/projects/colorblindness', '/projects/colorblindness', Record<never, never>, Record<never, never>>,
     '/projects/cozer': RouteRecordInfo<'/projects/cozer', '/projects/cozer', Record<never, never>, Record<never, never>>,
+    '/projects/deferred-jobs': RouteRecordInfo<'/projects/deferred-jobs', '/projects/deferred-jobs', Record<never, never>, Record<never, never>>,
     '/projects/dura2d': RouteRecordInfo<'/projects/dura2d', '/projects/dura2d', Record<never, never>, Record<never, never>>,
     '/projects/free-breeze': RouteRecordInfo<'/projects/free-breeze', '/projects/free-breeze', Record<never, never>, Record<never, never>>,
+    '/projects/game-da-cidadania': RouteRecordInfo<'/projects/game-da-cidadania', '/projects/game-da-cidadania', Record<never, never>, Record<never, never>>,
+    '/projects/glasm': RouteRecordInfo<'/projects/glasm', '/projects/glasm', Record<never, never>, Record<never, never>>,
+    '/projects/ilha-das-pedras-falantes': RouteRecordInfo<'/projects/ilha-das-pedras-falantes', '/projects/ilha-das-pedras-falantes', Record<never, never>, Record<never, never>>,
     '/projects/kwartz': RouteRecordInfo<'/projects/kwartz', '/projects/kwartz', Record<never, never>, Record<never, never>>,
     '/projects/levegl': RouteRecordInfo<'/projects/levegl', '/projects/levegl', Record<never, never>, Record<never, never>>,
+    '/projects/parque-da-matematica': RouteRecordInfo<'/projects/parque-da-matematica', '/projects/parque-da-matematica', Record<never, never>, Record<never, never>>,
+    '/projects/ray-tracing-one-weekend': RouteRecordInfo<'/projects/ray-tracing-one-weekend', '/projects/ray-tracing-one-weekend', Record<never, never>, Record<never, never>>,
+    '/projects/rhio': RouteRecordInfo<'/projects/rhio', '/projects/rhio', Record<never, never>, Record<never, never>>,
     '/projects/robots-fight-at-night': RouteRecordInfo<'/projects/robots-fight-at-night', '/projects/robots-fight-at-night', Record<never, never>, Record<never, never>>,
     '/projects/run-coliru': RouteRecordInfo<'/projects/run-coliru', '/projects/run-coliru', Record<never, never>, Record<never, never>>,
     '/projects/shader-one': RouteRecordInfo<'/projects/shader-one', '/projects/shader-one', Record<never, never>, Record<never, never>>,
-    '/projects/shader-vista': RouteRecordInfo<'/projects/shader-vista', '/projects/shader-vista', Record<never, never>, Record<never, never>>,
+    '/projects/simulador-arduino': RouteRecordInfo<'/projects/simulador-arduino', '/projects/simulador-arduino', Record<never, never>, Record<never, never>>,
     '/projects/slidev-addon-cpp-runner': RouteRecordInfo<'/projects/slidev-addon-cpp-runner', '/projects/slidev-addon-cpp-runner', Record<never, never>, Record<never, never>>,
     '/projects/the-ashes-of-jorge': RouteRecordInfo<'/projects/the-ashes-of-jorge', '/projects/the-ashes-of-jorge', Record<never, never>, Record<never, never>>,
     '/projects/vosgi': RouteRecordInfo<'/projects/vosgi', '/projects/vosgi', Record<never, never>, Record<never, never>>,
@@ -164,10 +170,6 @@ declare module 'vue-router/auto-routes' {
       routes: '/posts/chip0u-interpreter'
       views: never
     }
-    'pages/posts/deferred-jobs.md': {
-      routes: '/posts/deferred-jobs'
-      views: never
-    }
     'pages/posts/dinamica-newtoniana.md': {
       routes: '/posts/dinamica-newtoniana'
       views: never
@@ -184,10 +186,6 @@ declare module 'vue-router/auto-routes' {
       routes: '/posts/math/basic-trigonometry'
       views: never
     }
-    'pages/posts/mvvm-unreal.md': {
-      routes: '/posts/mvvm-unreal'
-      views: never
-    }
     'pages/posts/ola.md': {
       routes: '/posts/ola'
       views: never
@@ -202,6 +200,10 @@ declare module 'vue-router/auto-routes' {
     }
     'pages/projects/index.md': {
       routes: '/projects/'
+      views: never
+    }
+    'pages/projects/actis.md': {
+      routes: '/projects/actis'
       views: never
     }
     'pages/projects/ae6502.md': {
@@ -228,6 +230,10 @@ declare module 'vue-router/auto-routes' {
       routes: '/projects/cozer'
       views: never
     }
+    'pages/projects/deferred-jobs.md': {
+      routes: '/projects/deferred-jobs'
+      views: never
+    }
     'pages/projects/dura2d.md': {
       routes: '/projects/dura2d'
       views: never
@@ -236,12 +242,36 @@ declare module 'vue-router/auto-routes' {
       routes: '/projects/free-breeze'
       views: never
     }
+    'pages/projects/game-da-cidadania.md': {
+      routes: '/projects/game-da-cidadania'
+      views: never
+    }
+    'pages/projects/glasm.md': {
+      routes: '/projects/glasm'
+      views: never
+    }
+    'pages/projects/ilha-das-pedras-falantes.md': {
+      routes: '/projects/ilha-das-pedras-falantes'
+      views: never
+    }
     'pages/projects/kwartz.md': {
       routes: '/projects/kwartz'
       views: never
     }
     'pages/projects/levegl.md': {
       routes: '/projects/levegl'
+      views: never
+    }
+    'pages/projects/parque-da-matematica.md': {
+      routes: '/projects/parque-da-matematica'
+      views: never
+    }
+    'pages/projects/ray-tracing-one-weekend.md': {
+      routes: '/projects/ray-tracing-one-weekend'
+      views: never
+    }
+    'pages/projects/rhio.md': {
+      routes: '/projects/rhio'
       views: never
     }
     'pages/projects/robots-fight-at-night.md': {
@@ -256,8 +286,8 @@ declare module 'vue-router/auto-routes' {
       routes: '/projects/shader-one'
       views: never
     }
-    'pages/projects/shader-vista.md': {
-      routes: '/projects/shader-vista'
+    'pages/projects/simulador-arduino.md': {
+      routes: '/projects/simulador-arduino'
       views: never
     }
     'pages/projects/slidev-addon-cpp-runner.md': {

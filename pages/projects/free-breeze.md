@@ -3,11 +3,18 @@ title: Free Breeze - Multiplayer Nature Shooter
 display: Free Breeze
 subtitle: Cute, colorful multiplayer nature strategy shooter
 description: Free Breeze is a cute and colorful online multiplayer strategy shooter inspired by scouting dynamics, made with Unity.
+category: Games
+year: 2020
+role: SOHNE, project manager, team of four
+tags: [Unity, Multiplayer]
+link: https://gamejolt.com/games/free-breeze/551443
+linkLabel: Play on Game Jolt
+cover: /projects/free-breeze.webp
 ---
 
 Free Breeze is a player-versus-player game inspired by the dynamics of gincanas (Brazilian team competitions) and scouting. Underneath the cute, colorful nature theme sits an online strategy shooter: sign in with your Game Jolt account and play against real players.
 
-![Free Breeze](/projects/free-breeze.webp)
+I managed the project for a team of four using Agile and Scrum, and programmed the multiplayer networking, core gameplay, UI and shaders.
 
 ## Features
 
@@ -19,6 +26,9 @@ Free Breeze is a player-versus-player game inspired by the dynamics of gincanas 
 ## Tech
 
 - **Unity** with **C#**
+- **Real-time multiplayer networking**: state synchronization tuned for latency and reliability
+- **UI**: responsive menus and HUD
+- **Custom shaders** in GLSL and HLSL for rendering and visual effects
 - **Game Jolt API** for player accounts
 
 ## What I learned

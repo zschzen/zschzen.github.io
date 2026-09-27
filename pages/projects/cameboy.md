@@ -3,11 +3,26 @@ title: CameBoy - Game Boy Emulator
 display: CameBoy
 subtitle: A minimalist Game Boy emulator written in C99
 description: CameBoy is a minimalist Game Boy emulator written in C99 with an SDL2 front-end, built for learning the bare mechanics of the classic handheld.
+category: Emulators
+year: 2025–Present
+role: SOHNE, open source
+tags: [C99, SDL2]
+link: https://github.com/SOHNE/CameBoy
+linkLabel: Source on GitHub
+featured: true
+order: 4
+facts:
+  Started: February 2025
+  Language: C99
+  Front-end: SDL2
+media:
+  - lab: '2025-07-07'
+    caption: A minimalist Game Boy emulator in C99
+  - lab: '2025-03-14'
+    caption: Audio visualizer
 ---
 
 CameBoy is a raw dive into retro computing: a Game Boy emulator built in C99, pieced together from a patchwork of online insights to reveal the bare mechanics behind the classic handheld. No bells, no whistles; every line tries to be a lesson in minimalism.
-
-![CameBoy running the bgbtest.gb demo ROM](https://github.com/user-attachments/assets/2c978054-81e3-4b64-828e-c6480615e974)
 
 It already passes Blargg's `cpu_instrs` hardware test ROM, with instruction and memory timing still being brought in line.
 

@@ -106,8 +106,8 @@ onKeyStroke('Escape', (e: KeyboardEvent) => {
   <Transition name="fade">
     <div
       v-if="imageModel" fixed top-0 left-0 right-0 bottom-0 z-500 backdrop-blur-7 tabindex="0" role="dialog"
-      aria-modal="true" :aria-label="`Image preview: ${imageAlt}`" @click="imageModel = undefined"
-      @keydown.esc="imageModel = undefined"
+      aria-modal="true" :aria-label="`Image preview: ${imageAlt}`" @click="closeModal()"
+      @keydown.esc="closeModal()"
     >
       <div absolute top-0 left-0 right-0 bottom-0 bg-black:50 z--1 />
 

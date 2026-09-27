@@ -3,6 +3,10 @@ title: The Ashes of Jorge - Beat 'em up Brawler
 display: The Ashes of Jorge
 subtitle: 2D side-scrolling beat 'em up with retro arcade flair
 description: The Ashes of Jorge is a 2D side-scrolling beat 'em up made in one month by three students, with an aesthetic inspired by Scott Pilgrim vs. the World.
+category: Games
+year: 2019
+role: Senac, team of three
+tags: [Unity, C#]
 ---
 
 The Ashes of Jorge is a 2D side-scrolling beat 'em up, produced in one month (May to June 2019) as the Projeto Integrador II of the Digital Games program at Faculdade Senac Goiás.
@@ -14,7 +18,7 @@ Made by a team of three: Dyego Marques on design, art, characters, and animation
 ## Tech
 
 - **Unity 2019.1** with **C#**
-- Full project documentation in the repo: game design document, people management, and schedule (it was graded, after all)
+- Full project documentation: game design document, people management, and schedule (it was graded, after all)
 
 ## What I learned
 
@@ -26,4 +30,4 @@ Made by a team of three: Dyego Marques on design, art, characters, and animation
 
 ## Links
 
-- [Source on GitHub](https://github.com/zschzen/The-ashes-of-Jorge)
+- [Earlier two-week Pygame version (November 2018)](https://github.com/SOHNE/The-ashes-of-Jorge)
