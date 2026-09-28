@@ -92,21 +92,21 @@ const featuredLabs = projects.filter(p => p.featured).flatMap(p => p.media ?? []
   </ul>
 </section>
 
-<section id="experience" class="section flex flex-col gap-6 lg:gap-8">
-  <div class="section-head">
-    <h2 class="h-section">Experience</h2>
-    <a :href="site.resume" target="_blank" rel="noopener" class="link-arrow py-2.5 lg:py-0">Resume <span class="i-ph-download-simple h-4! w-4!" aria-hidden="true" /></a>
-  </div>
-  <ol class="col flex flex-col gap-6 lg:gap-8">
-    <ExperienceItem v-for="item in frontmatter.experience" :key="item.org" v-bind="item" />
-  </ol>
-  <div class="col flex flex-col gap-3">
-    <h3 class="text-[15px] font-medium leading-[1.4] text-muted-foreground">Education</h3>
-    <ol>
-      <ExperienceItem v-for="item in frontmatter.education" :key="item.org" v-bind="item" />
-    </ol>
-  </div>
-</section>
+<!-- <section id="experience" class="section flex flex-col gap-6 lg:gap-8"> -->
+<!--   <div class="section-head"> -->
+<!--     <h2 class="h-section">Experience</h2> -->
+<!--     <a :href="site.resume" target="_blank" rel="noopener" class="link-arrow py-2.5 lg:py-0">Resume <span class="i-ph-download-simple h-4! w-4!" aria-hidden="true" /></a> -->
+<!--   </div> -->
+<!--   <ol class="col flex flex-col gap-6 lg:gap-8"> -->
+<!--     <ExperienceItem v-for="item in frontmatter.experience" :key="item.org" v-bind="item" /> -->
+<!--   </ol> -->
+<!--   <div class="col flex flex-col gap-3"> -->
+<!--     <h3 class="text-[15px] font-medium leading-[1.4] text-muted-foreground">Education</h3> -->
+<!--     <ol> -->
+<!--       <ExperienceItem v-for="item in frontmatter.education" :key="item.org" v-bind="item" /> -->
+<!--     </ol> -->
+<!--   </div> -->
+<!-- </section> -->
 
 <section id="about" class="section flex flex-col gap-4 lg:gap-5">
 <h2 class="col h-section">About</h2>
